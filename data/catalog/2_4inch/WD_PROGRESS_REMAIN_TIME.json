@@ -1,0 +1,30 @@
+{
+    "name": "WD_PROGRESS_REMAIN_TIME",
+    "type": "Widget",
+    "description": "Remaining time display showing hours and minutes with large animated digits. Uses DigitAnim components for smooth number transitions. Includes 'hr' and 'min' unit labels. Shows time left in current operation.",
+    "visualForm": "Large animated digit display: [H]H → 'hr' → [M]M → 'min' with smooth digit transitions",
+    "category": "Washer/Progress",
+    "descriptionKo": "대형 애니메이션 숫자로 남은 시간(시/분)을 표시합니다. DigitAnim 컴포넌트로 시간 변경 시 부드러운 숫자 슬라이드 전환을 구현하며 hr과 min 단위 레이블을 포함합니다.",
+    "descriptionEn": "Remaining time display showing hours and minutes with large animated digits. Uses DigitAnim components for smooth number transitions. Includes 'hr' and 'min' unit labels. Shows time left in current operation.",
+    "props": [
+        "id",
+        "remain_hour",
+        "remain_min",
+        "style"
+    ],
+    "keywords": [
+        "WD_PROGRESS_REMAIN_TIME",
+        "wd",
+        "progress",
+        "remain",
+        "time",
+        "washer",
+        "세탁기",
+        "진행",
+        "id",
+        "remain_hour",
+        "remain_min",
+        "style",
+        "animation"
+    ]
+}

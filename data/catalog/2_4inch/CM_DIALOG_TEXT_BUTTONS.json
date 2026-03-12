@@ -1,0 +1,40 @@
+{
+    "name": "CM_DIALOG_TEXT_BUTTONS",
+    "type": "Widget",
+    "description": "Confirmation screen with centered description and two horizontal action buttons. Simpler than Core_CM_Confirmation (no icon). Buttons have rounded corners (24px radius), support focus states, and can be navigated with arrow keys. Description centered above buttons.",
+    "visualForm": "Vertically centered layout: description text at top, two rounded buttons (40px height default, 132px min width) in horizontal row below",
+    "category": "Dialog/Popup",
+    "descriptionKo": "설명 텍스트와 두 개의 가로형 액션 버튼으로 구성된 확인 화면입니다. 아이콘 없이 단순하게 구성되며, 24px 모서리 둥근 버튼을 방향키로 탐색할 수 있습니다.",
+    "descriptionEn": "Confirmation screen with centered description and two horizontal action buttons. Simpler than Core_CM_Confirmation (no icon). Buttons have rounded corners (24px radius), support focus states, and can be navigated with arrow keys. Description centered above buttons.",
+    "props": [
+        "desc",
+        "button1Text",
+        "button2Text",
+        "buttonHeight",
+        "payload",
+        "index",
+        "label",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_TEXT_BUTTONS",
+        "cm",
+        "dialog",
+        "text",
+        "buttons",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "desc",
+        "button1text",
+        "button2text",
+        "buttonheight",
+        "payload",
+        "index",
+        "label",
+        "onkey"
+    ]
+}

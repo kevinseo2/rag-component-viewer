@@ -1,0 +1,33 @@
+{
+    "name": "OV_DIALOG_TITLE_ICON",
+    "type": "Widget",
+    "description": "Dialog variant combining title text, centered content text, and optional icon. Used for oven-specific dialogs with icon support. Structured layout with title region and content area.",
+    "visualForm": "Title area → centered icon (if provided) → content text below",
+    "category": "Oven/Dialog",
+    "descriptionKo": "타이틀 텍스트, 중앙 콘텐츠 텍스트, 선택적 아이콘을 결합한 오븐 전용 다이얼로그입니다. 타이틀 영역과 콘텐츠 영역으로 구성된 구조화된 레이아웃을 제공합니다.",
+    "descriptionEn": "Dialog variant combining title text, centered content text, and optional icon. Used for oven-specific dialogs with icon support. Structured layout with title region and content area.",
+    "props": [
+        "id",
+        "title",
+        "message",
+        "icon",
+        "style",
+        "titleStyle",
+        "messageStyle"
+    ],
+    "keywords": [
+        "OV_DIALOG_TITLE_ICON",
+        "ov",
+        "dialog",
+        "title",
+        "icon",
+        "oven",
+        "오븐",
+        "다이얼로그",
+        "id",
+        "message",
+        "style",
+        "titlestyle",
+        "messagestyle"
+    ]
+}

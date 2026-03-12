@@ -1,0 +1,42 @@
+{
+    "name": "WD_DIALOG_ANIM_ICON",
+    "type": "Widget",
+    "description": "Dialogue with animated icon and multi-line text. Icon animation played via ImageSequencePlayer, text displayed below. Centered layout with keyboard support. Used for status messages with visual feedback.",
+    "visualForm": "Centered animated icon (customizable size) → multi-line description text (25px) below",
+    "category": "Washer/Dialog",
+    "descriptionKo": "애니메이션 아이콘과 여러 줄 텍스트가 있는 다이얼로그입니다. ImageSequencePlayer로 아이콘 애니메이션을 재생하고 아래에 설명 텍스트를 표시합니다. 시각적 피드백이 필요한 상태 메시지에 사용됩니다.",
+    "descriptionEn": "Dialogue with animated icon and multi-line text. Icon animation played via ImageSequencePlayer, text displayed below. Centered layout with keyboard support. Used for status messages with visual feedback.",
+    "props": [
+        "id",
+        "text",
+        "imagePath",
+        "sequenceId",
+        "showStaticImage",
+        "showLoadingAnimation",
+        "isFocused",
+        "onKey",
+        "style",
+        "gap"
+    ],
+    "keywords": [
+        "WD_DIALOG_ANIM_ICON",
+        "wd",
+        "dialog",
+        "anim",
+        "icon",
+        "washer",
+        "세탁기",
+        "다이얼로그",
+        "id",
+        "text",
+        "imagepath",
+        "sequenceid",
+        "showstaticimage",
+        "showloadinganimation",
+        "isfocused",
+        "onkey",
+        "style",
+        "gap",
+        "animation"
+    ]
+}

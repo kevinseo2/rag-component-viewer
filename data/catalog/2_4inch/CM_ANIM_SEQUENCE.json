@@ -1,0 +1,37 @@
+{
+    "name": "CM_ANIM_SEQUENCE",
+    "type": "Widget",
+    "description": "Core image sequence player that cycles through array of images at fixed intervals. Supports repeat mode (infinite loop) or single play with completion callback. Calculates frame duration by dividing total duration by frame count. Basic building block for animations.",
+    "visualForm": "Container (customizable width/height) displaying sequential images with timed transitions, images scaled to fit",
+    "category": "Animation",
+    "descriptionKo": "이미지 배열을 일정 간격으로 순환 재생하는 핵심 이미지 시퀀스 플레이어입니다. 무한 반복 또는 단일 재생 후 완료 콜백을 지원하며, 다양한 애니메이션 구현의 기본 빌딩 블록입니다.",
+    "descriptionEn": "Core image sequence player that cycles through array of images at fixed intervals. Supports repeat mode (infinite loop) or single play with completion callback. Calculates frame duration by dividing total duration by frame count. Basic building block for animations.",
+    "props": [
+        "images",
+        "duration",
+        "width",
+        "height",
+        "true",
+        "false",
+        "repeat",
+        "onComplete"
+    ],
+    "keywords": [
+        "CM_ANIM_SEQUENCE",
+        "cm",
+        "anim",
+        "sequence",
+        "animation",
+        "애니메이션",
+        "시퀀스",
+        "전환",
+        "images",
+        "duration",
+        "width",
+        "height",
+        "true",
+        "false",
+        "repeat",
+        "oncomplete"
+    ]
+}

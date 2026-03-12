@@ -1,0 +1,34 @@
+{
+    "name": "CM_ANIM_DIGIT",
+    "type": "Widget",
+    "description": "Animated single digit component with vertical slide transitions. Shows current digit with smooth slide animation when value changes (667ms ease-in-out). Direction determines slide up or down. Supports negative values (displays hyphen). Uses 87px font with 85px cell height.",
+    "visualForm": "Single digit cell (85px height) with translating number that slides vertically when changing, three-slot animation system (previous/current/next)",
+    "category": "Animation",
+    "descriptionKo": "세로 슬라이드 전환 애니메이션이 있는 단일 숫자 컴포넌트입니다. 값 변경 시 667ms ease-in-out 애니메이션으로 숫자가 위/아래로 슬라이드하며 전환됩니다. 87px 폰트와 85px 셀 높이를 사용합니다.",
+    "descriptionEn": "Animated single digit component with vertical slide transitions. Shows current digit with smooth slide animation when value changes (667ms ease-in-out). Direction determines slide up or down. Supports negative values (displays hyphen). Uses 87px font with 85px cell height.",
+    "props": [
+        "id",
+        "value",
+        "direction",
+        "delay",
+        "className",
+        "style"
+    ],
+    "keywords": [
+        "CM_ANIM_DIGIT",
+        "cm",
+        "anim",
+        "digit",
+        "animation",
+        "애니메이션",
+        "시퀀스",
+        "전환",
+        "sequence",
+        "id",
+        "value",
+        "direction",
+        "delay",
+        "classname",
+        "style"
+    ]
+}

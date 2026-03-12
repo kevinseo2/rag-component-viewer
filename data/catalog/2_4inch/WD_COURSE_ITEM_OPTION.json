@@ -1,0 +1,36 @@
+{
+    "name": "WD_COURSE_ITEM_OPTION",
+    "type": "Widget",
+    "description": "Single course option display (name + value + unit) using NextFmtLabelLite. Shows formatted option text like 'Heavy Soil: 40°C'. Part of course item options list.",
+    "visualForm": "Single line option text (21px, gray #cdcdcd) showing 'name: value unit' format",
+    "category": "Washer/Course",
+    "descriptionKo": "NextFmtLabelLite를 사용해 단일 코스 옵션(이름+값+단위)을 표시하는 항목입니다. name: value unit 형식의 옵션 텍스트를 21px 회색으로 한 줄에 보여줍니다.",
+    "descriptionEn": "Single course option display (name + value + unit) using NextFmtLabelLite. Shows formatted option text like 'Heavy Soil: 40°C'. Part of course item options list.",
+    "props": [
+        "id",
+        "title",
+        "value",
+        "unit",
+        "style",
+        "className",
+        "isAnimating"
+    ],
+    "keywords": [
+        "WD_COURSE_ITEM_OPTION",
+        "wd",
+        "course",
+        "item",
+        "option",
+        "washer",
+        "세탁코스",
+        "코스",
+        "id",
+        "title",
+        "value",
+        "unit",
+        "style",
+        "classname",
+        "isanimating",
+        "list"
+    ]
+}

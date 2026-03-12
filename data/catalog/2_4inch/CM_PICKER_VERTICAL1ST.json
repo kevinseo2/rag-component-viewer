@@ -1,0 +1,42 @@
+{
+    "name": "CM_PICKER_VERTICAL1ST",
+    "type": "Widget",
+    "description": "Infinite scroll vertical picker with 3 visible items (TOP, MID, LOW positions). Shows title, main text, and value for selected item. Value fades out/in (100ms/167ms) on selection change. Title visibility toggles based on selection (always visible at index 0 or if titleShowAlways=true). Supports enabled/disabled states.",
+    "visualForm": "Optional title area → 3-item vertical picker stack with centered selection → fade-in/out value display → gradient mask overlay",
+    "category": "Picker/Selection",
+    "descriptionKo": "3개 항목(TOP/MID/LOW 위치)이 보이는 무한 스크롤 세로 피커입니다. 선택 변경 시 값이 100ms/167ms 페이드 인/아웃되며, titleShowAlways 옵션으로 타이틀 표시를 제어합니다.",
+    "descriptionEn": "Infinite scroll vertical picker with 3 visible items (TOP, MID, LOW positions). Shows title, main text, and value for selected item. Value fades out/in (100ms/167ms) on selection change. Title visibility toggles based on selection (always visible at index 0 or if titleShowAlways=true). Supports enabled/disabled states.",
+    "props": [
+        "id",
+        "items",
+        "text",
+        "value",
+        "enabled",
+        "valueIsGuide",
+        "titleText",
+        "titleShowAlways",
+        "initialIndex",
+        "isFocused"
+    ],
+    "keywords": [
+        "CM_PICKER_VERTICAL1ST",
+        "cm",
+        "picker",
+        "vertical1st",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "id",
+        "items",
+        "text",
+        "value",
+        "enabled",
+        "valueisguide",
+        "titletext",
+        "titleshowalways",
+        "initialindex",
+        "isfocused"
+    ]
+}

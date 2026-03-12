@@ -1,0 +1,36 @@
+{
+    "name": "CM_LIST_ITEM2COL",
+    "type": "Widget",
+    "description": "Two-column list item variant with label on left and value on right. Fixed widths: label area 170px, value area 130px. Supports enabled/disabled states. Both label and value can independently show enabled/disabled styling.",
+    "visualForm": "Two-column item (320x68px): label (170px, left-aligned) | value (130px, right-aligned), both 30px font",
+    "category": "List/Selection",
+    "descriptionKo": "좌측 레이블과 우측 값이 2열로 배치된 리스트 항목 변형입니다. 레이블 영역 170px, 값 영역 130px의 고정 너비를 사용하며, 각각 독립적인 활성/비활성 스타일을 지원합니다.",
+    "descriptionEn": "Two-column list item variant with label on left and value on right. Fixed widths: label area 170px, value area 130px. Supports enabled/disabled states. Both label and value can independently show enabled/disabled styling.",
+    "props": [
+        "id",
+        "label_main",
+        "label_desc",
+        "label",
+        "showDescription",
+        "enabled",
+        "isSelected"
+    ],
+    "keywords": [
+        "CM_LIST_ITEM2COL",
+        "cm",
+        "list",
+        "item2col",
+        "selection",
+        "리스트",
+        "선택",
+        "목록",
+        "스크롤",
+        "id",
+        "label_main",
+        "label_desc",
+        "label",
+        "showdescription",
+        "enabled",
+        "isselected"
+    ]
+}

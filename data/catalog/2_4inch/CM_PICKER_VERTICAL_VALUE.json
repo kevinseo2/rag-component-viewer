@@ -1,0 +1,35 @@
+{
+    "name": "CM_PICKER_VERTICAL_VALUE",
+    "type": "Widget",
+    "description": "Vertical picker with value label that fades in/out on selection change. Shows title in picker items (36px) and value below (30px) when selected. Value fades out (150ms), updates, then fades in on scroll. Curved offset animation for previous/next items (+9px/-10px/-19px).",
+    "visualForm": "Three item picker with title texts (36px), fixed value label below center (30px) with fade animation, subtle curved arrangement, dividers and mask",
+    "category": "Picker/Selection",
+    "descriptionKo": "선택 변경 시 페이드 인/아웃 되는 값 레이블이 있는 세로 피커입니다. 선택 항목의 타이틀(36px)과 값(30px)을 표시하며, 이전/다음 항목에 곡선 오프셋 애니메이션을 적용합니다.",
+    "descriptionEn": "Vertical picker with value label that fades in/out on selection change. Shows title in picker items (36px) and value below (30px) when selected. Value fades out (150ms), updates, then fades in on scroll. Curved offset animation for previous/next items (+9px/-10px/-19px).",
+    "props": [
+        "title",
+        "value",
+        "items",
+        "onKey",
+        "isFocused",
+        "initialSelectedIndex"
+    ],
+    "keywords": [
+        "CM_PICKER_VERTICAL_VALUE",
+        "cm",
+        "picker",
+        "vertical",
+        "value",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "title",
+        "items",
+        "onkey",
+        "isfocused",
+        "initialselectedindex",
+        "animation"
+    ]
+}

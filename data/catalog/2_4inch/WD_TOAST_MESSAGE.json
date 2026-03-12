@@ -1,0 +1,38 @@
+{
+    "name": "WD_TOAST_MESSAGE",
+    "type": "Widget",
+    "description": "Individual toast message component (used by CM_Dialog_Toast_Holder). Shows formatted text in dark gray rounded rectangle. Auto-sized height based on text lines. Supports format slots.",
+    "visualForm": "Dark gray rounded rectangle (310px width, auto height) with centered white text (25px)",
+    "category": "Washer/Widget",
+    "descriptionKo": "개별 토스트 메시지 컴포넌트입니다. 어두운 회색 둥근 사각형(310px)에 흰색 텍스트(25px)를 표시하며, 텍스트 줄 수에 따라 높이가 자동 조정됩니다. CM_Dialog_Toast_Holder에서 사용됩니다.",
+    "descriptionEn": "Individual toast message component (used by CM_Dialog_Toast_Holder). Shows formatted text in dark gray rounded rectangle. Auto-sized height based on text lines. Supports format slots.",
+    "props": [
+        "id",
+        "text",
+        "duration",
+        "initialText",
+        "initialDuration",
+        "onDismiss",
+        "className",
+        "style"
+    ],
+    "keywords": [
+        "WD_TOAST_MESSAGE",
+        "wd",
+        "toast",
+        "message",
+        "washer",
+        "widget",
+        "위젯",
+        "ui",
+        "id",
+        "text",
+        "duration",
+        "initialtext",
+        "initialduration",
+        "ondismiss",
+        "classname",
+        "style",
+        "dialog"
+    ]
+}

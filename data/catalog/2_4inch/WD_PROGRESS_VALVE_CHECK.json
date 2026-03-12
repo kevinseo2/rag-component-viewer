@@ -1,0 +1,23 @@
+{
+    "name": "WD_PROGRESS_VALVE_CHECK",
+    "type": "Widget",
+    "description": "Water valve check progress display showing percentage and description. Theme-aware colors. Shows status during water inlet valve testing. Simple progress indicator.",
+    "visualForm": "Vertically centered: progress percentage display → description text below",
+    "category": "Washer/Progress",
+    "descriptionKo": "수도 유입 밸브 점검 진행 상황을 표시하는 위젯입니다. 퍼센트와 설명 텍스트를 중앙 정렬로 표시하며 테마 색상을 지원합니다.",
+    "descriptionEn": "Water valve check progress display showing percentage and description. Theme-aware colors. Shows status during water inlet valve testing. Simple progress indicator.",
+    "props": [
+        "theme"
+    ],
+    "keywords": [
+        "WD_PROGRESS_VALVE_CHECK",
+        "wd",
+        "progress",
+        "valve",
+        "check",
+        "washer",
+        "세탁기",
+        "진행",
+        "theme"
+    ]
+}

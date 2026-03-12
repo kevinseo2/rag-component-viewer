@@ -1,0 +1,26 @@
+{
+    "name": "CM_TITLE_BAR",
+    "type": "Widget",
+    "description": "Simple title bar widget for displaying centered screen titles. Fixed at top of screen (320x36px), white text (30px semibold) on transparent background. Standard header component used across many screens.",
+    "visualForm": "Title bar strip (320x36px) at screen top with centered white text (30px)",
+    "category": "Header/Title",
+    "descriptionKo": "화면 상단에 고정되는 공통 타이틀 바 위젯입니다. 320x36px 크기로 투명 배경 위에 흰색 30px 세미볼드 텍스트를 중앙 정렬해 표시합니다. 다양한 화면에서 표준 헤더로 재사용됩니다.",
+    "descriptionEn": "Simple title bar widget for displaying centered screen titles. Fixed at top of screen (320x36px), white text (30px semibold) on transparent background. Standard header component used across many screens.",
+    "props": [
+        "id",
+        "title",
+        "style"
+    ],
+    "keywords": [
+        "CM_TITLE_BAR",
+        "cm",
+        "title",
+        "bar",
+        "header",
+        "타이틀",
+        "헤더",
+        "제목",
+        "id",
+        "style"
+    ]
+}

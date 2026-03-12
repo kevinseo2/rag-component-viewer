@@ -1,0 +1,37 @@
+{
+    "name": "WD_ANIM_BOOT",
+    "type": "Widget",
+    "description": "Boot animation orchestrator managing multiple sequential ImageSequencePlayer playlists. Converts animation definitions into playlist format and plays them in order. Calls onReady when complete sequence finishes.",
+    "visualForm": "Full-screen sequential animation player for boot sequences (ThinQ logo → product intro)",
+    "category": "Washer/Animation",
+    "descriptionKo": "여러 순차 ImageSequencePlayer 플레이리스트를 관리하는 부팅 애니메이션 오케스트레이터입니다. 애니메이션 정의를 플레이리스트 형식으로 변환해 순서대로 재생하고, 완료 시 onReady를 호출합니다.",
+    "descriptionEn": "Boot animation orchestrator managing multiple sequential ImageSequencePlayer playlists. Converts animation definitions into playlist format and plays them in order. Calls onReady when complete sequence finishes.",
+    "props": [
+        "id",
+        "animation",
+        "animations",
+        "onReady",
+        "isFocused",
+        "onKey",
+        "style",
+        "className"
+    ],
+    "keywords": [
+        "WD_ANIM_BOOT",
+        "wd",
+        "anim",
+        "boot",
+        "washer",
+        "animation",
+        "세탁기",
+        "애니메이션",
+        "id",
+        "animations",
+        "onready",
+        "isfocused",
+        "onkey",
+        "style",
+        "classname",
+        "list"
+    ]
+}

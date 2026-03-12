@@ -1,0 +1,34 @@
+{
+    "name": "CM_LIST_VERTICAL2COL",
+    "type": "Widget",
+    "description": "Two-column vertical list screen with title bar and VerticalListView2nd. Similar structure to Core_CM_Ver_List but uses 2-column item layout. Includes gradient masks and standard navigation. For displaying paired or comparative information.",
+    "visualForm": "Title bar with back arrow (50px) → scrollable 2-column list area (190px) → gradient masks",
+    "category": "List/Selection",
+    "descriptionKo": "타이틀 바와 2열 리스트 뷰를 갖춘 세로 리스트 화면입니다. 그라디언트 마스크와 표준 탐색을 포함하며, 쌍을 이루거나 비교가 필요한 정보 표시에 적합합니다.",
+    "descriptionEn": "Two-column vertical list screen with title bar and VerticalListView2nd. Similar structure to Core_CM_Ver_List but uses 2-column item layout. Includes gradient masks and standard navigation. For displaying paired or comparative information.",
+    "props": [
+        "id",
+        "title",
+        "showBackArrow",
+        "items",
+        "selectedIndex",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_LIST_VERTICAL2COL",
+        "cm",
+        "list",
+        "vertical2col",
+        "selection",
+        "리스트",
+        "선택",
+        "목록",
+        "스크롤",
+        "id",
+        "title",
+        "showbackarrow",
+        "items",
+        "selectedindex",
+        "onkey"
+    ]
+}

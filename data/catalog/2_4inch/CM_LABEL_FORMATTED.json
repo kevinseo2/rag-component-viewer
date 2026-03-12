@@ -1,0 +1,41 @@
+{
+    "name": "CM_LABEL_FORMATTED",
+    "type": "Widget",
+    "description": "Advanced formatted label with slot-based templating. Supports format strings with {0}, {1} placeholders for STRING/IMAGE/NUMBER slots. Auto font fitting (scales down if overflow), scroll mode if fitting fails (horizontal/vertical). 2-second delay before scrolling. Wrap-around scrolling with masks.",
+    "visualForm": "Flexible text/image container with auto-sizing, scrolling text when too long, gradient masks during scroll, inline images and styled slots",
+    "category": "Text/Label",
+    "descriptionKo": "슬롯 기반 템플릿이 있는 고급 포맷 레이블입니다. 플레이스홀더로 STRING/IMAGE/NUMBER 슬롯을 지원하며, 자동 폰트 축소 및 수평/수직 스크롤 모드를 제공합니다.",
+    "descriptionEn": "Advanced formatted label with slot-based templating. Supports format strings with {0}, {1} placeholders for STRING/IMAGE/NUMBER slots. Auto font fitting (scales down if overflow), scroll mode if fitting fails (horizontal/vertical). 2-second delay before scrolling. Wrap-around scrolling with masks.",
+    "props": [
+        "id",
+        "format",
+        "slots",
+        "align",
+        "multiline",
+        "style",
+        "maxArea",
+        "isFocused",
+        "animSpeed",
+        "forceMinFontSize"
+    ],
+    "keywords": [
+        "CM_LABEL_FORMATTED",
+        "cm",
+        "label",
+        "formatted",
+        "text",
+        "텍스트",
+        "라벨",
+        "문구",
+        "id",
+        "format",
+        "slots",
+        "align",
+        "multiline",
+        "style",
+        "maxarea",
+        "isfocused",
+        "animspeed",
+        "forceminfontsize"
+    ]
+}

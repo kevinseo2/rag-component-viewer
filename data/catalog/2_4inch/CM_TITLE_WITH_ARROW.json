@@ -1,0 +1,34 @@
+{
+    "name": "CM_TITLE_WITH_ARROW",
+    "type": "Widget",
+    "description": "Standard title bar component with centered title text and optional back arrow. Arrow is clickable 100x50px area at left. Title is 30px semibold centered across full width. Black background, white text. Standard header for list and settings screens.",
+    "visualForm": "Header bar (320x50px): back arrow icon on left (100x50px) | centered title text (30px white)",
+    "category": "Header/Title",
+    "descriptionKo": "중앙 타이틀 텍스트와 선택적 뒤로 가기 화살표가 있는 표준 타이틀 바 컴포넌트입니다. 화살표는 100x50px 클릭 영역을 가지며, 리스트/설정 화면의 표준 헤더로 사용됩니다.",
+    "descriptionEn": "Standard title bar component with centered title text and optional back arrow. Arrow is clickable 100x50px area at left. Title is 30px semibold centered across full width. Black background, white text. Standard header for list and settings screens.",
+    "props": [
+        "title",
+        "onBack",
+        "true",
+        "false",
+        "showBackArrow",
+        "style"
+    ],
+    "keywords": [
+        "CM_TITLE_WITH_ARROW",
+        "cm",
+        "title",
+        "with",
+        "arrow",
+        "header",
+        "타이틀",
+        "헤더",
+        "제목",
+        "onback",
+        "true",
+        "false",
+        "showbackarrow",
+        "style",
+        "list"
+    ]
+}

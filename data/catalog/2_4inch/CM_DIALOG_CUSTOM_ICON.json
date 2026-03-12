@@ -1,0 +1,40 @@
+{
+    "name": "CM_DIALOG_CUSTOM_ICON",
+    "type": "Widget",
+    "description": "Similar to Core_CM_Dialogue_Icon_Title but with customizable icon source. Displays icon, optional title, and description vertically centered. Supports custom icon images via iconSrc prop. Keyboard handles BACK action only.",
+    "visualForm": "Centered vertical layout: custom icon (62x62px), optional title (30px), description (25px) below with 6px gap",
+    "category": "Dialog/Popup",
+    "descriptionKo": "사용자 지정 아이콘을 지원하는 다이얼로그입니다. iconSrc prop으로 커스텀 이미지를 설정하며, 선택적 타이틀과 설명을 세로 중앙 정렬로 표시합니다. BACK 키만 처리합니다.",
+    "descriptionEn": "Similar to Core_CM_Dialogue_Icon_Title but with customizable icon source. Displays icon, optional title, and description vertically centered. Supports custom icon images via iconSrc prop. Keyboard handles BACK action only.",
+    "props": [
+        "id",
+        "title",
+        "description",
+        "iconSrc",
+        "true",
+        "false",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_CUSTOM_ICON",
+        "cm",
+        "dialog",
+        "custom",
+        "icon",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "id",
+        "title",
+        "description",
+        "iconsrc",
+        "true",
+        "false",
+        "isfocused",
+        "onkey"
+    ]
+}

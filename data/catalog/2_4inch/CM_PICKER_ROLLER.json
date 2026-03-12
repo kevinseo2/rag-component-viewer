@@ -1,0 +1,42 @@
+{
+    "name": "CM_PICKER_ROLLER",
+    "type": "Widget",
+    "description": "Vertical roller picker component (iOS-style picker wheel). Shows 3 items with center selection. Supports infinite wrapping, smooth scroll animations. Used in clock setting and value selection. Divider lines mark selection area.",
+    "visualForm": "3-slot vertical picker with dividers (68px items), center item selected, smooth scrolling with wrapping",
+    "category": "Picker/Selection",
+    "descriptionKo": "3개 항목이 중앙 선택 방식으로 표시되는 세로 롤러 피커(iOS 스타일 피커 휠)입니다. 무한 감기와 부드러운 스크롤 애니메이션을 지원하며, 시계 설정이나 값 선택에 활용됩니다.",
+    "descriptionEn": "Vertical roller picker component (iOS-style picker wheel). Shows 3 items with center selection. Supports infinite wrapping, smooth scroll animations. Used in clock setting and value selection. Divider lines mark selection area.",
+    "props": [
+        "id",
+        "items",
+        "selectedIndex",
+        "itemHeight",
+        "visibleItems",
+        "style",
+        "textColor",
+        "font",
+        "fontSize"
+    ],
+    "keywords": [
+        "CM_PICKER_ROLLER",
+        "cm",
+        "picker",
+        "roller",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "id",
+        "items",
+        "selectedindex",
+        "itemheight",
+        "visibleitems",
+        "style",
+        "textcolor",
+        "font",
+        "fontsize",
+        "clock",
+        "animation"
+    ]
+}

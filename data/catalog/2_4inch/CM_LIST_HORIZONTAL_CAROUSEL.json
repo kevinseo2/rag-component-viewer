@@ -1,0 +1,37 @@
+{
+    "name": "CM_LIST_HORIZONTAL_CAROUSEL",
+    "type": "Widget",
+    "description": "Horizontal dynamic carousel picker with centered item and partial preview of adjacent items. Features smooth 300ms slide animations between items. Large centered text (49px) with fade masks on left/right edges. Optional title at top. Items arranged horizontally with 40px gaps.",
+    "visualForm": "Horizontal scrolling carousel with large centered item (118px width), partial side items visible, gradient fade masks on edges, optional title bar",
+    "category": "List/Selection",
+    "descriptionKo": "인접 항목이 부분 미리보기되는 수평 동적 캐러셀 피커입니다. 300ms 슬라이드 애니메이션과 좌우 페이드 마스크를 사용하며, 49px 대형 텍스트로 선택 항목을 중앙에 강조합니다.",
+    "descriptionEn": "Horizontal dynamic carousel picker with centered item and partial preview of adjacent items. Features smooth 300ms slide animations between items. Large centered text (49px) with fade masks on left/right edges. Optional title at top. Items arranged horizontally with 40px gaps.",
+    "props": [
+        "id",
+        "title",
+        "items",
+        "initialIndex",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_LIST_HORIZONTAL_CAROUSEL",
+        "cm",
+        "list",
+        "horizontal",
+        "carousel",
+        "selection",
+        "리스트",
+        "선택",
+        "목록",
+        "스크롤",
+        "id",
+        "title",
+        "items",
+        "initialindex",
+        "isfocused",
+        "onkey",
+        "picker",
+        "animation"
+    ]
+}

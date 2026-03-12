@@ -1,0 +1,33 @@
+{
+    "name": "CM_LIST_HORIZONTAL_PAGER",
+    "type": "Widget",
+    "description": "Full-screen horizontal pager (320px per page) with smooth page transitions. Supports two variants: standard (large centered label + optional sub-label + optional command button) and 2nd depth (title/value/description layout). Dot indicators at top show page position.",
+    "visualForm": "Full-width horizontal pages (320x240px each), page indicator dots at top (y=6px), smooth 300ms transitions, each page fills entire screen",
+    "category": "List/Selection",
+    "descriptionKo": "부드러운 페이지 전환이 있는 전체 화면 수평 페이저입니다. 표준형(큰 레이블+서브레이블+버튼)과 2차 깊이(타이틀/값/설명) 두 가지 변형을 지원하며, 상단 점 인디케이터로 현재 위치를 표시합니다.",
+    "descriptionEn": "Full-screen horizontal pager (320px per page) with smooth page transitions. Supports two variants: standard (large centered label + optional sub-label + optional command button) and 2nd depth (title/value/description layout). Dot indicators at top show page position.",
+    "props": [
+        "items",
+        "initialIndex",
+        "payload",
+        "onKey",
+        "variant"
+    ],
+    "keywords": [
+        "CM_LIST_HORIZONTAL_PAGER",
+        "cm",
+        "list",
+        "horizontal",
+        "pager",
+        "selection",
+        "리스트",
+        "선택",
+        "목록",
+        "스크롤",
+        "items",
+        "initialindex",
+        "payload",
+        "onkey",
+        "variant"
+    ]
+}

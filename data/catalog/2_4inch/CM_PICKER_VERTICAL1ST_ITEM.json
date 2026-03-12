@@ -1,0 +1,35 @@
+{
+    "name": "CM_PICKER_VERTICAL1ST_ITEM",
+    "type": "Widget",
+    "description": "Individual item for VerticalList1stDepth with position-based vertical offset animation. TOP position: +12px, MID: -19px (if has value) or 0px, LOW: -12px. Supports enabled/disabled states (gray when disabled). Text centered in 94px cell.",
+    "visualForm": "Text item (300x94px) with position-based vertical offset, centered 36px white/gray text, smooth transitions",
+    "category": "Picker/Selection",
+    "descriptionKo": "위치 기반 수직 오프셋 애니메이션이 있는 1차 세로 피커의 개별 항목입니다. TOP: +12px, MID: -19px(값 있을 때)/0px, LOW: -12px 오프셋이 적용되며, 비활성 상태(회색)를 지원합니다.",
+    "descriptionEn": "Individual item for VerticalList1stDepth with position-based vertical offset animation. TOP position: +12px, MID: -19px (if has value) or 0px, LOW: -12px. Supports enabled/disabled states (gray when disabled). Text centered in 94px cell.",
+    "props": [
+        "id",
+        "text",
+        "value",
+        "position",
+        "enabled"
+    ],
+    "keywords": [
+        "CM_PICKER_VERTICAL1ST_ITEM",
+        "cm",
+        "picker",
+        "vertical1st",
+        "item",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "id",
+        "text",
+        "value",
+        "position",
+        "enabled",
+        "list",
+        "animation"
+    ]
+}

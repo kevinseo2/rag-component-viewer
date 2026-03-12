@@ -1,0 +1,36 @@
+{
+    "name": "CM_DIALOG_TITLE_ICON_STACK",
+    "type": "Widget",
+    "description": "Dialog combining icon, title, and description in centered vertical stack. Icon at top (62x62px), title below (30px), description at bottom (25px) with 6px gap. Supports custom icon source. Handles BACK keyboard action.",
+    "visualForm": "Vertically centered: icon (62x62px) → title (30px) → description (25px), all centered with 6px gap between title and description",
+    "category": "Dialog/Popup",
+    "descriptionKo": "아이콘, 타이틀, 설명을 중앙 정렬 세로 스택으로 배치한 다이얼로그입니다. 커스텀 아이콘 소스를 지원하며 BACK 키를 처리합니다.",
+    "descriptionEn": "Dialog combining icon, title, and description in centered vertical stack. Icon at top (62x62px), title below (30px), description at bottom (25px) with 6px gap. Supports custom icon source. Handles BACK keyboard action.",
+    "props": [
+        "id",
+        "title",
+        "description",
+        "iconSrc",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_TITLE_ICON_STACK",
+        "cm",
+        "dialog",
+        "title",
+        "icon",
+        "stack",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "id",
+        "description",
+        "iconsrc",
+        "isfocused",
+        "onkey"
+    ]
+}

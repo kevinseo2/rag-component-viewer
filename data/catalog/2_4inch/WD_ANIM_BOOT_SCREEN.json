@@ -1,0 +1,33 @@
+{
+    "name": "WD_ANIM_BOOT_SCREEN",
+    "type": "Widget",
+    "description": "Standard boot screen with logo animation and loading text. Shows animated logo playlist centered with status message below. Typical boot sequence component.",
+    "visualForm": "Centered logo animation with optional loading text below",
+    "category": "Washer/Animation",
+    "descriptionKo": "로고 애니메이션과 로딩 텍스트가 있는 표준 부팅 화면입니다. 중앙 정렬된 애니메이션 로고 플레이리스트와 하단 상태 메시지를 표시하는 일반적인 부팅 시퀀스 컴포넌트입니다.",
+    "descriptionEn": "Standard boot screen with logo animation and loading text. Shows animated logo playlist centered with status message below. Typical boot sequence component.",
+    "props": [
+        "id",
+        "text",
+        "isFocused",
+        "onKey",
+        "style"
+    ],
+    "keywords": [
+        "WD_ANIM_BOOT_SCREEN",
+        "wd",
+        "anim",
+        "boot",
+        "screen",
+        "washer",
+        "animation",
+        "세탁기",
+        "애니메이션",
+        "id",
+        "text",
+        "isfocused",
+        "onkey",
+        "style",
+        "list"
+    ]
+}

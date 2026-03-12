@@ -1,0 +1,38 @@
+{
+    "name": "WD_COURSE_PROGRESS_TITLE",
+    "type": "Widget",
+    "description": "Course title component showing course name with optional AI/pentagon icons. Uses NextFmtLabelLite for formatted text with icon slots. Supports auto font sizing. Used in progress screens.",
+    "visualForm": "Course name text (30px) with optional inline icons (AI: 15x15px, Pentagon: 18x18px)",
+    "category": "Washer/Course",
+    "descriptionKo": "선택적 AI/오각형 아이콘과 함께 코스 이름을 표시하는 코스 타이틀 컴포넌트입니다. NextFmtLabelLite로 인라인 아이콘 슬롯을 지원하며, 자동 폰트 크기 조정을 제공합니다.",
+    "descriptionEn": "Course title component showing course name with optional AI/pentagon icons. Uses NextFmtLabelLite for formatted text with icon slots. Supports auto font sizing. Used in progress screens.",
+    "props": [
+        "id",
+        "title",
+        "show_ai",
+        "show_pentagon",
+        "isFocused",
+        "align",
+        "style",
+        "max_width",
+        "max_height"
+    ],
+    "keywords": [
+        "WD_COURSE_PROGRESS_TITLE",
+        "wd",
+        "course",
+        "progress",
+        "title",
+        "washer",
+        "세탁코스",
+        "코스",
+        "id",
+        "show_ai",
+        "show_pentagon",
+        "isfocused",
+        "align",
+        "style",
+        "max_width",
+        "max_height"
+    ]
+}

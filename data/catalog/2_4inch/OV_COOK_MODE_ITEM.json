@@ -1,0 +1,34 @@
+{
+    "name": "OV_COOK_MODE_ITEM",
+    "type": "Widget",
+    "description": "Individual cooking mode item for oven mode selection. Displays mode name, temperature, icon. Used in WD_CookMode_Pager for showing available cooking programs.",
+    "visualForm": "Cooking mode display: mode name → temperature → mode icon, centered layout",
+    "category": "Oven/Cooking",
+    "descriptionKo": "오븐 모드 선택용 개별 조리 모드 항목입니다. 모드 이름, 온도, 아이콘을 표시하며, WD_CookMode_Pager에서 사용 가능한 조리 프로그램을 보여줄 때 사용됩니다.",
+    "descriptionEn": "Individual cooking mode item for oven mode selection. Displays mode name, temperature, icon. Used in WD_CookMode_Pager for showing available cooking programs.",
+    "props": [
+        "id",
+        "image",
+        "title",
+        "description",
+        "showIcon",
+        "style"
+    ],
+    "keywords": [
+        "OV_COOK_MODE_ITEM",
+        "ov",
+        "cook",
+        "mode",
+        "item",
+        "oven",
+        "cooking",
+        "오븐",
+        "조리",
+        "id",
+        "image",
+        "title",
+        "description",
+        "showicon",
+        "style"
+    ]
+}

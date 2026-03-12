@@ -1,0 +1,42 @@
+{
+    "name": "CM_DIALOG_SCROLL_DESC",
+    "type": "Widget",
+    "description": "Screen with title bar, scrollable description area, and 1-2 action buttons at bottom. Description area supports vertical scrolling with up/down arrow keys. Gradient masks at top and bottom indicate scrollable content. Buttons use same styling as Core_CM_Confirmation.",
+    "visualForm": "Three sections: title bar with back arrow (50px), scrollable content area (128px) with gradient masks, button row at bottom (62px height)",
+    "category": "Dialog/Popup",
+    "descriptionKo": "타이틀 바, 스크롤 가능한 설명 영역, 하단 1~2개 액션 버튼으로 구성된 화면입니다. 상하 방향키로 설명을 스크롤하며, 상하 그라디언트 마스크로 스크롤 가능 여부를 시각적으로 안내합니다.",
+    "descriptionEn": "Screen with title bar, scrollable description area, and 1-2 action buttons at bottom. Description area supports vertical scrolling with up/down arrow keys. Gradient masks at top and bottom indicate scrollable content. Buttons use same styling as Core_CM_Confirmation.",
+    "props": [
+        "id",
+        "title",
+        "top",
+        "description",
+        "buttonCount",
+        "btn1Text",
+        "btn2Text",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_SCROLL_DESC",
+        "cm",
+        "dialog",
+        "scroll",
+        "desc",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "id",
+        "title",
+        "top",
+        "description",
+        "buttoncount",
+        "btn1text",
+        "btn2text",
+        "isfocused",
+        "onkey"
+    ]
+}

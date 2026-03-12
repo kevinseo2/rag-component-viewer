@@ -1,0 +1,39 @@
+{
+    "name": "CM_CTRL_SLIDER_DISCRETE",
+    "type": "Widget",
+    "description": "Discrete level slider (segments instead of continuous). Shows title, current level value text, and segmented bar indicator. 5 segments (44px each) with 50px spacing. Active segments shown in primary color, inactive in track color. Arrow keys change level.",
+    "visualForm": "Title bar with back arrow → value text display (42px) → segmented bar (5 segments × 44px, 5px height) at y=150px",
+    "category": "Control/Input",
+    "descriptionKo": "세그먼트 방식의 이산 레벨 슬라이더입니다. 5개 세그먼트(각 44px)로 구성된 바와 타이틀, 현재 레벨 텍스트를 표시하며, 활성 세그먼트는 주색상으로 강조됩니다. 방향키로 레벨을 변경합니다.",
+    "descriptionEn": "Discrete level slider (segments instead of continuous). Shows title, current level value text, and segmented bar indicator. 5 segments (44px each) with 50px spacing. Active segments shown in primary color, inactive in track color. Arrow keys change level.",
+    "props": [
+        "id",
+        "title",
+        "level",
+        "maxLevels",
+        "isFocused",
+        "payload",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_CTRL_SLIDER_DISCRETE",
+        "cm",
+        "ctrl",
+        "slider",
+        "discrete",
+        "control",
+        "input",
+        "입력",
+        "제어",
+        "컨트롤",
+        "button",
+        "switch",
+        "id",
+        "title",
+        "level",
+        "maxlevels",
+        "isfocused",
+        "payload",
+        "onkey"
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "name": "CM_PROGRESS_BAR",
+    "type": "Widget",
+    "description": "Horizontal progress bar with title, large time display, and visual progress indicator. Shows hours and minutes in large font (87px) with units (25px). Progress bar animates across 320px width using translateX formula. Bottom description and label texts. Supports unit customization.",
+    "visualForm": "Vertical layout: title at top → large time display (87px digits + 25px units) → progress bar (y=149px) → bottom labels and description",
+    "category": "Progress/Loading",
+    "descriptionKo": "타이틀, 대형 시간 표시, 시각적 진행 표시줄을 갖춘 수평 프로그레스 바입니다. 시간/분을 87px 대형 폰트로 표시하며, translateX 공식으로 320px 너비 애니메이션을 구현합니다.",
+    "descriptionEn": "Horizontal progress bar with title, large time display, and visual progress indicator. Shows hours and minutes in large font (87px) with units (25px). Progress bar animates across 320px width using translateX formula. Bottom description and label texts. Supports unit customization.",
+    "props": [
+        "id",
+        "percent",
+        "label_CM_PB_Title",
+        "label",
+        "label_2",
+        "label_CM_PB_Desc",
+        "label_CM_PB_Desc_1",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_PROGRESS_BAR",
+        "cm",
+        "progress",
+        "bar",
+        "loading",
+        "진행",
+        "로딩",
+        "처리중",
+        "id",
+        "percent",
+        "label_cm_pb_title",
+        "label",
+        "label_2",
+        "label_cm_pb_desc",
+        "label_cm_pb_desc_1",
+        "isfocused",
+        "onkey",
+        "animation"
+    ]
+}

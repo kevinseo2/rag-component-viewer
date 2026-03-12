@@ -1,0 +1,146 @@
+{
+    "catalogVersion": "1.0.0",
+    "generatedDate": "2026-03-12",
+    "totalComponents": 98,
+    "directory": "ux-simulator-application-core/src/app/components/lcd/widgets/2.4/standard",
+    "ingestSchemaVersion": "1.0.0",
+    "ingestSchema": {
+        "requiredFields": [
+            "name",
+            "type",
+            "category",
+            "descriptionKo",
+            "descriptionEn",
+            "keywords",
+            "props"
+        ],
+        "rules": {
+            "languagePriority": "Korean primary, English secondary",
+            "descriptionKo": "2-4 sentences, scenario-focused, searchable Korean terms included",
+            "descriptionEn": "1-3 concise sentences for bilingual retrieval",
+            "keywords": "6-20 items, mixed KO/EN terms, include intent words",
+            "props": "runtime props names only, no type annotations",
+            "category": "Use stable taxonomy such as Dialog/Popup, List/Selection, Picker/Selection, Progress/Loading, Control/Input"
+        }
+    },
+    "ingestSamples": [
+        {
+            "name": "CM_DIALOG_ICON_BUTTONS",
+            "type": "Widget",
+            "category": "Dialog/Popup",
+            "descriptionKo": "아이콘과 설명, 하단 1~2개 버튼을 포함한 확인 다이얼로그 위젯입니다. 설명 줄 수에 따라 상하 여백이 자동 조정되어 좁은 화면에서도 가독성을 유지합니다. 확인/취소, 경고 안내, 설정 적용 확인 같은 의사결정 화면에 적합합니다.",
+            "descriptionEn": "Confirmation dialog with icon, message, and one or two action buttons. Spacing adapts to message length for compact displays.",
+            "keywords": [
+                "확인",
+                "취소",
+                "다이얼로그",
+                "팝업",
+                "confirmation",
+                "modal",
+                "icon dialog",
+                "action buttons"
+            ],
+            "props": [
+                "id",
+                "description",
+                "buttonCount",
+                "btn1Text",
+                "btn2Text",
+                "isFocused",
+                "onKey"
+            ]
+        },
+        {
+            "name": "CM_LIST_SINGLE_SELECT",
+            "type": "Widget",
+            "category": "List/Selection",
+            "descriptionKo": "단일 선택(라디오 스타일) 목록 위젯입니다. 현재 선택 항목은 체크 아이콘으로 표시되며 비활성 항목은 회색으로 렌더링됩니다. 옵션 1개를 고르는 설정 화면에서 사용됩니다.",
+            "descriptionEn": "Single-selection vertical list with a selected marker icon and disabled-state rendering.",
+            "keywords": [
+                "단일선택",
+                "리스트",
+                "라디오",
+                "옵션 선택",
+                "single select",
+                "list",
+                "radio style"
+            ],
+            "props": [
+                "id",
+                "title",
+                "showBackArrow",
+                "listData",
+                "initialFocusIndex",
+                "isFocused",
+                "onKey"
+            ]
+        },
+        {
+            "name": "CM_PICKER_VERTICAL_VALUE",
+            "type": "Widget",
+            "category": "Picker/Selection",
+            "descriptionKo": "3개 슬롯 기반 수직 피커로, 선택 변경 시 하단 값 라벨이 페이드 전환됩니다. 중앙 선택 항목 강조와 곡선형 오프셋 애니메이션을 지원합니다. 시간/온도/강도 같은 단계형 값을 설정할 때 적합합니다.",
+            "descriptionEn": "Three-slot vertical picker with fading value label transitions and centered selection emphasis.",
+            "keywords": [
+                "수직피커",
+                "값 선택",
+                "롤러",
+                "설정",
+                "vertical picker",
+                "value selector",
+                "fade transition"
+            ],
+            "props": [
+                "data",
+                "onKey",
+                "isFocused",
+                "initialSelectedIndex"
+            ]
+        },
+        {
+            "name": "CM_PROGRESS_SPINNER",
+            "type": "Widget",
+            "category": "Progress/Loading",
+            "descriptionKo": "회전 스피너와 설명 문구를 표시하는 로딩 위젯입니다. 네트워크 요청, 연산 처리, 전환 대기 상태를 사용자에게 명확하게 전달합니다. 설명 문구는 상황별로 동적으로 갱신 가능합니다.",
+            "descriptionEn": "Loading spinner widget with optional description text for processing and waiting states.",
+            "keywords": [
+                "로딩",
+                "진행",
+                "처리중",
+                "대기",
+                "spinner",
+                "loading",
+                "progress indicator"
+            ],
+            "props": [
+                "id",
+                "desc",
+                "duration",
+                "spinnerStyle",
+                "labelStyle"
+            ]
+        },
+        {
+            "name": "WD_CLOCK_DIGITAL",
+            "type": "Widget",
+            "category": "Washer/Clock",
+            "descriptionKo": "AM/PM, 시각, 날짜를 대형 타이포그래피로 표시하는 디지털 시계 위젯입니다. 대기 화면에서 현재 시간을 빠르게 인지하도록 설계되었습니다. 테마 색상에 따라 AM/PM 강조색이 달라집니다.",
+            "descriptionEn": "Digital clock widget for idle screens with AM/PM indicator, large time text, and date.",
+            "keywords": [
+                "디지털시계",
+                "대기화면",
+                "시간표시",
+                "날짜",
+                "digital clock",
+                "idle screen",
+                "AM PM"
+            ],
+            "props": [
+                "clock_info",
+                "theme_id",
+                "isFocused",
+                "onKey"
+            ]
+        }
+    ]
+}

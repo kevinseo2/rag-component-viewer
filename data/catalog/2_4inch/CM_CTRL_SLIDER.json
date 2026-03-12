@@ -1,0 +1,34 @@
+{
+    "name": "CM_CTRL_SLIDER",
+    "type": "Widget",
+    "description": "Basic HTML range slider component with customizable min/max values and width. Uses browser default styling with white accent color. Simple continuous value selector. Touch-friendly 40px height. Returns integer values via onChange callback.",
+    "visualForm": "Horizontal slider track (customizable width, default 244px) with draggable thumb, 1px height track",
+    "category": "Control/Input",
+    "descriptionKo": "기본 HTML range 슬라이더 컴포넌트입니다. min/max 값과 너비를 설정할 수 있으며, 흰색 악센트의 브라우저 기본 스타일을 사용합니다. onChange 콜백으로 정수 값을 반환합니다.",
+    "descriptionEn": "Basic HTML range slider component with customizable min/max values and width. Uses browser default styling with white accent color. Simple continuous value selector. Touch-friendly 40px height. Returns integer values via onChange callback.",
+    "props": [
+        "min",
+        "max",
+        "value",
+        "onChange",
+        "width"
+    ],
+    "keywords": [
+        "CM_CTRL_SLIDER",
+        "cm",
+        "ctrl",
+        "slider",
+        "control",
+        "input",
+        "입력",
+        "제어",
+        "컨트롤",
+        "button",
+        "switch",
+        "min",
+        "max",
+        "value",
+        "onchange",
+        "width"
+    ]
+}

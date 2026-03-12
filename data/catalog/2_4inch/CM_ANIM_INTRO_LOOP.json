@@ -1,0 +1,31 @@
+{
+    "name": "CM_ANIM_INTRO_LOOP",
+    "type": "Widget",
+    "description": "Two-phase animation player: intro sequence (plays once) → loop sequence (repeats infinitely). Automatically transitions from intro to loop on completion. If no intro provided, starts with loop immediately. Useful for splash screens and idle animations.",
+    "visualForm": "Full-size container playing intro animation once, then seamlessly transitioning to looping animation",
+    "category": "Animation",
+    "descriptionKo": "인트로 시퀀스(1회 재생) → 루프 시퀀스(무한 반복) 2단계 애니메이션 플레이어입니다. 인트로 완료 후 자동으로 루프로 전환되며, 스플래시 화면이나 대기 애니메이션에 적합합니다.",
+    "descriptionEn": "Two-phase animation player: intro sequence (plays once) → loop sequence (repeats infinitely). Automatically transitions from intro to loop on completion. If no intro provided, starts with loop immediately. Useful for splash screens and idle animations.",
+    "props": [
+        "introImages",
+        "introDuration",
+        "loopImages",
+        "loopDuration"
+    ],
+    "keywords": [
+        "CM_ANIM_INTRO_LOOP",
+        "cm",
+        "anim",
+        "intro",
+        "loop",
+        "animation",
+        "애니메이션",
+        "시퀀스",
+        "전환",
+        "sequence",
+        "introimages",
+        "introduration",
+        "loopimages",
+        "loopduration"
+    ]
+}

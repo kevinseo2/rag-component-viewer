@@ -1,0 +1,31 @@
+{
+    "name": "CM_DIALOG_ICON",
+    "type": "Widget",
+    "description": "Simple dialog with centered icon and description text. No title or buttons. Icon (62x62px) displays info/warning/check status. Gap between icon and text adjusts based on text line count (16px for ≤2 lines, 6px for 3+ lines). Minimal centered layout.",
+    "visualForm": "Vertically centered: info icon (62x62px) with description text (25px) below, gap varies by text length",
+    "category": "Dialog/Popup",
+    "descriptionKo": "아이콘과 설명 텍스트만 표시하는 단순 다이얼로그입니다. 타이틀이나 버튼 없이 정보/경고/완료 상태 아이콘(62px)과 설명을 중앙 정렬로 보여주며, 텍스트 줄 수에 따라 간격이 자동 조정됩니다.",
+    "descriptionEn": "Simple dialog with centered icon and description text. No title or buttons. Icon (62x62px) displays info/warning/check status. Gap between icon and text adjusts based on text line count (16px for ≤2 lines, 6px for 3+ lines). Minimal centered layout.",
+    "props": [
+        "id",
+        "description",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_ICON",
+        "cm",
+        "dialog",
+        "icon",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "id",
+        "description",
+        "isfocused",
+        "onkey"
+    ]
+}

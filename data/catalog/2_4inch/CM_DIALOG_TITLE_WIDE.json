@@ -1,0 +1,33 @@
+{
+    "name": "CM_DIALOG_TITLE_WIDE",
+    "type": "Widget",
+    "description": "Dialog with integrated title bar and large description area. Title in fixed bar (36px) at screen top, description fills remaining space (204px height). Maximizes description area while keeping title visible. Handles BACK action.",
+    "visualForm": "Two sections: compact title bar at top (36px), large description area below (204px height) for extensive text content",
+    "category": "Dialog/Popup",
+    "descriptionKo": "타이틀 바와 넓은 설명 영역으로 구성된 다이얼로그입니다. 36px 타이틀 바 아래 204px 설명 영역을 최대한 활용해 긴 텍스트를 표시하며 BACK 키를 처리합니다.",
+    "descriptionEn": "Dialog with integrated title bar and large description area. Title in fixed bar (36px) at screen top, description fills remaining space (204px height). Maximizes description area while keeping title visible. Handles BACK action.",
+    "props": [
+        "id",
+        "title",
+        "description",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_TITLE_WIDE",
+        "cm",
+        "dialog",
+        "title",
+        "wide",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "id",
+        "description",
+        "isfocused",
+        "onkey"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "name": "CM_CTRL_SWITCH",
+    "type": "Widget",
+    "category": "Control/Input",
+    "descriptionKo": "ON/OFF 상태를 전환하는 토글 스위치 위젯입니다. 둥근 트랙과 슬라이딩 노브로 현재 상태를 직관적으로 보여줍니다. 설정 화면에서 기능 활성/비활성 전환에 주로 사용됩니다.",
+    "descriptionEn": "Toggle switch widget with pill track and sliding knob for ON/OFF control.",
+    "description": "Toggle switch component with ON/OFF states. Rounded pill-shaped track (55x30px) with sliding knob. Blue background with white circular knob that slides between left (OFF) and right (ON) positions. Supports click interaction and disabled states.",
+    "keywords": [
+        "스위치",
+        "토글",
+        "ON OFF",
+        "설정",
+        "switch",
+        "toggle",
+        "control",
+        "CM_CTRL_SWITCH",
+        "cm",
+        "ctrl",
+        "input",
+        "입력",
+        "제어",
+        "컨트롤",
+        "button",
+        "slider",
+        "id",
+        "checked",
+        "visible",
+        "classname",
+        "ontoggle",
+        "true",
+        "false"
+    ],
+    "props": [
+        "id",
+        "checked",
+        "visible",
+        "className",
+        "onToggle",
+        "true",
+        "false"
+    ],
+    "visualForm": "Rounded pill switch (55x30px) with white circular knob (24px) that slides horizontally, blue track background"
+}

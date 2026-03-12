@@ -1,0 +1,43 @@
+{
+    "name": "CM_OVERLAY_GUIDE",
+    "type": "Widget",
+    "category": "Overlay/Feedback",
+    "descriptionKo": "전체 화면을 덮는 가이드 메시지 오버레이 위젯입니다. 반투명 배경 위에 안내 텍스트를 표시해 사용자의 주의를 집중시킵니다. 자동 닫힘 또는 사용자 액션 기반 닫힘 흐름 모두에 활용 가능합니다.",
+    "descriptionEn": "Full-screen guide overlay with dimmed background and centered instruction text.",
+    "description": "Full-screen overlay guide message component with semi-transparent dark background. Displays centered guide text with fade-in/fade-out animations (167ms). Can auto-dismiss after duration or require manual dismissal. Supports keyboard interaction and multi-line text.",
+    "keywords": [
+        "가이드",
+        "전체오버레이",
+        "안내",
+        "guide",
+        "fullscreen overlay",
+        "instruction",
+        "CM_OVERLAY_GUIDE",
+        "cm",
+        "overlay",
+        "feedback",
+        "오버레이",
+        "피드백",
+        "알림",
+        "toast",
+        "text",
+        "duration",
+        "isfocused",
+        "onkey",
+        "id",
+        "active",
+        "dismissmanually",
+        "onclose"
+    ],
+    "props": [
+        "text",
+        "duration",
+        "isFocused",
+        "onKey",
+        "id",
+        "active",
+        "dismissManually",
+        "onClose"
+    ],
+    "visualForm": "Full-screen semi-transparent overlay (rgba(0,0,0,0.85)) with centered white text (25px), covers entire 310x240px area"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "CM_LIST_SCROLL_VIEW2COL",
+    "type": "Widget",
+    "description": "Two-column vertical list view using VerticalListItem2nd components. Similar scrolling behavior to VerticalListView but with label/value column layout. Item height 68px, viewport 190px. Keyboard navigation and auto-scroll.",
+    "visualForm": "Scrollable two-column list (320x190px) with items showing label | value pairs in 68px rows",
+    "category": "List/Selection",
+    "descriptionKo": "VerticalListItem2nd 컴포넌트를 사용하는 2열 세로 리스트 뷰입니다. VerticalListView와 동일한 스크롤 동작에 레이블/값 열 레이아웃을 추가합니다.",
+    "descriptionEn": "Two-column vertical list view using VerticalListItem2nd components. Similar scrolling behavior to VerticalListView but with label/value column layout. Item height 68px, viewport 190px. Keyboard navigation and auto-scroll.",
+    "props": [
+        "id",
+        "items",
+        "initialSelectedIndex",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_LIST_SCROLL_VIEW2COL",
+        "cm",
+        "list",
+        "scroll",
+        "view2col",
+        "selection",
+        "리스트",
+        "선택",
+        "목록",
+        "스크롤",
+        "id",
+        "items",
+        "initialselectedindex",
+        "onkey"
+    ]
+}

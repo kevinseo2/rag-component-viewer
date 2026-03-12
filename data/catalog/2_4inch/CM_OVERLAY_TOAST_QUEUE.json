@@ -1,0 +1,38 @@
+{
+    "name": "CM_OVERLAY_TOAST_QUEUE",
+    "type": "Widget",
+    "category": "Overlay/Feedback",
+    "descriptionKo": "여러 토스트 메시지를 큐로 관리해 순차 표시하는 오버레이 위젯입니다. 하단에서 슬라이드 인/아웃 애니메이션으로 자연스럽게 알림을 전달합니다. 동시 다발적인 이벤트 알림을 누락 없이 보여줄 때 유용합니다.",
+    "descriptionEn": "Toast queue manager that displays pending notifications sequentially with slide-up/down motion.",
+    "description": "Toast notification queue manager with slide-up animations. Manages multiple sequential toast messages with automatic queuing. Animates from bottom with 500ms slide-in, holds for duration, then 500ms slide-out. Supports keyboard interaction and duration customization.",
+    "keywords": [
+        "토스트 큐",
+        "순차 알림",
+        "슬라이드",
+        "toast queue",
+        "sequential notification",
+        "feedback",
+        "CM_OVERLAY_TOAST_QUEUE",
+        "cm",
+        "overlay",
+        "toast",
+        "queue",
+        "오버레이",
+        "피드백",
+        "알림",
+        "text",
+        "duration",
+        "slots",
+        "isfocused",
+        "onkey",
+        "animation"
+    ],
+    "props": [
+        "text",
+        "duration",
+        "slots",
+        "isFocused",
+        "onKey"
+    ],
+    "visualForm": "Container (310x240px) at screen bottom where toast messages slide up from bottom edge, pause, then slide back down"
+}

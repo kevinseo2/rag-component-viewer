@@ -1,0 +1,28 @@
+{
+    "name": "CM_PICKER_Mask2nd",
+    "category": "Picker/Selection",
+    "type": "Widget",
+    "descriptionKo": "2차 깊이 피커 화면용 설정 가능한 마스크/오버레이 컴포넌트입니다. 숨김, 상단만, 하단만, 양쪽 마스크 표시 4가지 모드를 지원하며 피커 영역의 시각적 피드백을 제공합니다.",
+    "descriptionEn": "Configurable mask/overlay component for 2nd depth picker screens. Supports multiple display modes: hidden, top-only, bottom-only, or both masks. Displays dimming overlays or visual indicators at top/bottom of picker area. Component for visual feedback.",
+    "visualForm": "Conditional overlay masks at top/bottom of picker area based on mode setting",
+    "props": [
+        "mode",
+        "text"
+    ],
+    "keywords": [
+        "CM_PICKER_MASK2ND",
+        "cm",
+        "picker",
+        "mask2nd",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "mode",
+        "text"
+    ],
+    "relatedScreens": [
+        "사용안함"
+    ]
+}

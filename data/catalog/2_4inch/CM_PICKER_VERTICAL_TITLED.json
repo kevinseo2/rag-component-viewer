@@ -1,0 +1,39 @@
+{
+    "name": "CM_PICKER_VERTICAL_TITLED",
+    "type": "Widget",
+    "description": "Vertical picker with title bar and 3 visible items. Similar to Core_CM_picker_Ver but with integrated title at top (36px). Items are 68px height, supports small font variant. Dividers at top/bottom of selection area. Gradient mask (5px left offset).",
+    "visualForm": "Title bar (36px) → picker area (204px) with 3 item slots (68px each), horizontal dividers at selection boundaries, gradient mask overlay",
+    "category": "Picker/Selection",
+    "descriptionKo": "상단 타이틀 바(36px)와 3개 항목을 표시하는 세로 피커입니다. 68px 높이 항목, 소형 폰트 변형, 선택 영역 상하 구분선과 그라디언트 마스크를 포함합니다.",
+    "descriptionEn": "Vertical picker with title bar and 3 visible items. Similar to Core_CM_picker_Ver but with integrated title at top (36px). Items are 68px height, supports small font variant. Dividers at top/bottom of selection area. Gradient mask (5px left offset).",
+    "props": [
+        "title",
+        "items",
+        "true",
+        "false",
+        "isSmallFont",
+        "onKey",
+        "isFocused",
+        "initialSelectedIndex"
+    ],
+    "keywords": [
+        "CM_PICKER_VERTICAL_TITLED",
+        "cm",
+        "picker",
+        "vertical",
+        "titled",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "title",
+        "items",
+        "true",
+        "false",
+        "issmallfont",
+        "onkey",
+        "isfocused",
+        "initialselectedindex"
+    ]
+}

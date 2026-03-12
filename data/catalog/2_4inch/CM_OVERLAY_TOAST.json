@@ -1,0 +1,29 @@
+{
+    "name": "CM_OVERLAY_TOAST",
+    "type": "Widget",
+    "category": "Overlay/Feedback",
+    "descriptionKo": "한 번에 하나의 토스트 메시지를 표시하는 오버레이 위젯입니다. 텍스트 줄 수에 따라 높이가 자동 조정되어 짧은 알림과 긴 안내 문구를 모두 처리할 수 있습니다. 시스템 상태 안내나 완료 메시지에 적합합니다.",
+    "descriptionEn": "Single toast overlay with automatic height based on text lines. Suitable for status and completion feedback.",
+    "description": "Single toast message display component with automatic height adjustment based on text line count. Supports format slots for dynamic text replacement. Dark gray background (#313137) with white centered text. Height varies: 1-2 lines (92px), 3-4 lines (120px), 5+ lines (150px).",
+    "keywords": [
+        "토스트",
+        "알림",
+        "오버레이",
+        "피드백",
+        "toast",
+        "notification",
+        "overlay",
+        "CM_OVERLAY_TOAST",
+        "cm",
+        "feedback",
+        "text",
+        "duration",
+        "slots"
+    ],
+    "props": [
+        "text",
+        "duration",
+        "slots"
+    ],
+    "visualForm": "Horizontal bar (310px width, variable height) with dark gray background, centered white text (25px LGSBD font), supports multi-line text"
+}

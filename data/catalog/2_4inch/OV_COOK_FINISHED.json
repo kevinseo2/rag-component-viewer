@@ -1,0 +1,34 @@
+{
+    "name": "OV_COOK_FINISHED",
+    "type": "Widget",
+    "description": "Cooking completion screen for oven. Shows oven title, completion message, rotating finish images/animations, and completion sound. Content cycles through visual assets. Uses oven-specific styling.",
+    "visualForm": "Oven title (2-line) → rotating completion visuals (images/animations) → completion text",
+    "category": "Oven/Cooking",
+    "descriptionKo": "오븐 조리 완료 화면입니다. 오븐 타이틀, 완료 메시지, 순환하는 완료 이미지/애니메이션, 완료 사운드를 표시하며, 오븐 전용 스타일과 비주얼 에셋을 사용합니다.",
+    "descriptionEn": "Cooking completion screen for oven. Shows oven title, completion message, rotating finish images/animations, and completion sound. Content cycles through visual assets. Uses oven-specific styling.",
+    "props": [
+        "id",
+        "title",
+        "message",
+        "isFocused",
+        "onKey",
+        "style"
+    ],
+    "keywords": [
+        "OV_COOK_FINISHED",
+        "ov",
+        "cook",
+        "finished",
+        "oven",
+        "cooking",
+        "오븐",
+        "조리",
+        "id",
+        "title",
+        "message",
+        "isfocused",
+        "onkey",
+        "style",
+        "animation"
+    ]
+}

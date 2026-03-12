@@ -1,0 +1,39 @@
+{
+    "name": "WD_DIALOG_UNLOCK",
+    "type": "Widget",
+    "description": "Child lock unlock dialog with lock icon animation and instruction text. Shows animated lock icon during unlock gesture. Changes icon and text when isUnlocking=true. Calls onComplete when unlocked.",
+    "visualForm": "Centered lock icon animation (customizable) → instruction text below, visual changes during unlock process",
+    "category": "Washer/Dialog",
+    "descriptionKo": "잠금 해제 제스처 중 아이콘과 안내 텍스트가 변경되는 어린이 잠금 해제 다이얼로그입니다. isUnlocking=true 시 아이콘과 문구가 전환되며, 잠금 해제 완료 시 onComplete를 호출합니다.",
+    "descriptionEn": "Child lock unlock dialog with lock icon animation and instruction text. Shows animated lock icon during unlock gesture. Changes icon and text when isUnlocking=true. Calls onComplete when unlocked.",
+    "props": [
+        "id",
+        "description",
+        "true",
+        "false",
+        "isUnlocking",
+        "onComplete",
+        "isFocused",
+        "onKey",
+        "className"
+    ],
+    "keywords": [
+        "WD_DIALOG_UNLOCK",
+        "wd",
+        "dialog",
+        "unlock",
+        "washer",
+        "세탁기",
+        "다이얼로그",
+        "id",
+        "description",
+        "true",
+        "false",
+        "isunlocking",
+        "oncomplete",
+        "isfocused",
+        "onkey",
+        "classname",
+        "animation"
+    ]
+}

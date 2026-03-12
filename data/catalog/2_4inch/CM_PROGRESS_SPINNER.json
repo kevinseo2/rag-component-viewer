@@ -1,0 +1,36 @@
+{
+    "name": "CM_PROGRESS_SPINNER",
+    "type": "Widget",
+    "description": "Loading spinner widget with rotating 50-frame animation (blue spinner, 62x62px). Optional description text below spinner (25px). Spinner positioned at top-center area, label below. Continuous rotation animation for loading/processing states.",
+    "visualForm": "Centered layout: animated loading spinner (62x62px) at top, description text (25px) below spinner, black background",
+    "category": "Progress/Loading",
+    "descriptionKo": "50프레임 회전 애니메이션(파란색, 62x62px)을 가진 로딩 스피너 위젯입니다. 스피너 아래 선택적 설명 텍스트(25px)를 표시하며, 로딩/처리 중 상태에서 지속 회전합니다.",
+    "descriptionEn": "Loading spinner widget with rotating 50-frame animation (blue spinner, 62x62px). Optional description text below spinner (25px). Spinner positioned at top-center area, label below. Continuous rotation animation for loading/processing states.",
+    "props": [
+        "id",
+        "top",
+        "desc",
+        "duration",
+        "left",
+        "spinnerStyle",
+        "labelStyle"
+    ],
+    "keywords": [
+        "CM_PROGRESS_SPINNER",
+        "cm",
+        "progress",
+        "spinner",
+        "loading",
+        "진행",
+        "로딩",
+        "처리중",
+        "id",
+        "top",
+        "desc",
+        "duration",
+        "left",
+        "spinnerstyle",
+        "labelstyle",
+        "animation"
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "name": "WD_CLOCK_ANALOG",
+    "type": "Widget",
+    "description": "Analog clock widget with rotating hands and circular hour digits. Shows hour/minute/second hands rotating around center. Current hour digit highlighted. Supports theme colors (blue/orange). Hour positions arranged in circle pattern. Hands rotate smoothly with proper angles.",
+    "visualForm": "Circular analog clock face (320x240) with three rotating hands (hour/minute/second), hour digit at current position, theme-colored hour hand",
+    "category": "Washer/Clock",
+    "descriptionKo": "회전하는 핸드와 원형으로 배열된 시각 숫자가 있는 아날로그 시계 위젯입니다. 시/분/초 핸드가 중심을 기준으로 회전하며 현재 시각 숫자를 강조합니다. 파란색/주황색 테마를 지원합니다.",
+    "descriptionEn": "Analog clock widget with rotating hands and circular hour digits. Shows hour/minute/second hands rotating around center. Current hour digit highlighted. Supports theme colors (blue/orange). Hour positions arranged in circle pattern. Hands rotate smoothly with proper angles.",
+    "props": [
+        "clock_style",
+        "clock_info",
+        "hour",
+        "min",
+        "sec",
+        "date",
+        "theme_id",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "WD_CLOCK_ANALOG",
+        "wd",
+        "clock",
+        "analog",
+        "washer",
+        "세탁기",
+        "시계",
+        "시간",
+        "clock_style",
+        "clock_info",
+        "hour",
+        "min",
+        "sec",
+        "date",
+        "theme_id",
+        "isfocused",
+        "onkey"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "name": "WD_DIALOG_TEXT_ONLY",
+    "type": "Widget",
+    "description": "Simple dialogue showing only centered multi-line text message. No icons, title, or buttons. Minimal component for brief messages. Supports keyboard back action.",
+    "visualForm": "Centered multi-line text message (25px) on black background, no other UI elements",
+    "category": "Washer/Dialog",
+    "descriptionKo": "중앙 정렬된 여러 줄 텍스트 메시지만 표시하는 단순 다이얼로그입니다. 아이콘, 타이틀, 버튼 없이 간단한 메시지를 전달하며 키보드 뒤로 가기 액션을 지원합니다.",
+    "descriptionEn": "Simple dialogue showing only centered multi-line text message. No icons, title, or buttons. Minimal component for brief messages. Supports keyboard back action.",
+    "props": [
+        "id",
+        "text",
+        "isFocused",
+        "onKey",
+        "style"
+    ],
+    "keywords": [
+        "WD_DIALOG_TEXT_ONLY",
+        "wd",
+        "dialog",
+        "text",
+        "only",
+        "washer",
+        "세탁기",
+        "다이얼로그",
+        "id",
+        "isfocused",
+        "onkey",
+        "style"
+    ]
+}

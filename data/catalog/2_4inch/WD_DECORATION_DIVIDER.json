@@ -1,0 +1,25 @@
+{
+    "name": "WD_DECORATION_DIVIDER",
+    "type": "Widget",
+    "description": "Simple vertical divider line component for separating UI sections. Customizable height, width, position, and color. Basic visual separator element.",
+    "visualForm": "Vertical line divider (customizable dimensions and color) for UI section separation",
+    "category": "Washer/Widget",
+    "descriptionKo": "UI 섹션을 구분하는 단순 수직 구분선 컴포넌트입니다. 높이, 너비, 위치, 색상을 설정할 수 있는 기본 시각적 분리 요소입니다.",
+    "descriptionEn": "Simple vertical divider line component for separating UI sections. Customizable height, width, position, and color. Basic visual separator element.",
+    "props": [
+        "id",
+        "className"
+    ],
+    "keywords": [
+        "WD_DECORATION_DIVIDER",
+        "wd",
+        "decoration",
+        "divider",
+        "washer",
+        "widget",
+        "위젯",
+        "ui",
+        "id",
+        "classname"
+    ]
+}

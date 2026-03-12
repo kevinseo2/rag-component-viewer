@@ -1,0 +1,36 @@
+{
+    "name": "CM_DIALOG_DESC_ONLY",
+    "type": "Widget",
+    "description": "Simple screen with title bar (with back arrow) and centered description text only. No buttons or additional UI elements. Useful for displaying information or instructions without user action. Supports keyboard back navigation.",
+    "visualForm": "Title bar at top (with back arrow), large centered description area (190px height) below title for multi-line text (25px)",
+    "category": "Dialog/Popup",
+    "descriptionKo": "뒤로 가기 화살표가 있는 타이틀 바와 중앙 정렬된 설명 텍스트만 표시하는 단순 화면입니다. 버튼이나 추가 UI 없이 정보나 안내를 표시할 때 사용하며, 키보드 뒤로 가기를 지원합니다.",
+    "descriptionEn": "Simple screen with title bar (with back arrow) and centered description text only. No buttons or additional UI elements. Useful for displaying information or instructions without user action. Supports keyboard back navigation.",
+    "props": [
+        "id",
+        "title",
+        "height",
+        "description",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_DIALOG_DESC_ONLY",
+        "cm",
+        "dialog",
+        "desc",
+        "only",
+        "popup",
+        "다이얼로그",
+        "팝업",
+        "확인",
+        "안내",
+        "modal",
+        "id",
+        "title",
+        "height",
+        "description",
+        "isfocused",
+        "onkey"
+    ]
+}

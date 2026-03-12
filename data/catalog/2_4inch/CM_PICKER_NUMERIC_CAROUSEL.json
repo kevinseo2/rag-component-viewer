@@ -1,0 +1,42 @@
+{
+    "name": "CM_PICKER_NUMERIC_CAROUSEL",
+    "type": "Widget",
+    "description": "Horizontal numeric picker with title, 3 visible values, and unit label with fade effect. Values slide left/right (500ms animation). Center value is emphasized. Unit label fades out during transitions. Supports configurable start/end/stride values. Infinite scroll picker design.",
+    "visualForm": "Title at top → three horizontal value slots (118px each) with center emphasis → unit label with fade transitions",
+    "category": "Picker/Selection",
+    "descriptionKo": "3개의 숫자 값이 수평으로 표시되는 무한 스크롤 숫자 피커입니다. 500ms 슬라이드 애니메이션, 전환 시 페이드 아웃되는 단위 레이블, 중앙 강조 값을 특징으로 합니다.",
+    "descriptionEn": "Horizontal numeric picker with title, 3 visible values, and unit label with fade effect. Values slide left/right (500ms animation). Center value is emphasized. Unit label fades out during transitions. Supports configurable start/end/stride values. Infinite scroll picker design.",
+    "props": [
+        "id",
+        "title",
+        "start",
+        "stride",
+        "end",
+        "currentIndex",
+        "unit",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_PICKER_NUMERIC_CAROUSEL",
+        "cm",
+        "picker",
+        "numeric",
+        "carousel",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "id",
+        "title",
+        "start",
+        "stride",
+        "end",
+        "currentindex",
+        "unit",
+        "isfocused",
+        "onkey",
+        "animation"
+    ]
+}

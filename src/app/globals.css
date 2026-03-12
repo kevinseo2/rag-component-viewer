@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom Fonts ──────────────────────────────────────────────────────────── */
+
+@font-face { font-family: 'LGSBD';   src: url('/fonts/LGSBD.ttf')   format('truetype'); }
+@font-face { font-family: 'LGSBD23'; src: url('/fonts/LGSBD23.ttf') format('truetype'); }
+@font-face { font-family: 'LGBD23';  src: url('/fonts/LGBD23.ttf')  format('truetype'); }
+@font-face { font-family: 'LGLT23';  src: url('/fonts/LGLT23.ttf')  format('truetype'); }
+@font-face { font-family: 'LOCK3B23';src: url('/fonts/LOCK3B23.ttf')format('truetype'); }
+
+/* Aliases used by widget source files */
+@font-face { font-family: 'LG Smart UI HA2023 SemiBold';  src: url('/fonts/LGSBD23.ttf')  format('truetype'); }
+@font-face { font-family: 'LG_Smart_UI_HA2023_SemiBold';  src: url('/fonts/LGSBD23.ttf')  format('truetype'); }
+@font-face { font-family: 'LG Smart UI HA2023 Regular';   src: url('/fonts/LGLT23.ttf')   format('truetype'); }
+@font-face { font-family: 'LG_Smart_UI_HA2023_Regular';   src: url('/fonts/LGLT23.ttf')   format('truetype'); }
+@font-face { font-family: 'LOCK3B'; src: url('/fonts/LOCK3B23.ttf') format('truetype'); }
+@font-face { font-family: 'LOCK3R'; src: url('/fonts/LOCK3B23.ttf') format('truetype'); }
+@font-face { font-family: 'LGREG';  src: url('/fonts/LGLT23.ttf')  format('truetype'); }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }

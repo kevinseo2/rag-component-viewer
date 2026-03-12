@@ -1,0 +1,41 @@
+{
+    "name": "CM_PICKER_VERTICAL2ND",
+    "type": "Widget",
+    "description": "Second-depth vertical picker with title, unit label, and item list. Handles up/down navigation internally, delegates OK/LEFT/RIGHT/BACK to external handler. Shows title at top, dividers around selection area, optional unit label. Supports item-based unit hiding.",
+    "visualForm": "Title bar (36px) → vertical picker with dividers (top: 104px, bottom: 172px) → optional unit label → gradient mask",
+    "category": "Picker/Selection",
+    "descriptionKo": "타이틀, 단위 레이블, 항목 리스트를 갖춘 2차 깊이 세로 피커입니다. 상하 탐색은 내부에서 처리하고 OK/LEFT/RIGHT/BACK 키를 외부 핸들러로 위임합니다.",
+    "descriptionEn": "Second-depth vertical picker with title, unit label, and item list. Handles up/down navigation internally, delegates OK/LEFT/RIGHT/BACK to external handler. Shows title at top, dividers around selection area, optional unit label. Supports item-based unit hiding.",
+    "props": [
+        "title",
+        "unit",
+        "items",
+        "value_text",
+        "unit_hide",
+        "mask",
+        "initialSelectedIndex",
+        "isFocused",
+        "onKey"
+    ],
+    "keywords": [
+        "CM_PICKER_VERTICAL2ND",
+        "cm",
+        "picker",
+        "vertical2nd",
+        "selection",
+        "피커",
+        "선택값",
+        "롤러",
+        "selector",
+        "title",
+        "unit",
+        "items",
+        "value_text",
+        "unit_hide",
+        "mask",
+        "initialselectedindex",
+        "isfocused",
+        "onkey",
+        "list"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "WD_COURSE_LIST",
+    "type": "Widget",
+    "description": "Multi-page horizontal list of washing courses with smooth scrolling. Shows course items with indicators, page dots, and optional titles (Cloud Cycle, Additional Cycles). Energy saver icon when enabled. Complex navigation and state management.",
+    "visualForm": "Horizontal scrolling course list with page indicators at top, course items showing options and icons, navigation arrows",
+    "category": "Washer/Course",
+    "descriptionKo": "부드러운 스크롤이 있는 다중 페이지 세탁 코스 수평 리스트입니다. 코스 항목, 페이지 점, 선택적 타이틀을 표시하며 절전 아이콘과 복잡한 탐색 및 상태 관리를 지원합니다.",
+    "descriptionEn": "Multi-page horizontal list of washing courses with smooth scrolling. Shows course items with indicators, page dots, and optional titles (Cloud Cycle, Additional Cycles). Energy saver icon when enabled. Complex navigation and state management.",
+    "props": [
+        "id",
+        "courses",
+        "energySaverEnabled",
+        "indicatorInfo",
+        "currentIdx",
+        "show",
+        "strTitleCloudCycle",
+        "strTitleAdditionalCycles",
+        "strFastdlDetecting",
+        "className",
+        "isFocused"
+    ],
+    "keywords": [
+        "WD_COURSE_LIST",
+        "wd",
+        "course",
+        "list",
+        "washer",
+        "세탁코스",
+        "코스",
+        "id",
+        "courses",
+        "energysaverenabled",
+        "indicatorinfo",
+        "currentidx",
+        "show",
+        "strtitlecloudcycle",
+        "strtitleadditionalcycles",
+        "strfastdldetecting",
+        "classname",
+        "isfocused"
+    ]
+}
