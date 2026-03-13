@@ -97,6 +97,9 @@ function CatalogEditor({ name, defaultPropsKeys }) {
     const [draft, setDraft] = useState(null);
     const [saveStatus, setSaveStatus] = useState(null); // null | 'saving' | 'saved' | 'error'
     const [ingestStatus, setIngestStatus] = useState(null); // null | 'ingesting' | 'done' | 'error'
+    const [showIngestAllModal, setShowIngestAllModal] = useState(false);
+    const [ingestAllStatus, setIngestAllStatus] = useState(null); // null | 'ingesting' | 'done' | 'error'
+    const [ingestAllResult, setIngestAllResult] = useState(null); // { total, succeeded, failed, failedList }
 
     // Load from API when component changes
     useEffect(() => {
@@ -173,6 +176,24 @@ function CatalogEditor({ name, defaultPropsKeys }) {
         }
     };
 
+    const handleIngestAll = async () => {
+        setShowIngestAllModal(false);
+        setIngestAllStatus('ingesting');
+        setIngestAllResult(null);
+        try {
+            const res = await fetch('/api/ingest-all', { method: 'POST' });
+            const json = await res.json();
+            if (res.ok) {
+                setIngestAllResult(json);
+                setIngestAllStatus('done');
+            } else {
+                setIngestAllStatus('error');
+            }
+        } catch {
+            setIngestAllStatus('error');
+        }
+    };
+
     return (
         <div className="flex h-full bg-white flex-col text-sm border-t border-gray-200">
             {/* Header */}
@@ -184,23 +205,54 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                     {saveStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Save failed</span>}
                     {ingestStatus === 'done' && <span className="text-[10px] text-blue-600 font-semibold">↑ Ingested</span>}
                     {ingestStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Ingest failed</span>}
+                    {ingestAllStatus === 'ingesting' && <span className="text-[10px] text-purple-600 font-semibold animate-pulse">⏳ Ingesting all...</span>}
+                    {ingestAllStatus === 'done' && ingestAllResult && (
+                        <span className="text-[10px] text-purple-600 font-semibold">
+                            ↑ All ingested ({ingestAllResult.succeeded}/{ingestAllResult.total})
+                            {ingestAllResult.failed > 0 && <span className="text-red-500 ml-1">{ingestAllResult.failed} failed</span>}
+                        </span>
+                    )}
+                    {ingestAllStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Ingest all failed</span>}
                 </div>
                 <div className="flex items-center gap-2">
+                    {/* Ingest All 버튼 */}
+                    <button
+                        onClick={() => setShowIngestAllModal(true)}
+                        disabled={ingestAllStatus === 'ingesting'}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white border ${
+                            ingestAllStatus === 'ingesting'
+                                ? 'bg-purple-300 border-purple-300 cursor-not-allowed'
+                                : 'bg-purple-600 border-purple-600 hover:bg-purple-700'
+                        }`}
+                        title="모든 컴포넌트를 ChromaDB에 인제스트 (전체 3개 컬렉션)"
+                    >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                        Ingest All
+                    </button>
+                    {/* Ingest This 버튼 */}
                     <button
                         onClick={handleIngest}
                         disabled={ingestStatus === 'ingesting'}
-                        className={`flex items-center gap-2 px-4 py-1.5 rounded text-xs transition-colors text-white ${ingestStatus === 'ingesting' ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'}`}
-                        title="ChromaDB에 이 컴포넌트를 인제스트 (3개 컬렉션 upsert)"
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
+                            ingestStatus === 'ingesting' ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                        }`}
+                        title="현재 컴포넌트만 ChromaDB에 인제스트 (카탈로그, 코드, 샘플 — 3개 컬렉션)"
                     >
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                         </svg>
-                        {ingestStatus === 'ingesting' ? 'Ingesting...' : 'Ingest'}
+                        {ingestStatus === 'ingesting' ? 'Ingesting...' : 'Ingest This'}
                     </button>
+                    {/* Save 버튼 */}
                     <button 
                         onClick={handleSave}
                         disabled={saveStatus === 'saving'}
-                        className={`flex items-center gap-2 px-4 py-1.5 rounded text-xs transition-colors text-white ${saveStatus === 'saving' ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-black'}`}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
+                            saveStatus === 'saving' ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-black'
+                        }`}
+                        title="카탈로그 데이터를 JSON 파일로 저장 (ChromaDB 인제스트 없음)"
                     >
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
@@ -209,6 +261,43 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                     </button>
                 </div>
             </div>
+
+            {/* Ingest All 확인 모달 */}
+            {showIngestAllModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+                    <div className="bg-white rounded-xl shadow-2xl w-[420px] p-6 flex flex-col gap-5">
+                        <div className="flex items-start gap-3">
+                            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18A9 9 0 0012 3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 className="text-sm font-bold text-gray-900 mb-1">전체 컬렉션 인제스트</h2>
+                                <p className="text-xs text-gray-600 leading-relaxed">
+                                    카탈로그 디렉토리의 <strong>모든 컴포넌트</strong>를 ChromaDB에 인제스트합니다.<br />
+                                    각 컴포넌트의 <strong>카탈로그(description), 코드(code), 샘플(samples)</strong> 3개 컬렉션이 모두 업데이트됩니다.<br /><br />
+                                    컴포넌트 수에 따라 시간이 오래 걸릴 수 있습니다. 계속하시겠습니까?
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex justify-end gap-2">
+                            <button
+                                onClick={() => setShowIngestAllModal(false)}
+                                className="px-4 py-2 rounded text-xs text-gray-700 bg-gray-100 hover:bg-gray-200 transition-colors font-medium"
+                            >
+                                취소
+                            </button>
+                            <button
+                                onClick={handleIngestAll}
+                                className="px-4 py-2 rounded text-xs text-white bg-purple-600 hover:bg-purple-700 transition-colors font-medium"
+                            >
+                                확인 — 전체 인제스트
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Form Scroll Area */}
             <div className="flex-1 overflow-y-auto p-6 bg-white w-full">

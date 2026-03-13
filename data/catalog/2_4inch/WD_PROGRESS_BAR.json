@@ -1,11 +1,10 @@
 {
-    "name": "WD_PROGRESS_BAR",
-    "type": "Widget",
-    "description": "Horizontal progress bar widget for washer dryer. Shows progress percentage with visual bar animation. Theme-aware colors (blue/orange). Smooth progress updates with translateX animation.",
-    "visualForm": "Horizontal bar indicator showing progress percentage with animated fill, theme-colored",
+    "name": "WD_PROGRESS_Bar",
     "category": "Washer/Progress",
+    "type": "Widget",
     "descriptionKo": "세탁기/건조기용 수평 프로그레스 바 위젯입니다. translateX 애니메이션으로 진행률을 시각적으로 표시하며 파란색/주황색 테마 색상을 지원합니다.",
     "descriptionEn": "Horizontal progress bar widget for washer dryer. Shows progress percentage with visual bar animation. Theme-aware colors (blue/orange). Smooth progress updates with translateX animation.",
+    "visualForm": "Horizontal bar indicator showing progress percentage with animated fill, theme-colored",
     "props": [
         "id",
         "percent",
@@ -23,5 +22,9 @@
         "percent",
         "style",
         "animation"
+    ],
+    "relatedScreens": [
+        "수평프로그레스바 컴포넌트",
+        "진행바 컴포넌트"
     ]
 }
