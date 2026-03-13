@@ -30,8 +30,20 @@ export async function POST(request, { params }) {
     if (body.ids)           payload.ids = body.ids;
 
     try {
+        // v2 requires UUID — resolve collection name → id first
+        const colInfoRes = await fetch(`${V2_PREFIX}/collections/${encodeURIComponent(name)}`);
+        if (!colInfoRes.ok) {
+            const text = await colInfoRes.text();
+            return NextResponse.json({ error: `Collection not found: ${text}` }, { status: colInfoRes.status });
+        }
+        const colInfo = await colInfoRes.json();
+        const collectionId = colInfo.id ?? colInfo._id;
+        if (!collectionId) {
+            return NextResponse.json({ error: 'Could not resolve collection UUID' }, { status: 500 });
+        }
+
         const res = await fetch(
-            `${V2_PREFIX}/collections/${encodeURIComponent(name)}/get`,
+            `${V2_PREFIX}/collections/${collectionId}/get`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

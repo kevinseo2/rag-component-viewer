@@ -17,17 +17,20 @@ export async function GET() {
         const list = await res.json();
         const collections = Array.isArray(list) ? list : [];
 
-        // Enrich with document count
+        // Enrich with document count (v2 requires UUID, not name)
         const enriched = await Promise.all(
             collections.map(async (col) => {
                 const name = col?.name ?? col?._name ?? 'unknown';
+                const id = col?.id ?? col?._id;
                 const metadata = col?.metadata ?? col?._metadata ?? {};
                 try {
-                    const countRes = await fetch(`${V2_PREFIX}/collections/${encodeURIComponent(name)}/count`);
-                    const count = countRes.ok ? await countRes.json() : 0;
-                    return { name, count: typeof count === 'number' ? count : 0, metadata };
+                    const countRes = id
+                        ? await fetch(`${V2_PREFIX}/collections/${id}/count`)
+                        : null;
+                    const count = countRes?.ok ? await countRes.json() : 0;
+                    return { name, id, count: typeof count === 'number' ? count : 0, metadata };
                 } catch {
-                    return { name, count: 0, metadata };
+                    return { name, id, count: 0, metadata };
                 }
             })
         );
