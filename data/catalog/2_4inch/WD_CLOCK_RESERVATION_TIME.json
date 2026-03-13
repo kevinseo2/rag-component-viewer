@@ -1,11 +1,10 @@
 {
-    "name": "WD_CLOCK_RESERVATION_TIME",
-    "type": "Widget",
-    "description": "Reservation time display component showing date, AM/PM indicator, and time (HH:MM format). Used within WD_FinishReservation. Theme colors for AM/PM (orange/blue).",
-    "visualForm": "Three-line display: date text → AM/PM (colored) → HH:MM time (large font)",
+    "name": "WD_CLOCK_ReservationTime",
     "category": "Washer/Clock",
-    "descriptionKo": "날짜, AM/PM 표시기, 시간(HH:MM)을 3행으로 표시하는 예약 시간 컴포넌트입니다. WD_FinishReservation에서 사용되며 AM/PM에 테마 색상(주황색/파란색)을 적용합니다.",
+    "type": "Widget",
+    "descriptionKo": "날짜, AM/PM 표시기, 시간(HH:MM)을 3행으로 표시하는 예약 시간 컴포넌트입니다. WD_CLOCK_Reservation에서 사용되며 AM/PM에 테마 색상(주황색/파란색)을 적용합니다.",
     "descriptionEn": "Reservation time display component showing date, AM/PM indicator, and time (HH:MM format). Used within WD_FinishReservation. Theme colors for AM/PM (orange/blue).",
+    "visualForm": "Three-line display: date text → AM/PM (colored) → HH:MM time (large font)",
     "props": [
         "id",
         "reservationDate",
@@ -30,5 +29,8 @@
         "reservationhour",
         "reservationmin",
         "style"
+    ],
+    "relatedScreens": [
+        "예약시간컴포넌트(화면아님)"
     ]
 }

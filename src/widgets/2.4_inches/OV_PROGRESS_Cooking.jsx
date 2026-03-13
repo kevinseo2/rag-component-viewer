@@ -86,7 +86,7 @@ const OV_PROGRESS_Cooking = ({
             {/* Time Display Container - rendered AFTER title (on top of title) */}
             <div
                 id={`${id}-time-container`}
-                className="absolute left-0 top-[29px] w-full h-[81px] flex flex-row items-center justify-center p-0 z-10"
+                className="absolute left-0 top-[36px] w-full h-[81px] flex flex-row items-center justify-center p-0 z-10"
             >
                 {showHour && (
                     <>
@@ -121,7 +121,7 @@ const OV_PROGRESS_Cooking = ({
 
             {/* Status Text */}
             {statusText && (
-                <div id={`${id}-status-wrapper`} className="absolute top-[164px] left-[10px] w-[310px] h-[39px] flex items-center justify-center">
+                <div id={`${id}-status-wrapper`} className="absolute top-[164px] left-[10px] w-[310px] h-[39px] flex items-center justify-center z-10">
                     <CM_LABEL_Smart
                         id={`${id}-status-label`}
                         key={`status-${statusText}`}
@@ -133,11 +133,11 @@ const OV_PROGRESS_Cooking = ({
                 </div>
             )}
 
-            {/* Notification Icons bar (Centered with offsetY:9) */}
+            {/* Notification Icons bar - between time (bottom:117px) and progress bar (149px) */}
             <div
                 id={`${id}-noti-bar`}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 flex flex-row items-center gap-[5px]"
-                style={{ transform: 'translate(-50%, calc(-50% + 9px))' }}
+                className="absolute left-1/2 top-[118px] flex flex-row items-center gap-[5px] z-10"
+                style={{ transform: 'translateX(-50%)' }}
             >
                 {hasDisplayInfo && (
                     <div id={`${id}-temp-info`} className="flex flex-row items-center justify-center p-0">

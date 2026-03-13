@@ -1,11 +1,10 @@
 {
-    "name": "WD_CLOCK_PICKER",
-    "type": "Widget",
-    "description": "Time picker component using three WD_Roller pickers for hour, minute, and AM/PM selection. Manages time state internally. Converts between 12/24 hour formats. Fires onChange with hour/minute/isPM values.",
-    "visualForm": "Three horizontal roller pickers: hour (1-12) | minute (00-59) | AM/PM selector",
+    "name": "WD_CLOCK_Picker",
     "category": "Washer/Clock",
+    "type": "Widget",
     "descriptionKo": "세 개의 WD_Roller 피커로 시/분/AM·PM을 선택하는 시간 피커 컴포넌트입니다. 12/24시간 형식 변환을 내부에서 처리하며, onChange로 hour/minute/isPM 값을 전달합니다.",
     "descriptionEn": "Time picker component using three WD_Roller pickers for hour, minute, and AM/PM selection. Manages time state internally. Converts between 12/24 hour formats. Fires onChange with hour/minute/isPM values.",
+    "visualForm": "Three horizontal roller pickers: hour (1-12) | minute (00-59) | AM/PM selector",
     "props": [
         "id",
         "scrollIndex",
@@ -23,5 +22,8 @@
         "id",
         "scrollindex",
         "style"
+    ],
+    "relatedScreens": [
+        "숫자컴포넌트(Roller Picker에서 사용)"
     ]
 }

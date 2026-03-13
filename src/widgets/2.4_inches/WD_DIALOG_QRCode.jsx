@@ -61,7 +61,7 @@ const WD_DIALOG_QRCode = ({
                 {/* Alert Icon - 50x50 */}
                 <img
                     id={`${id}-image`}
-                    src="/ui/images/washer_dryer/img_alert_2.png"
+                    src="/ui/images/img_alert_2.png"
                     alt="alert"
                     className="w-[50px] h-[50px]"
                     onError={(e) => { e.target.style.display = 'none'; }}

@@ -1,11 +1,10 @@
 {
-    "name": "OV_COOK_AUTO_PAGER",
-    "type": "Widget",
-    "description": "Auto-cook mode horizontal pager using WD_Pager base component. Displays cooking modes across multiple pages with navigation. Shows mode labels and cycling through available auto-cook programs.",
-    "visualForm": "Horizontal pager for auto-cook modes with page indicators and smooth transitions",
+    "name": "OV_COOK_AutoPager",
     "category": "Oven/Cooking",
+    "type": "Widget",
     "descriptionKo": "WD_Pager 기반의 오토 쿡 모드 수평 페이저입니다. 탐색 기능과 함께 여러 페이지에 걸쳐 자동 조리 모드를 표시하며, 사용 가능한 자동 조리 프로그램을 순환합니다.",
     "descriptionEn": "Auto-cook mode horizontal pager using WD_Pager base component. Displays cooking modes across multiple pages with navigation. Shows mode labels and cycling through available auto-cook programs.",
+    "visualForm": "Horizontal pager for auto-cook modes with page indicators and smooth transitions",
     "props": [
         "id",
         "0",
@@ -44,5 +43,8 @@
         "isfocused",
         "onkey",
         "style"
+    ],
+    "relatedScreens": [
+        "자동요리화면"
     ]
 }

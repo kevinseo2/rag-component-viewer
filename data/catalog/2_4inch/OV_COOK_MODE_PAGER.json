@@ -1,11 +1,10 @@
 {
-    "name": "OV_COOK_MODE_PAGER",
-    "type": "Widget",
-    "description": "Horizontal pager for oven cooking modes using WD_Pager base. Each page shows WD_CookMode_Item with mode details. Horizontal navigation through available cooking programs.",
-    "visualForm": "Horizontal pager displaying cooking mode items with smooth page transitions",
+    "name": "OV_COOK_ModePager",
     "category": "Oven/Cooking",
-    "descriptionKo": "WD_Pager 기반의 오븐 조리 모드 수평 페이저입니다. 각 페이지에 WD_CookMode_Item과 모드 상세 정보를 표시하며, 수평 탐색으로 조리 프로그램을 선택할 수 있습니다.",
-    "descriptionEn": "Horizontal pager for oven cooking modes using WD_Pager base. Each page shows WD_CookMode_Item with mode details. Horizontal navigation through available cooking programs.",
+    "type": "Widget",
+    "descriptionKo": "WD_Pager 기반의 오븐 조리 모드 수평 페이저입니다. 각 페이지에 OV_COOK_ModeItem과 모드 상세 정보를 표시하며, 수평 탐색으로 조리 프로그램을 선택할 수 있습니다.",
+    "descriptionEn": "Horizontal pager for oven cooking modes using WD_Pager base. Each page shows OV_COOK_ModeItem with mode details. Horizontal navigation through available cooking programs.",
+    "visualForm": "Horizontal pager displaying cooking mode items with smooth page transitions",
     "props": [
         "id",
         "dataset",
@@ -38,5 +37,9 @@
         "isfocused",
         "onkey",
         "style"
+    ],
+    "relatedScreens": [
+        "요리모드화면",
+        "조리모드화면"
     ]
 }

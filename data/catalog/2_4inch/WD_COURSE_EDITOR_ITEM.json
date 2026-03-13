@@ -1,11 +1,10 @@
 {
-    "name": "WD_COURSE_EDITOR_ITEM",
-    "type": "Widget",
-    "description": "Individual checkbox list item for course editing. Shows checkbox icon, course title with optional pentagon, description text. Item height 68px. Supports checked/unchecked/mandatory states.",
-    "visualForm": "Horizontal item layout: checkbox icon | course title (with optional pentagon) + description | visual states for selection",
+    "name": "WD_COURSE_EditorItem",
     "category": "Washer/Course",
-    "descriptionKo": "코스 편집용 체크박스 리스트의 개별 항목입니다. 체크박스 아이콘, 선택적 오각형이 있는 코스 타이틀, 설명 텍스트를 68px 높이로 표시하며, 체크/미체크/필수 상태를 지원합니다.",
+    "type": "Widget",
+    "descriptionKo": "코스 편집용 체크박스 리스트의 개별 항목입니다. 체크박스 아이콘, 선택적 오각형이 있는 코스 타이틀, 설명 텍스트를 68px 높이로 표시하며, 체크/미체크/필수 상태를 지원합니다. WD_COURSE_Editor와 결합하여 사용합니다.",
     "descriptionEn": "Individual checkbox list item for course editing. Shows checkbox icon, course title with optional pentagon, description text. Item height 68px. Supports checked/unchecked/mandatory states.",
+    "visualForm": "Horizontal item layout: checkbox icon | course title (with optional pentagon) + description | visual states for selection",
     "props": [
         "id",
         "value_text",
@@ -34,5 +33,8 @@
         "isfocused",
         "style",
         "list"
+    ],
+    "relatedScreens": [
+        "체크박스 개별항목 컴포넌트"
     ]
 }

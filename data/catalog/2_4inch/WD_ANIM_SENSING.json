@@ -1,11 +1,10 @@
 {
-    "name": "WD_ANIM_SENSING",
-    "type": "Widget",
-    "description": "Fabric sensing display with intro→loop animation and rotating status descriptions. Shows sensing operation animation with text cycling through detection messages. Uses imgseqopt_Intro_Loop for animation.",
-    "visualForm": "Centered sensing animation (intro then loop) → rotating description text below showing detection status",
+    "name": "WD_ANIM_Sensing",
     "category": "Washer/Animation",
+    "type": "Widget",
     "descriptionKo": "인트로→루프 애니메이션과 순환하는 상태 설명이 있는 섬유 감지 화면 위젯입니다. 감지 동작 중 애니메이션과 함께 감지 메시지가 교대로 표시됩니다.",
     "descriptionEn": "Fabric sensing display with intro→loop animation and rotating status descriptions. Shows sensing operation animation with text cycling through detection messages. Uses imgseqopt_Intro_Loop for animation.",
+    "visualForm": "Centered sensing animation (intro then loop) → rotating description text below showing detection status",
     "props": [
         "introImages",
         "introDuration",
@@ -35,5 +34,9 @@
         "toggleperiod",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "감지중화면",
+        "세탁물센싱화면"
     ]
 }

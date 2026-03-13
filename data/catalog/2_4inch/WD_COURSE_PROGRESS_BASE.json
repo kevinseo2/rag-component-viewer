@@ -1,11 +1,10 @@
 {
-    "name": "WD_COURSE_PROGRESS_BASE",
-    "type": "Widget",
-    "description": "Base component for course progress screens. Combines course title, remaining time, progress bar, status text, and indicators. Supports reservation mode with different time display. Complex layout with multiple sub-widgets. Animation for blinking status text.",
-    "visualForm": "Multi-section vertical layout: course title → remaining/reservation time → progress bar → status text → description → indicators",
+    "name": "WD_COURSE_ProgressBase",
     "category": "Washer/Course",
+    "type": "Widget",
     "descriptionKo": "코스 진행 화면의 기본 컴포넌트입니다. 코스 타이틀, 남은 시간, 프로그레스 바, 상태 텍스트, 인디케이터를 결합하며, 예약 모드 시 별도 시간 표시 방식을 지원합니다.",
     "descriptionEn": "Base component for course progress screens. Combines course title, remaining time, progress bar, status text, and indicators. Supports reservation mode with different time display. Complex layout with multiple sub-widgets. Animation for blinking status text.",
+    "visualForm": "Multi-section vertical layout: course title → remaining/reservation time → progress bar → status text → description → indicators",
     "props": [
         "id",
         "course_name",
@@ -55,5 +54,14 @@
         "remain_min",
         "reservation_date",
         "reservation_ampm"
+    ],
+    "relatedScreens": [
+        "세탁중화면",
+        "헹굼중화면",
+        "건조중화면",
+        "AI코스중화면",
+        "예약시간표시화면",
+        "상태깜빡임화면",
+        "설명 텍스트 포함 진행중 화면"
     ]
 }

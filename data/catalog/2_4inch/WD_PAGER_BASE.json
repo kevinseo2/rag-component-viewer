@@ -1,11 +1,10 @@
 {
-    "name": "WD_PAGER_BASE",
-    "type": "Widget",
-    "description": "Base horizontal pager component for multi-page content. Manages page state, transitions (300ms), and page indicators. Children rendered as full-width pages. Navigation via arrow keys. Foundation for other pager widgets.",
-    "visualForm": "Horizontal page container with smooth transitions, page indicator dots at top, full-width pages (310px)",
+    "name": "WD_PAGER_Base",
     "category": "Washer/Widget",
+    "type": "Widget",
     "descriptionKo": "다중 페이지 콘텐츠를 위한 수평 페이저 기반 컴포넌트입니다. 페이지 상태, 300ms 전환, 페이지 인디케이터를 관리하며, 자식 요소를 310px 전체 너비 페이지로 렌더링합니다. 다른 페이저 위젯의 기반이 됩니다.",
     "descriptionEn": "Base horizontal pager component for multi-page content. Manages page state, transitions (300ms), and page indicators. Children rendered as full-width pages. Navigation via arrow keys. Foundation for other pager widgets.",
+    "visualForm": "Horizontal page container with smooth transitions, page indicator dots at top, full-width pages (310px)",
     "props": [
         "id",
         "currentPage",
@@ -35,5 +34,8 @@
         "isfocused",
         "onkey",
         "style"
+    ],
+    "relatedScreens": [
+        "기본 페이저 컴포넌트"
     ]
 }

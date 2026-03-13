@@ -1,11 +1,10 @@
 {
-    "name": "WD_DIALOG_CHILD_LOCK",
-    "type": "Widget",
-    "description": "Child lock status display with lock icon animation and instruction text. Shows animated lock icon centered with text below indicating child lock is active. Keyboard interaction support.",
-    "visualForm": "Centered lock icon animation (62x62px) with instruction text below (25px)",
+    "name": "WD_DIALOG_ChildLock",
     "category": "Washer/Dialog",
+    "type": "Widget",
     "descriptionKo": "어린이 잠금 상태를 표시하는 잠금 아이콘 애니메이션과 안내 텍스트 위젯입니다. 어린이 잠금 활성화 시 중앙에 자물쇠 애니메이션 아이콘(62px)과 잠금 안내 문구를 표시합니다.",
     "descriptionEn": "Child lock status display with lock icon animation and instruction text. Shows animated lock icon centered with text below indicating child lock is active. Keyboard interaction support.",
+    "visualForm": "Centered lock icon animation (62x62px) with instruction text below (25px)",
     "props": [
         "id",
         "text",
@@ -28,5 +27,12 @@
         "onkey",
         "style",
         "animation"
+    ],
+    "relatedScreens": [
+        "소아안전잠금화면",
+        "어린이안전잠금화면",
+        "잠금해제중화면",
+        "잠금활성안내화면",
+        "잠금해제방법안내화면"
     ]
 }

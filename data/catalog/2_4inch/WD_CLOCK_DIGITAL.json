@@ -1,11 +1,10 @@
 {
-    "name": "WD_CLOCK_DIGITAL",
-    "type": "Widget",
-    "description": "Digital clock widget showing time in large format (HH:MM) with AM/PM indicator and date. AM shown in orange, PM in blue. Time displayed in extra-large LOCK3B23 font (86px). Date shown below (24px). Simple centered layout.",
-    "visualForm": "Centered digital display: AM/PM text (24px, colored) → large time (86px) → date text (24px) below",
+    "name": "WD_CLOCK_Digital",
     "category": "Washer/Clock",
+    "type": "Widget",
     "descriptionKo": "AM/PM 표시와 날짜가 포함된 대형 포맷(HH:MM) 디지털 시계 위젯입니다. AM은 주황색, PM은 파란색으로 표시되며, 86px 초대형 LOCK3B23 폰트로 시간을 보여줍니다.",
     "descriptionEn": "Digital clock widget showing time in large format (HH:MM) with AM/PM indicator and date. AM shown in orange, PM in blue. Time displayed in extra-large LOCK3B23 font (86px). Date shown below (24px). Simple centered layout.",
+    "visualForm": "Centered digital display: AM/PM text (24px, colored) → large time (86px) → date text (24px) below",
     "props": [
         "clock_type",
         "clock_style",
@@ -41,5 +40,8 @@
         "theme_id",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "디지털시계화면"
     ]
 }

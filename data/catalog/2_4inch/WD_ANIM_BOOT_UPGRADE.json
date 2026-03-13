@@ -1,11 +1,10 @@
 {
-    "name": "WD_ANIM_BOOT_UPGRADE",
-    "type": "Widget",
-    "description": "Firmware upgrade boot screen showing upgrade progress message. Displays centered text indicating system update in progress. Used during SOTA updates at boot time.",
-    "visualForm": "Centered upgrade message text on black background during boot",
+    "name": "WD_ANIM_BootUpgrade",
     "category": "Washer/Animation",
+    "type": "Widget",
     "descriptionKo": "업그레이드 진행 메시지를 표시하는 펌웨어 업그레이드 부팅 화면 위젯입니다. 시스템 업데이트 진행 중임을 안내하는 텍스트를 중앙에 표시하며, SOTA 업데이트 부팅 시 사용됩니다.",
     "descriptionEn": "Firmware upgrade boot screen showing upgrade progress message. Displays centered text indicating system update in progress. Used during SOTA updates at boot time.",
+    "visualForm": "Centered upgrade message text on black background during boot",
     "props": [
         "id",
         "0",
@@ -43,5 +42,8 @@
         "onkey",
         "style",
         "progress"
+    ],
+    "relatedScreens": [
+        "SOTA업데이트부팅화면"
     ]
 }

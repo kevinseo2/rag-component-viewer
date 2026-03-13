@@ -1,11 +1,10 @@
 {
-    "name": "WD_CLOCK_IDLE",
-    "type": "Widget",
-    "description": "Clock idle screen showing current time, date, and optional energy saver icon. Large time display (LOCK3B23 font) with date below. Minimalist clock widget for idle/standby mode.",
-    "visualForm": "Centered time display (large font) → date text below → optional energy icon at bottom or top",
+    "name": "WD_CLOCK_Idle",
     "category": "Washer/Clock",
+    "type": "Widget",
     "descriptionKo": "현재 시간, 날짜, 선택적 절전 아이콘을 표시하는 시계 대기 화면입니다. LOCK3B23 폰트로 대형 시간과 날짜를 보여주는 대기/절전 모드용 미니멀 시계 위젯입니다.",
     "descriptionEn": "Clock idle screen showing current time, date, and optional energy saver icon. Large time display (LOCK3B23 font) with date below. Minimalist clock widget for idle/standby mode.",
+    "visualForm": "Centered time display (large font) → date text below → optional energy icon at bottom or top",
     "props": [
         "id",
         "hour",
@@ -36,5 +35,8 @@
         "onkey",
         "style",
         "list"
+    ],
+    "relatedScreens": [
+        "시간표시대기화면"
     ]
 }

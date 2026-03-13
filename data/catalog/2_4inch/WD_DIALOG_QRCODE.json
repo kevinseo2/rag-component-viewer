@@ -1,11 +1,10 @@
 {
-    "name": "WD_DIALOG_QRCODE",
-    "type": "Widget",
-    "description": "Error dialog displaying QR code for support links. Shows title text, centered QR code (scaled to 80% max size), and description below. QR code generated from URL prop using qrcode.react library.",
-    "visualForm": "Vertical modal layout: title text (25px) → centered QR code (max 80% size) → description text below (21px)",
+    "name": "WD_DIALOG_QRCode",
     "category": "Washer/Dialog",
+    "type": "Widget",
     "descriptionKo": "지원 링크용 QR 코드를 표시하는 에러 다이얼로그입니다. 타이틀 텍스트, 중앙 정렬된 QR 코드, 하단 설명을 표시하며 qrcode.react 라이브러리로 URL에서 QR 코드를 생성합니다.",
     "descriptionEn": "Error dialog displaying QR code for support links. Shows title text, centered QR code (scaled to 80% max size), and description below. QR code generated from URL prop using qrcode.react library.",
+    "visualForm": "Vertical modal layout: title text (25px) → centered QR code (max 80% size) → description text below (21px)",
     "props": [
         "id",
         "titleText",
@@ -30,5 +29,11 @@
         "qrurl",
         "classname",
         "isfocused"
+    ],
+    "relatedScreens": [
+        "QR코드화면",
+        "QR에러화면",
+        "오류안내QR",
+        "ThinQ연결QR"
     ]
 }

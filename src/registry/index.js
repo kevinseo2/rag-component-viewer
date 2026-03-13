@@ -255,44 +255,48 @@ export const ComponentRegistry = {
     },
     CM_ANIM_SequencePlayer: {
         Component: CM_ANIM_SequencePlayer,
-        defaultProps: { playlist: [{ CM_ANIM_Sequence: { path: '/ui/image_sequences/img_booting_thinq/.orig_images/', frames: ['img_booting_thinq_01.png','img_booting_thinq_02.png','img_booting_thinq_03.png','img_booting_thinq_04.png','img_booting_thinq_05.png','img_booting_thinq_06.png','img_booting_thinq_07.png','img_booting_thinq_08.png','img_booting_thinq_09.png','img_booting_thinq_10.png','img_booting_thinq_11.png','img_booting_thinq_12.png','img_booting_thinq_13.png','img_booting_thinq_14.png','img_booting_thinq_15.png','img_booting_thinq_16.png','img_booting_thinq_17.png','img_booting_thinq_18.png','img_booting_thinq_19.png','img_booting_thinq_20.png','img_booting_thinq_21.png','img_booting_thinq_22.png','img_booting_thinq_23.png','img_booting_thinq_24.png','img_booting_thinq_25.png','img_booting_thinq_26.png','img_booting_thinq_27.png','img_booting_thinq_28.png','img_booting_thinq_29.png','img_booting_thinq_30.png'] }, duration: 1000, repeatCount: -1 }] },
+        defaultProps: { playlist: [{ CM_ANIM_Sequence: { path: '/ui/image_sequences/img_booting_thinq/.orig_images/', frames: ['img_booting_thinq_01.png', 'img_booting_thinq_02.png', 'img_booting_thinq_03.png', 'img_booting_thinq_04.png', 'img_booting_thinq_05.png', 'img_booting_thinq_06.png', 'img_booting_thinq_07.png', 'img_booting_thinq_08.png', 'img_booting_thinq_09.png', 'img_booting_thinq_10.png', 'img_booting_thinq_11.png', 'img_booting_thinq_12.png', 'img_booting_thinq_13.png', 'img_booting_thinq_14.png', 'img_booting_thinq_15.png', 'img_booting_thinq_16.png', 'img_booting_thinq_17.png', 'img_booting_thinq_18.png', 'img_booting_thinq_19.png', 'img_booting_thinq_20.png', 'img_booting_thinq_21.png', 'img_booting_thinq_22.png', 'img_booting_thinq_23.png', 'img_booting_thinq_24.png', 'img_booting_thinq_25.png', 'img_booting_thinq_26.png', 'img_booting_thinq_27.png', 'img_booting_thinq_28.png', 'img_booting_thinq_29.png', 'img_booting_thinq_30.png'] }, duration: 1000, repeatCount: -1 }] },
         variants: [
             { id: 'v1', description: 'Empty playlist', data: { playlist: [] } },
-            { id: 'v2', description: 'ThinQ Boot loop', data: { playlist: [{ CM_ANIM_Sequence: { path: '/ui/image_sequences/img_booting_thinq/.orig_images/', frames: ['img_booting_thinq_01.png','img_booting_thinq_02.png','img_booting_thinq_03.png','img_booting_thinq_04.png','img_booting_thinq_05.png','img_booting_thinq_06.png','img_booting_thinq_07.png','img_booting_thinq_08.png','img_booting_thinq_09.png','img_booting_thinq_10.png','img_booting_thinq_11.png','img_booting_thinq_12.png','img_booting_thinq_13.png','img_booting_thinq_14.png','img_booting_thinq_15.png','img_booting_thinq_16.png','img_booting_thinq_17.png','img_booting_thinq_18.png','img_booting_thinq_19.png','img_booting_thinq_20.png','img_booting_thinq_21.png','img_booting_thinq_22.png','img_booting_thinq_23.png','img_booting_thinq_24.png','img_booting_thinq_25.png','img_booting_thinq_26.png','img_booting_thinq_27.png','img_booting_thinq_28.png','img_booting_thinq_29.png','img_booting_thinq_30.png'] }, duration: 1000, repeatCount: -1 }] } },
+            { id: 'v2', description: 'ThinQ Boot loop', data: { playlist: [{ CM_ANIM_Sequence: { path: '/ui/image_sequences/img_booting_thinq/.orig_images/', frames: ['img_booting_thinq_01.png', 'img_booting_thinq_02.png', 'img_booting_thinq_03.png', 'img_booting_thinq_04.png', 'img_booting_thinq_05.png', 'img_booting_thinq_06.png', 'img_booting_thinq_07.png', 'img_booting_thinq_08.png', 'img_booting_thinq_09.png', 'img_booting_thinq_10.png', 'img_booting_thinq_11.png', 'img_booting_thinq_12.png', 'img_booting_thinq_13.png', 'img_booting_thinq_14.png', 'img_booting_thinq_15.png', 'img_booting_thinq_16.png', 'img_booting_thinq_17.png', 'img_booting_thinq_18.png', 'img_booting_thinq_19.png', 'img_booting_thinq_20.png', 'img_booting_thinq_21.png', 'img_booting_thinq_22.png', 'img_booting_thinq_23.png', 'img_booting_thinq_24.png', 'img_booting_thinq_25.png', 'img_booting_thinq_26.png', 'img_booting_thinq_27.png', 'img_booting_thinq_28.png', 'img_booting_thinq_29.png', 'img_booting_thinq_30.png'] }, duration: 1000, repeatCount: -1 }] } },
         ],
     },
 
     // ── Controls ────────────────────────────────────────────────────────────
     CM_CTRL_Button: {
         Component: CM_CTRL_Button,
-        defaultProps: { text: 'OK', focused: true },
+        defaultProps: { text: 'OK', focused: true, width: 200, height: 60, textStyle: { fontSize: '28px' } },
         variants: [
-            { id: 'focused', description: 'Focused', data: { text: 'Confirm', focused: true } },
-            { id: 'unfocused', description: 'Unfocused', data: { text: 'Cancel', focused: false } },
+            { id: 'focused', description: 'Focused', data: { text: 'Confirm', focused: true, width: 200, height: 60, textStyle: { fontSize: '28px' } } },
+            { id: 'unfocused', description: 'Unfocused', data: { text: 'Cancel', focused: false, width: 200, height: 60, textStyle: { fontSize: '28px' } } },
+            { id: 'auto-width', description: 'Auto Width', data: { text: 'Start Cycle', focused: true, width: 'auto', style: { padding: '0 30px' }, height: 60, textStyle: { fontSize: '28px' } } },
         ],
     },
     CM_CTRL_Slider: {
         Component: CM_CTRL_Slider,
-        defaultProps: { value: 50, min: 0, max: 100, isFocused: true },
+        defaultProps: { value: 50, min: 0, max: 100, onChange: () => { } },
         variants: [
-            { id: 'mid', description: '50%', data: { value: 50, min: 0, max: 100, isFocused: true } },
-            { id: 'low', description: '20%', data: { value: 20, min: 0, max: 100, isFocused: true } },
+            { id: 'mid', description: '50% (Default)', data: { value: 50, min: 0, max: 100 } },
+            { id: 'low', description: '20%', data: { value: 20, min: 0, max: 100 } },
+            { id: 'custom-width', description: 'Width 150px', data: { value: 50, width: 150 } },
         ],
     },
     CM_CTRL_SliderContinuous: {
         Component: CM_CTRL_SliderContinuous,
-        defaultProps: { value: 50, min: 0, max: 100, isFocused: true },
+        defaultProps: { initialValue: 50, min: 0, max: 100, step: 1, isFocused: true },
         variants: [
-            { id: 'mid', description: '50%', data: { value: 50, isFocused: true } },
-            { id: 'high', description: '80%', data: { value: 80, isFocused: true } },
+            { id: 'mid', description: 'Default (50)', data: { initialValue: 50, isFocused: true } },
+            { id: 'high-step', description: 'Step 10, Value 80', data: { initialValue: 80, step: 10, isFocused: true } },
+            { id: 'with-arrow', description: 'With Back Arrow', data: { title: 'Volume', initialValue: 30, showBackArrow: true, isFocused: true } },
         ],
     },
     CM_CTRL_SliderDiscrete: {
         Component: CM_CTRL_SliderDiscrete,
-        defaultProps: { title: 'Speed', level: 2, maxLevels: 5, isFocused: true },
+        defaultProps: { title: 'Speed', level: 3, maxLevels: 5, isFocused: true },
         variants: [
             { id: 'step2', description: 'Level 2/5', data: { title: 'Speed', level: 2, maxLevels: 5, isFocused: true } },
             { id: 'step4', description: 'Level 4/5', data: { title: 'Speed', level: 4, maxLevels: 5, isFocused: true } },
+            { id: 'max7', description: 'Max 7 Levels', data: { title: 'Intensity', level: 5, maxLevels: 7, isFocused: true } },
         ],
     },
     CM_CTRL_Switch: {
@@ -301,24 +305,24 @@ export const ComponentRegistry = {
         variants: [
             { id: 'on', description: 'ON', data: { checked: true, visible: true } },
             { id: 'off', description: 'OFF', data: { checked: false, visible: true } },
+            { id: 'hidden', description: 'Hidden', data: { checked: true, visible: false } },
         ],
     },
 
     // ── Dialogs ─────────────────────────────────────────────────────────────
     CM_DIALOG_CustomIcon: {
         Component: CM_DIALOG_CustomIcon,
-        defaultProps: { description: 'Custom message\nLine 2', buttonCount: 2, btn1Text: 'OK', btn2Text: 'Cancel', isFocused: true },
+        defaultProps: { title: 'Alert', description: 'Custom message\nLine 2', iconSrc: '/ui/images/img_info.png', isFocused: true },
         variants: [
-            { id: 'v1', description: '2 buttons', data: { description: 'Are you sure?', buttonCount: 2, btn1Text: 'Yes', btn2Text: 'No', isFocused: true } },
-            { id: 'v2', description: '1 button', data: { description: 'Operation complete.', buttonCount: 1, btn1Text: 'OK', isFocused: true } },
+            { id: 'v1', description: 'Default', data: { title: 'Alert', description: 'Operation complete.', iconSrc: '/ui/images/img_info.png', isFocused: true } },
         ],
     },
     CM_DIALOG_DescOnly: {
         Component: CM_DIALOG_DescOnly,
-        defaultProps: { description: 'This is a description-only dialog message.', isFocused: true },
+        defaultProps: { title: 'Info', description: 'This is a description-only dialog message.', isFocused: true },
         variants: [
-            { id: 'v1', description: 'Short', data: { description: 'Short message.', isFocused: true } },
-            { id: 'v2', description: 'Multiline', data: { description: 'Longer message\nspanning two lines.', isFocused: true } },
+            { id: 'v1', description: 'Short', data: { title: 'Info', description: 'Short message.', isFocused: true } },
+            { id: 'v2', description: 'Multiline', data: { title: 'Notice', description: 'Longer message\nspanning two lines.', isFocused: true } },
         ],
     },
     CM_DIALOG_Icon: {
@@ -326,6 +330,7 @@ export const ComponentRegistry = {
         defaultProps: { description: 'Information dialog', isFocused: true },
         variants: [
             { id: 'info', description: 'Info', data: { description: 'Please check settings.', isFocused: true } },
+            { id: 'multiline', description: 'Multiline', data: { description: 'Please check settings.\nAnd try again.', isFocused: true } },
         ],
     },
     CM_DIALOG_IconButtons: {
@@ -345,24 +350,26 @@ export const ComponentRegistry = {
     },
     CM_DIALOG_ScrollDesc: {
         Component: CM_DIALOG_ScrollDesc,
-        defaultProps: { title: 'Terms', description: 'Long scrollable description text\nLine 2\nLine 3\nLine 4\nLine 5', isFocused: true },
+        defaultProps: { title: 'Terms', description: 'Long scrollable description text\nLine 2\nLine 3\nLine 4\nLine 5', buttonCount: 2, btn1Text: 'Agree', btn2Text: 'Disagree', isFocused: true },
         variants: [
-            { id: 'v1', description: 'Scrollable text', data: { title: 'Terms & Conditions', description: 'Long text\nLine 2\nLine 3\nLine 4\nLine 5', isFocused: true } },
+            { id: 'v1', description: 'Scrollable text', data: { title: 'Terms & Conditions', description: 'Long text\nLine 2\nLine 3\nLine 4\nLine 5', buttonCount: 2, btn1Text: 'Agree', btn2Text: 'Disagree', isFocused: true } },
+            { id: '1btn', description: '1 Button', data: { title: 'Notice', description: 'Scrollable text...\nMore text...', buttonCount: 1, btn1Text: 'OK', isFocused: true } },
         ],
     },
     CM_DIALOG_TextButtons: {
         Component: CM_DIALOG_TextButtons,
-        defaultProps: { description: 'Confirm action?', buttonCount: 2, btn1Text: 'Confirm', btn2Text: 'Cancel', isFocused: true },
+        defaultProps: { desc: 'Confirm action?', button1Text: 'Cancel', button2Text: 'Confirm', buttonHeight: 40 },
         variants: [
-            { id: 'v1', description: '2 buttons', data: { description: 'Delete this cycle?', buttonCount: 2, btn1Text: 'Delete', btn2Text: 'Cancel', isFocused: true } },
+            { id: 'v1', description: 'Standard', data: { desc: 'Delete this cycle?', button1Text: 'Cancel', button2Text: 'Delete', buttonHeight: 40 } },
+            { id: 'tall', description: 'Tall Buttons', data: { desc: 'Are you sure?', button1Text: 'No', button2Text: 'Yes', buttonHeight: 66 } },
         ],
     },
     CM_DIALOG_TextOnly: {
         Component: CM_DIALOG_TextOnly,
-        defaultProps: { text: 'Information text only', isFocused: true },
+        defaultProps: { description: 'Information text only', isFocused: true },
         variants: [
-            { id: 'v1', description: 'Short', data: { text: 'OK', isFocused: true } },
-            { id: 'v2', description: 'Long', data: { text: 'Please wait while the cycle completes...', isFocused: true } },
+            { id: 'v1', description: 'Short', data: { description: 'OK', isFocused: true } },
+            { id: 'v2', description: 'Long', data: { description: 'Please wait while the cycle completes...', isFocused: true } },
         ],
     },
     CM_DIALOG_TitleDesc: {
@@ -374,8 +381,8 @@ export const ComponentRegistry = {
     },
     CM_DIALOG_TitleIconStack: {
         Component: CM_DIALOG_TitleIconStack,
-        defaultProps: { title: 'Settings', isFocused: true },
-        variants: [{ id: 'v1', description: 'Default', data: { title: 'Quick Settings', isFocused: true } }],
+        defaultProps: { title: 'Settings', description: 'Description text', iconSrc: '/ui/images/img_info.png', isFocused: true },
+        variants: [{ id: 'v1', description: 'Default', data: { title: 'Quick Settings', description: 'Adjust basic preferences', iconSrc: '/ui/images/img_info.png', isFocused: true } }],
     },
     CM_DIALOG_TitleWide: {
         Component: CM_DIALOG_TitleWide,
@@ -386,8 +393,8 @@ export const ComponentRegistry = {
     // ── Display ─────────────────────────────────────────────────────────────
     CM_DISPLAY_Black: {
         Component: CM_DISPLAY_Black,
-        defaultProps: {},
-        variants: [{ id: 'v1', description: 'Black screen', data: {} }],
+        defaultProps: { style: {} },
+        variants: [{ id: 'v1', description: 'Black screen', data: { style: { backgroundColor: '#000000' } } }],
     },
 
     // ── Labels ──────────────────────────────────────────────────────────────
@@ -398,56 +405,71 @@ export const ComponentRegistry = {
             slots: [{ type: 'string', value: '세탁기' }],
             align: 'center',
             style: { fontSize: 30, color: '#ffffff' },
-            maxArea: { width: 320, height: 60 }
+            maxArea: { width: 320, height: 60 },
+            isFocused: true
         },
         variants: [
-            { id: 'string-slot',  description: '문자열 슬롯',   data: { format: '안녕하세요, {0}!', slots: [{ type: 'string', value: '세탁기' }], align: 'center', style: { fontSize: 30, color: '#ffffff' }, maxArea: { width: 320, height: 60 } } },
-            { id: 'number-slot',  description: '숫자 단위',      data: { format: '설정 온도 {0}°C', slots: [{ type: 'number', value: '40' }], align: 'center', style: { fontSize: 36, color: '#ffffff' }, maxArea: { width: 320, height: 60 } } },
-            { id: 'image-slot',   description: '이미지 인라인',  data: { format: '{0} 세탁 완료', slots: [{ type: 'image', value: '/ui/images/img_ok.png' }], align: 'center', style: { fontSize: 30, color: '#ffffff' }, maxArea: { width: 320, height: 60 } } },
-            { id: 'multiline',    description: '멀티라인',        data: { format: '세탁이 완료되었습니다.\n꺼내주세요.', slots: [], align: 'center', multiline: true, style: { fontSize: 28, color: '#ffffff' }, maxArea: { width: 310, height: 100 } } },
-            { id: 'long-scroll',  description: '긴 텍스트 스크롤', data: { format: '이 텍스트는 너무 길어서 스크롤됩니다. 세탁 코스: 표준, 온도: 40°C, 탈수: 1200rpm', slots: [], align: 'left', style: { fontSize: 28, color: '#ffffff' }, maxArea: { width: 200, height: 40 } } },
+            { id: 'string-slot', description: '문자열 슬롯', data: { format: '안녕하세요, {0}!', slots: [{ type: 'string', value: '세탁기' }], align: 'center', style: { fontSize: 30, color: '#ffffff' }, maxArea: { width: 320, height: 60 }, isFocused: true } },
+            { id: 'number-slot', description: '숫자 단위', data: { format: '설정 온도 {0}°C', slots: [{ type: 'number', value: '40' }], align: 'center', style: { fontSize: 36, color: '#ffffff' }, maxArea: { width: 320, height: 60 }, isFocused: true } },
+            { id: 'image-slot', description: '이미지 인라인', data: { format: '{0} 세탁 완료', slots: [{ type: 'image', value: '/ui/images/img_ok.png' }], align: 'center', style: { fontSize: 30, color: '#ffffff' }, maxArea: { width: 320, height: 60 }, isFocused: true } },
+            { id: 'multiline', description: '멀티라인', data: { format: '세탁이 완료되었습니다.\n꺼내주세요.', slots: [], align: 'center', multiline: true, style: { fontSize: 28, color: '#ffffff' }, maxArea: { width: 310, height: 100 }, isFocused: true } },
+            { id: 'long-scroll', description: '긴 텍스트 스크롤', data: { format: '이 텍스트는 너무 길어서 스크롤됩니다. 세탁 코스: 표준, 온도: 40°C, 탈수: 1200rpm', slots: [], align: 'left', style: { fontSize: 28, color: '#ffffff' }, maxArea: { width: 200, height: 40 }, isFocused: true, animSpeed: 50 } },
         ],
     },
     CM_LABEL_Smart: {
         Component: CM_LABEL_Smart,
-        defaultProps: { text: 'Smart Label Text', align: 'center', maxArea: { width: 320, height: 40 } },
+        defaultProps: { text: 'Smart Label Text', align: 'center', maxArea: { width: 320, height: 40 }, isFocused: true },
         variants: [
-            { id: 'short', description: 'Short text', data: { text: 'OK', align: 'center', maxArea: { width: 320, height: 40 } } },
-            { id: 'long', description: 'Long text', data: { text: 'This is a much longer smart label text with auto-sizing', align: 'center', maxArea: { width: 320, height: 60 } } },
+            { id: 'short', description: 'Short text', data: { text: 'OK', align: 'center', maxArea: { width: 320, height: 40 }, isFocused: true } },
+            { id: 'long', description: 'Long text', data: { text: 'This is a much longer smart label text with auto-sizing and scrolling enabled', align: 'center', maxArea: { width: 320, height: 60 }, isFocused: true, animSpeed: 50 } },
+            { id: 'multiline-scroll', description: 'Multiline Scroll', data: { text: 'First Line\nSecond Line\nThird Line\nFourth Line which is long', align: 'center', multiline: true, style: { fontSize: 24, color: '#ffffff' }, maxArea: { width: 320, height: 50 }, isFocused: true, animSpeed: 30 } },
         ],
     },
 
     // ── Lists ───────────────────────────────────────────────────────────────
     CM_LIST_Grid: {
         Component: CM_LIST_Grid,
-        defaultProps: { title: 'Cycles', items: sampleGridData, isFocused: true },
-        variants: [{ id: 'v1', description: 'Grid view', data: { title: 'Cook Mode', items: sampleGridData, isFocused: true } }],
+        defaultProps: { items: sampleGridData },
+        variants: [
+            { id: 'default', description: 'Grid view (2 Pages)', data: { items: sampleGridData } },
+            { id: 'single-page', description: 'Single Page (3 Items)', data: { items: sampleGridData.slice(0, 3) } },
+        ],
     },
     CM_LIST_HorizontalCarousel: {
         Component: CM_LIST_HorizontalCarousel,
         defaultProps: { items: sampleCarouselItems, isFocused: true },
-        variants: [{ id: 'v1', description: 'Default', data: { items: sampleCarouselItems, isFocused: true } }],
+        variants: [
+            { id: 'default', description: 'Default', data: { items: sampleCarouselItems, isFocused: true } },
+            { id: 'with-title', description: 'With Title', data: { title: 'Wash Modes', items: sampleCarouselItems, isFocused: true } },
+            { id: 'start-mid', description: 'Start at index 2', data: { items: sampleCarouselItems, initialIndex: 2, isFocused: true } },
+        ],
     },
     CM_LIST_HorizontalPager: {
         Component: CM_LIST_HorizontalPager,
-        defaultProps: { items: sampleCarouselItems, isFocused: true },
-        variants: [{ id: 'v1', description: 'Default', data: { items: sampleCarouselItems, isFocused: true } }],
+        defaultProps: { items: sampleCarouselItems },
+        variants: [
+            { id: '1st', description: '1st Variant (Labels)', data: { variant: '1st', items: [{ label1: 'Item 1', label2: 'Sub 1' }, { label1: 'Item 2', hasCommand: true, commandText: 'Start' }] } },
+            { id: '2nd', description: '2nd Variant (Title/Value/Desc)', data: { variant: '2nd', items: [{ title: 'Wash', value: 'Auto', description: 'Smart mode' }, { title: 'Spin', value: 'High' }] } },
+        ],
     },
     CM_LIST_Item: {
         Component: CM_LIST_Item,
-        defaultProps: { label: 'Cotton', isFocused: true },
+        defaultProps: { label: 'Cotton', showDescription: false, isSelected: false, enabled: true },
         variants: [
-            { id: 'normal', description: 'Normal', data: { label: 'Cotton', isFocused: false } },
-            { id: 'focused', description: 'Focused', data: { label: 'Cotton', isFocused: true } },
-            { id: 'selected', description: 'Selected', data: { label: 'Cotton', selected: true, isFocused: false } },
+            { id: 'normal', description: 'Normal', data: { label: 'Cotton', showDescription: false, isSelected: false } },
+            { id: 'selected', description: 'Selected', data: { label: 'Cotton', showDescription: false, isSelected: true } },
+            { id: 'with-desc', description: 'With Description', data: { label: 'Cotton', description: 'Standard Wash', showDescription: true, isSelected: false } },
+            { id: 'disabled', description: 'Disabled', data: { label: 'Cotton', showDescription: false, enabled: false } },
         ],
     },
     CM_LIST_Item2Col: {
         Component: CM_LIST_Item2Col,
-        defaultProps: { label: 'Temperature', value: '40°C', isFocused: true },
+        defaultProps: { label_main: 'Temperature', label: '40°C', showDescription: false, isSelected: false, enabled: true },
         variants: [
-            { id: 'v1', description: 'Key-Value', data: { label: 'Temperature', value: '40°C', isFocused: true } },
-            { id: 'v2', description: 'Spin', data: { label: 'Spin Speed', value: '1200rpm', isFocused: false } },
+            { id: 'normal', description: 'Normal', data: { label_main: 'Temperature', label: '40°C', showDescription: false, isSelected: false } },
+            { id: 'selected', description: 'Selected', data: { label_main: 'Temperature', label: '40°C', showDescription: false, isSelected: true } },
+            { id: 'with-desc', description: 'With Description', data: { label_main: 'Spin', label_desc: 'Set spin speed', label: '1200rpm', showDescription: true } },
+            { id: 'disabled', description: 'Disabled', data: { label_main: 'Pre-wash', label: 'Off', showDescription: false, enabled: false } },
         ],
     },
     CM_LIST_ItemFull: {
@@ -463,8 +485,8 @@ export const ComponentRegistry = {
     },
     CM_LIST_MultiSelect: {
         Component: CM_LIST_MultiSelect,
-        defaultProps: { title: 'Options', listData: sampleMultiSelectData, isFocused: true },
-        variants: [{ id: 'v1', description: 'Multi-select', data: { title: 'Select Options', listData: sampleMultiSelectData, isFocused: true } }],
+        defaultProps: { title: 'Options', listData: [{ label: 'Rinse', description: 'Extra rinse', checked: true }, { label: 'Spin', checked: true }, { label: 'Dry', checked: false }, { label: 'Steam', checked: false, disabled: true }], isFocused: true },
+        variants: [{ id: 'v1', description: 'Multi-select', data: { title: 'Select Options', listData: [{ label: 'Rinse', description: 'Extra rinse', checked: true }, { label: 'Spin', checked: true }, { label: 'Dry', checked: false }, { label: 'Steam', checked: false, disabled: true }], isFocused: true } }],
     },
     CM_LIST_Reorder: {
         Component: CM_LIST_Reorder,
@@ -473,18 +495,18 @@ export const ComponentRegistry = {
     },
     CM_LIST_ScrollView: {
         Component: CM_LIST_ScrollView,
-        defaultProps: { items: sampleListData, initialSelectedIndex: 0 },
+        defaultProps: { items: sampleListData.map(i => ({ label: i.label, description: 'Description', showDescription: true, enabled: !i.disabled })), initialSelectedIndex: 0 },
         variants: [
-            { id: 'v1', description: 'Scroll list', data: { items: sampleListData, initialSelectedIndex: 0 } },
-            { id: 'v2', description: 'Mid selection', data: { items: sampleListData, initialSelectedIndex: 3 } },
+            { id: 'v1', description: 'Scroll list', data: { items: sampleListData.map(i => ({ label: i.label, description: 'Description', showDescription: true, enabled: !i.disabled })), initialSelectedIndex: 0 } },
+            { id: 'v2', description: 'Mid selection', data: { items: sampleListData.map(i => ({ label: i.label, description: 'Description', showDescription: true, enabled: !i.disabled })), initialSelectedIndex: 3 } },
         ],
     },
     CM_LIST_ScrollView2Col: {
         Component: CM_LIST_ScrollView2Col,
-        defaultProps: { items: [{ label: 'Temperature', value: '40°C' }, { label: 'Spin Speed', value: '1200rpm' }, { label: 'Duration', value: '1h 30min' }, { label: 'Rinse', value: '+1' }, { label: 'Dry', value: 'OFF' }, { label: 'Delay', value: '3h' }], initialSelectedIndex: 0 },
+        defaultProps: { items: [{ label_main: 'Temperature', label: '40°C', showDescription: false }, { label_main: 'Spin Speed', label_desc: 'Max limit', label: '1200rpm', showDescription: true }, { label_main: 'Duration', label: '1h 30min', showDescription: false }, { label_main: 'Rinse', label: '+1', showDescription: false }, { label_main: 'Dry', label: 'OFF', showDescription: false }], initialSelectedIndex: 0 },
         variants: [
-            { id: 'v1', description: 'First item', data: { items: [{ label: 'Temperature', value: '40°C' }, { label: 'Spin Speed', value: '1200rpm' }, { label: 'Duration', value: '1h 30min' }, { label: 'Rinse', value: '+1' }, { label: 'Dry', value: 'OFF' }, { label: 'Delay', value: '3h' }], initialSelectedIndex: 0 } },
-            { id: 'v2', description: 'Mid selection', data: { items: [{ label: 'Temperature', value: '40°C' }, { label: 'Spin Speed', value: '1200rpm' }, { label: 'Duration', value: '1h 30min' }, { label: 'Rinse', value: '+1' }, { label: 'Dry', value: 'OFF' }, { label: 'Delay', value: '3h' }], initialSelectedIndex: 3 } },
+            { id: 'v1', description: 'First item', data: { items: [{ label_main: 'Temperature', label: '40°C', showDescription: false }, { label_main: 'Spin Speed', label_desc: 'Max limit', label: '1200rpm', showDescription: true }, { label_main: 'Duration', label: '1h 30min', showDescription: false }, { label_main: 'Rinse', label: '+1', showDescription: false }, { label_main: 'Dry', label: 'OFF', showDescription: false }], initialSelectedIndex: 0 } },
+            { id: 'v2', description: 'Mid selection', data: { items: [{ label_main: 'Temperature', label: '40°C', showDescription: false }, { label_main: 'Spin Speed', label_desc: 'Max limit', label: '1200rpm', showDescription: true }, { label_main: 'Duration', label: '1h 30min', showDescription: false }, { label_main: 'Rinse', label: '+1', showDescription: false }, { label_main: 'Dry', label: 'OFF', showDescription: false }], initialSelectedIndex: 3 } },
         ],
     },
     CM_LIST_SingleSelect: {
@@ -497,18 +519,18 @@ export const ComponentRegistry = {
     },
     CM_LIST_SwitchList: {
         Component: CM_LIST_SwitchList,
-        defaultProps: { title: 'Options', listData: sampleSwitchListData, isFocused: true },
-        variants: [{ id: 'v1', description: 'Switch list', data: { title: 'Wash Options', listData: sampleSwitchListData, isFocused: true } }],
+        defaultProps: { title: 'Options', items: [{ label_option: 'Pre-wash', switchState: 0 }, { label_option: 'Rinse +1', switchState: 1 }, { label_option: 'Extra Spin', switchState: 0 }, { label_option: 'Delay', switchState: 2 }], isFocused: true },
+        variants: [{ id: 'v1', description: 'Switch list', data: { title: 'Wash Options', items: [{ label_option: 'Pre-wash', switchState: 0 }, { label_option: 'Rinse +1', switchState: 1 }, { label_option: 'Extra Spin', switchState: 0 }, { label_option: 'Delay', switchState: 2 }], isFocused: true } }],
     },
     CM_LIST_Vertical: {
         Component: CM_LIST_Vertical,
-        defaultProps: { title: 'Cycles', listData: sampleListData, isFocused: true },
-        variants: [{ id: 'v1', description: 'Vertical list', data: { title: 'Select Cycle', listData: sampleListData, isFocused: true } }],
+        defaultProps: { title: 'Cycles', items: sampleListData.map(i => ({ label: i.label, description: 'Description', showDescription: true, enabled: !i.disabled })), selectedIndex: 0, isFocused: true },
+        variants: [{ id: 'v1', description: 'Vertical list', data: { title: 'Select Cycle', items: sampleListData.map(i => ({ label: i.label, description: 'Description', showDescription: true, enabled: !i.disabled })), selectedIndex: 0, isFocused: true } }],
     },
     CM_LIST_Vertical2Col: {
         Component: CM_LIST_Vertical2Col,
-        defaultProps: { title: 'Options', listData: sampleListData, isFocused: true },
-        variants: [{ id: 'v1', description: '2-column vertical', data: { title: 'Select Option', listData: sampleListData, isFocused: true } }],
+        defaultProps: { title: 'Settings', items: [{ label_main: 'Temperature', label: '40°C', showDescription: false }, { label_main: 'Spin Speed', label_desc: 'Max limit', label: '1200rpm', showDescription: true }, { label_main: 'Duration', label: '1h 30min', showDescription: false }], selectedIndex: 0, isFocused: true },
+        variants: [{ id: 'v1', description: '2-column vertical', data: { title: 'Wash Settings', items: [{ label_main: 'Temperature', label: '40°C', showDescription: false }, { label_main: 'Spin Speed', label_desc: 'Max limit', label: '1200rpm', showDescription: true }, { label_main: 'Duration', label: '1h 30min', showDescription: false }], selectedIndex: 0, isFocused: true } }],
     },
 
     // ── Overlays ────────────────────────────────────────────────────────────
@@ -534,8 +556,11 @@ export const ComponentRegistry = {
     // ── Pickers ─────────────────────────────────────────────────────────────
     CM_PICKER_HorizontalSel: {
         Component: CM_PICKER_HorizontalSel,
-        defaultProps: { items: samplePickerDataWash, initialSelectedIndex: 1, isFocused: true },
-        variants: [{ id: 'temp', description: 'Temperature', data: { items: samplePickerDataWash, initialSelectedIndex: 1, isFocused: true } }],
+        defaultProps: { items: samplePickerDataWash, currentIndex: 1, isFocused: true },
+        variants: [
+            { id: 'single', description: 'Single Select', data: { title: 'Wash Temp', items: samplePickerDataWash, currentIndex: 1, showCheckbox: false, isFocused: true } },
+            { id: 'multi', description: 'Multi Select (Checkbox)', data: { title: 'Options', items: [{ label: 'Pre Wash', checked: true }, { label: 'Rinse+', checked: false }, { label: 'Steam', checked: false, disabled: true }], currentIndex: 0, showCheckbox: true, isFocused: true } },
+        ],
     },
     CM_PICKER_Mask2nd: {
         Component: CM_PICKER_Mask2nd,
@@ -550,10 +575,10 @@ export const ComponentRegistry = {
         Component: CM_PICKER_NumericCarousel,
         defaultProps: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 4, unit: 'ml', isFocused: true },
         variants: [
-            { id: 'start',   description: '시작 값 (10ml)',  data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 0,  unit: 'ml', isFocused: true } },
-            { id: 'mid',     description: '중간 값 (30ml)',  data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 4,  unit: 'ml', isFocused: true } },
-            { id: 'triple',  description: '3자리 (100ml)',   data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 18, unit: 'ml', isFocused: true } },
-            { id: 'max',     description: '최대 값 (200ml)', data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 38, unit: 'ml', isFocused: true } },
+            { id: 'start', description: '시작 값 (10ml)', data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 0, unit: 'ml', isFocused: true } },
+            { id: 'mid', description: '중간 값 (30ml)', data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 4, unit: 'ml', isFocused: true } },
+            { id: 'triple', description: '3자리 (100ml)', data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 18, unit: 'ml', isFocused: true } },
+            { id: 'max', description: '최대 값 (200ml)', data: { title: '물 양', start: 10, stride: 5, end: 200, currentIndex: 38, unit: 'ml', isFocused: true } },
         ],
     },
     CM_PICKER_Roller: {
@@ -563,8 +588,22 @@ export const ComponentRegistry = {
     },
     CM_PICKER_Vertical: {
         Component: CM_PICKER_Vertical,
-        defaultProps: { items: samplePickerData, isFocused: true },
-        variants: [{ id: 'v1', description: 'Vertical picker', data: { items: samplePickerData, initialSelectedIndex: 2, isFocused: true } }],
+        defaultProps: { items: samplePickerData, initialSelectedIndex: 2, isFocused: true },
+        variants: [
+            { id: 'v1', description: 'Standard picker', data: { items: samplePickerData, initialSelectedIndex: 2, isFocused: true } },
+            {
+                id: 'semantic', description: 'Semantic item styles', data: {
+                    items: [
+                        { title: 'Normal Style', value: 'Value 1' },
+                        { title: 'Small Font', value: 'Value 2', isSmallFont: true },
+                        { title: 'Double Height', value: 'Value 3', isDoubleHeight: true },
+                        { title: 'Hidden Value', value: 'Hidden', isValueHidden: true },
+                        { title: 'Last Item', value: 'End' }
+                    ],
+                    initialSelectedIndex: 1, isFocused: true
+                }
+            }
+        ],
     },
     CM_PICKER_Vertical1st: {
         Component: CM_PICKER_Vertical1st,
@@ -633,10 +672,10 @@ export const ComponentRegistry = {
     },
     CM_PROGRESS_Spinner: {
         Component: CM_PROGRESS_Spinner,
-        defaultProps: { desc: 'Please wait...', isFocused: true },
+        defaultProps: { desc: 'Please wait...' },
         variants: [
-            { id: 'default', description: 'Loading', data: { desc: 'Loading...', isFocused: true } },
-            { id: 'connecting', description: 'Connecting', data: { desc: 'Connecting to network...', isFocused: true } },
+            { id: 'default', description: 'Loading', data: { desc: 'Loading...' } },
+            { id: 'connecting', description: 'Connecting', data: { desc: 'Connecting to network...' } },
         ],
     },
 
@@ -651,10 +690,10 @@ export const ComponentRegistry = {
     },
     CM_TITLE_WithArrow: {
         Component: CM_TITLE_WithArrow,
-        defaultProps: { title: 'Settings', showBackArrow: true, isFocused: true },
+        defaultProps: { title: 'Settings', showBackArrow: true },
         variants: [
-            { id: 'with_arrow', description: 'With back arrow', data: { title: 'Options', showBackArrow: true, isFocused: true } },
-            { id: 'no_arrow', description: 'No back arrow', data: { title: 'Main Menu', showBackArrow: false, isFocused: true } },
+            { id: 'with_arrow', description: 'With back arrow', data: { title: 'Options', showBackArrow: true } },
+            { id: 'no_arrow', description: 'No back arrow', data: { title: 'Main Menu', showBackArrow: false } },
         ],
     },
 
@@ -677,7 +716,7 @@ export const ComponentRegistry = {
         defaultProps: { title: '에어프라이', description: '고온의 공기로 튀김 요리를 기름 없이 바삭하게 익히기', showIcon: false },
         variants: [
             { id: 'no-icon', description: 'Text only', data: { title: '에어프라이', description: '고온의 공기로 튀김 요리를 기름 없이 바삭하게 익히기', showIcon: false } },
-            { id: 'with-icon', description: 'With icon', data: { title: '에어프라이', description: '바삭하게 익히기', image: '/ui/images/ic_oven_airfry.png', showIcon: true } },
+            { id: 'with-icon', description: 'With icon', data: { title: '에어프라이', description: '바삭하게 익히기', image: '/ui/images/ic_mode.png', showIcon: true } },
         ],
     },
     OV_COOK_ModePager: {
@@ -693,7 +732,7 @@ export const ComponentRegistry = {
         defaultProps: { title: '예열 중', message: '오븐이 예열되고 있어요', icon: '' },
         variants: [
             { id: 'no-icon', description: 'Text only', data: { title: '예열 중', message: '오븐이 예열되고 있어요', icon: '' } },
-            { id: 'with-icon', description: 'With icon', data: { title: '예열 완료', message: '오븐 예열이 완료되었어요', icon: '/ui/images/ic_oven_complete.png' } },
+            { id: 'with-icon', description: 'With icon', data: { title: '예열 완료', message: '오븐 예열이 완료되었어요', icon: '/ui/images/ic_mode.png' } },
         ],
     },
     OV_PROGRESS_Cooking: {
@@ -702,6 +741,11 @@ export const ComponentRegistry = {
         variants: [
             { id: 'airfry', description: 'Air fry 65%', data: { title: '에어프라이', hour: 0, min: 30, sec: 0, percent: 65, temp: 200, statusText: '조리 중', isFocused: true } },
             { id: 'bake', description: 'Baking 30%', data: { title: '오븐', hour: 0, min: 45, sec: 0, percent: 30, temp: 180, statusText: '예열 중', isFocused: true } },
+            { id: 'hour_long', description: 'With hours (1h 30m)', data: { title: '오븐', hour: 1, min: 30, sec: 0, percent: 10, temp: 230, statusText: '예열 중', isFocused: true } },
+            { id: 'final_seconds', description: 'Final countdown (45s)', data: { title: '에어프라이', hour: 0, min: 0, sec: 45, percent: 95, temp: 200, statusText: '조리 중', isFocused: true } },
+            { id: 'with_steam', description: 'Steam mode', data: { title: '스팀(찜)', hour: 0, min: 20, sec: 0, percent: 50, temp: 100, steam: 1, statusText: '스팀 조리 중', isFocused: true } },
+            { id: 'with_guide', description: 'With guide text', data: { title: '토스트', hour: 0, min: 5, sec: 0, percent: 80, statusText: '조리 중', guideText: '완성되면 꺼내주세요', isFocused: true } },
+            { id: 'with_weight', description: 'Weight display (300g)', data: { title: '해동', hour: 0, min: 15, sec: 0, percent: 40, weight: 300, statusText: '해동 중', isFocused: true } },
         ],
     },
     OV_TITLE_2Line: {
@@ -728,17 +772,19 @@ export const ComponentRegistry = {
             }]
         },
         variants: [
-            { id: 'v1', description: 'Boot (thinq logo)', data: {
-                isFocused: true,
-                animations: [{
-                    CM_ANIM_Sequence: {
-                        path: '/ui/image_sequences/img_booting_thinq/.orig_images',
-                        frames: Array.from({ length: 30 }, (_, i) => `img_booting_thinq_${String(i + 1).padStart(2, '0')}.png`)
-                    },
-                    duration: 2500,
-                    repeatCount: 1
-                }]
-            }},
+            {
+                id: 'v1', description: 'Boot (thinq logo)', data: {
+                    isFocused: true,
+                    animations: [{
+                        CM_ANIM_Sequence: {
+                            path: '/ui/image_sequences/img_booting_thinq/.orig_images',
+                            frames: Array.from({ length: 30 }, (_, i) => `img_booting_thinq_${String(i + 1).padStart(2, '0')}.png`)
+                        },
+                        duration: 2500,
+                        repeatCount: 1
+                    }]
+                }
+            },
         ],
     },
     WD_ANIM_BootScreen: {
@@ -753,17 +799,17 @@ export const ComponentRegistry = {
         Component: WD_ANIM_BootUpgrade,
         defaultProps: { upgradeImageIndex: 1, isFocused: true },
         variants: [
-            { id: 'autumn',    description: '가을',     data: { upgradeImageIndex: 0 } },
-            { id: 'xmas',      description: '크리스마스', data: { upgradeImageIndex: 1 } },
-            { id: 'halloween', description: '할로윈',    data: { upgradeImageIndex: 2 } },
-            { id: 'newyear',   description: '신년',      data: { upgradeImageIndex: 3 } },
-            { id: 'spring1',   description: '봄 1',     data: { upgradeImageIndex: 4 } },
-            { id: 'spring2',   description: '봄 2',     data: { upgradeImageIndex: 5 } },
-            { id: 'summer1',   description: '여름 1',   data: { upgradeImageIndex: 6 } },
-            { id: 'summer2',   description: '여름 2',   data: { upgradeImageIndex: 7 } },
-            { id: 'winter1',   description: '겨울 1',   data: { upgradeImageIndex: 8 } },
-            { id: 'winter2',   description: '겨울 2',   data: { upgradeImageIndex: 9 } },
-            { id: 'winter3',   description: '겨울 3',   data: { upgradeImageIndex: 10 } },
+            { id: 'autumn', description: '가을', data: { upgradeImageIndex: 0 } },
+            { id: 'xmas', description: '크리스마스', data: { upgradeImageIndex: 1 } },
+            { id: 'halloween', description: '할로윈', data: { upgradeImageIndex: 2 } },
+            { id: 'newyear', description: '신년', data: { upgradeImageIndex: 3 } },
+            { id: 'spring1', description: '봄 1', data: { upgradeImageIndex: 4 } },
+            { id: 'spring2', description: '봄 2', data: { upgradeImageIndex: 5 } },
+            { id: 'summer1', description: '여름 1', data: { upgradeImageIndex: 6 } },
+            { id: 'summer2', description: '여름 2', data: { upgradeImageIndex: 7 } },
+            { id: 'winter1', description: '겨울 1', data: { upgradeImageIndex: 8 } },
+            { id: 'winter2', description: '겨울 2', data: { upgradeImageIndex: 9 } },
+            { id: 'winter3', description: '겨울 3', data: { upgradeImageIndex: 10 } },
         ],
     },
     WD_ANIM_Sensing: {
@@ -778,24 +824,28 @@ export const ComponentRegistry = {
             isFocused: true
         },
         variants: [
-            { id: 'with-desc', description: '문구 2개 순환', data: {
-                introImages: Array.from({ length: 30 }, (_, i) => `/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_${String(i).padStart(2, '0')}.png`),
-                introDuration: 1000,
-                loopImages: Array.from({ length: 60 }, (_, i) => `/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_${String(i).padStart(2, '0')}.png`),
-                loopDuration: 2000,
-                descriptionArr: [{ text: '감지 중...' }, { text: '세탁물을\n확인 중' }],
-                togglePeriod: 2000,
-                isFocused: true
-            }},
-            { id: 'single-desc', description: '단일 문구', data: {
-                introImages: Array.from({ length: 30 }, (_, i) => `/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_${String(i).padStart(2, '0')}.png`),
-                introDuration: 1000,
-                loopImages: Array.from({ length: 60 }, (_, i) => `/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_${String(i).padStart(2, '0')}.png`),
-                loopDuration: 2000,
-                descriptionArr: [{ text: '감지 중...' }],
-                togglePeriod: 2000,
-                isFocused: true
-            }},
+            {
+                id: 'with-desc', description: '문구 2개 순환', data: {
+                    introImages: Array.from({ length: 30 }, (_, i) => `/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_${String(i).padStart(2, '0')}.png`),
+                    introDuration: 1000,
+                    loopImages: Array.from({ length: 60 }, (_, i) => `/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_${String(i).padStart(2, '0')}.png`),
+                    loopDuration: 2000,
+                    descriptionArr: [{ text: '감지 중...' }, { text: '세탁물을\n확인 중' }],
+                    togglePeriod: 2000,
+                    isFocused: true
+                }
+            },
+            {
+                id: 'single-desc', description: '단일 문구', data: {
+                    introImages: Array.from({ length: 30 }, (_, i) => `/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_${String(i).padStart(2, '0')}.png`),
+                    introDuration: 1000,
+                    loopImages: Array.from({ length: 60 }, (_, i) => `/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_${String(i).padStart(2, '0')}.png`),
+                    loopDuration: 2000,
+                    descriptionArr: [{ text: '감지 중...' }],
+                    togglePeriod: 2000,
+                    isFocused: true
+                }
+            },
         ],
     },
 
@@ -804,18 +854,18 @@ export const ComponentRegistry = {
         Component: WD_CLOCK_Analog,
         defaultProps: { clock_info: { hour: 10, min: 30, sec: 0, date: 'Mon Mar 13' }, theme_id: 1, isFocused: true },
         variants: [
-            { id: 'blue',   description: 'Blue theme 10:30',  data: { clock_info: { hour: 10, min: 30, sec: 0,  date: 'Mon Mar 13' }, theme_id: 1, isFocused: true } },
-            { id: 'orange', description: 'Orange theme 3:45', data: { clock_info: { hour: 3,  min: 45, sec: 20, date: 'Mon Mar 13' }, theme_id: 2, isFocused: true } },
-            { id: 'noon',   description: 'Blue theme 12:00',  data: { clock_info: { hour: 12, min: 0,  sec: 0,  date: 'Mon Mar 13' }, theme_id: 1, isFocused: true } },
+            { id: 'blue', description: 'Blue theme 10:30', data: { clock_info: { hour: 10, min: 30, sec: 0, date: 'Mon Mar 13' }, theme_id: 1, isFocused: true } },
+            { id: 'orange', description: 'Orange theme 3:45', data: { clock_info: { hour: 3, min: 45, sec: 20, date: 'Mon Mar 13' }, theme_id: 2, isFocused: true } },
+            { id: 'noon', description: 'Blue theme 12:00', data: { clock_info: { hour: 12, min: 0, sec: 0, date: 'Mon Mar 13' }, theme_id: 1, isFocused: true } },
         ],
     },
     WD_CLOCK_Digital: {
         Component: WD_CLOCK_Digital,
         defaultProps: { clock_info: { hour: 10, min: 30, date: 'Mon Mar 13', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true },
         variants: [
-            { id: 'am',       description: 'AM 10:30',  data: { clock_info: { hour: 10, min: 30, date: 'Mon Mar 13', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true } },
-            { id: 'pm',       description: 'PM 3:05',   data: { clock_info: { hour: 15, min: 5,  date: 'Mon Mar 13', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true } },
-            { id: 'midnight', description: '자정 0:00', data: { clock_info: { hour: 0,  min: 0,  date: 'Tue Mar 14', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true } },
+            { id: 'am', description: 'AM 10:30', data: { clock_info: { hour: 10, min: 30, date: 'Mon Mar 13', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true } },
+            { id: 'pm', description: 'PM 3:05', data: { clock_info: { hour: 15, min: 5, date: 'Mon Mar 13', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true } },
+            { id: 'midnight', description: '자정 0:00', data: { clock_info: { hour: 0, min: 0, date: 'Tue Mar 14', am_str: 'AM', pm_str: 'PM' }, clock_type: 1, isFocused: true } },
         ],
     },
     WD_CLOCK_Idle: {
@@ -823,7 +873,7 @@ export const ComponentRegistry = {
         defaultProps: { hour: 10, minute: 30, ampm: 1, isFocused: true },
         variants: [
             { id: 'am', description: 'AM 10:30', data: { hour: 10, minute: 30, ampm: 1, isFocused: true } },
-            { id: 'pm', description: 'PM 3:05',  data: { hour: 3,  minute: 5,  ampm: 2, isFocused: true } },
+            { id: 'pm', description: 'PM 3:05', data: { hour: 3, minute: 5, ampm: 2, isFocused: true } },
             { id: 'single-digit', description: '한 자리 시 (9:00 AM)', data: { hour: 9, minute: 0, ampm: 1, isFocused: true } },
         ],
     },
@@ -867,52 +917,75 @@ export const ComponentRegistry = {
     // ── Washer/Course ─────────────────────────────────────────────────────────
     WD_COURSE_Editor: {
         Component: WD_COURSE_Editor,
-        defaultProps: { title_text: '코스 목록 편집', data: [{ id: 'item_1', label: 'Cotton', selected: true, is_mandatory: false }, { id: 'item_2', label: 'Synthetics', selected: false, is_mandatory: false }, { id: 'item_3', label: 'Wool', selected: true, is_mandatory: true }], isFocused: true },
-        variants: [{ id: 'v1', description: 'Course editor', data: { title_text: '코스 목록 편집', data: [{ id: 'item_1', label: 'Cotton', selected: true, is_mandatory: false }, { id: 'item_2', label: 'Synthetics', selected: false, is_mandatory: false }], isFocused: true } }],
+        defaultProps: { title_text: '코스 목록 편집', data: [{ id: 'item_1', label: 'Cotton', selected: true, is_mandatory: false }, { id: 'item_2', label: 'Synthetics', selected: false, is_mandatory: false }, { id: 'item_3', label: 'Wool', selected: true, is_mandatory: true }], initialSelectedIndex: 0, isFocused: true },
+        variants: [
+            { id: 'v1', description: '2개 항목', data: { title_text: '코스 목록 편집', data: [{ id: 'item_1', label: 'Cotton', selected: true, is_mandatory: false }, { id: 'item_2', label: 'Synthetics', selected: false, is_mandatory: false }], initialSelectedIndex: 0, isFocused: true } },
+            { id: 'v2', description: '필수 포함 3개', data: { title_text: '코스 목록 편집', data: [{ id: 'item_1', label: 'Cotton', selected: true, is_mandatory: false }, { id: 'item_2', label: 'Synthetics', selected: false, is_mandatory: false }, { id: 'item_3', label: 'Wool', selected: true, is_mandatory: true }], initialSelectedIndex: 1, isFocused: true } },
+            { id: 'v3', description: '5개 항목 (스크롤)', data: { title_text: '코스 목록 편집', data: [{ id: 'i1', label: 'Cotton', selected: true, is_mandatory: false }, { id: 'i2', label: 'Synthetics', selected: false, is_mandatory: false }, { id: 'i3', label: 'Wool', selected: true, is_mandatory: true }, { id: 'i4', label: 'Sports', selected: false, is_mandatory: false }, { id: 'i5', label: 'Quick 15m', selected: true, is_mandatory: false }], initialSelectedIndex: 0, isFocused: true } },
+        ],
     },
     WD_COURSE_EditorItem: {
         Component: WD_COURSE_EditorItem,
         defaultProps: { value_text: '코튼', description_text: '일반 세탁 코스', selected: true, is_mandatory: false, show_pentagon: false, isFocused: true },
         variants: [
-            { id: 'selected', description: 'Selected', data: { value_text: '코튼', description_text: '일반 세탁 코스', selected: true, is_mandatory: false, isFocused: true } },
-            { id: 'mandatory', description: 'Mandatory', data: { value_text: '급속', description_text: '빠른 세탁', selected: true, is_mandatory: true, show_pentagon: true, isFocused: false } },
+            { id: 'selected', description: 'Selected (focused)', data: { value_text: '코튼', description_text: '일반 세탁 코스', selected: true, is_mandatory: false, isFocused: true } },
+            { id: 'unselected', description: 'Unselected', data: { value_text: '합성섬유', description_text: '중온 세탁', selected: false, is_mandatory: false, isFocused: false } },
+            { id: 'mandatory', description: 'Mandatory (필수)', data: { value_text: '급속', description_text: '빠른 세탁', selected: true, is_mandatory: true, show_pentagon: true, isFocused: false } },
         ],
     },
     WD_COURSE_Item: {
         Component: WD_COURSE_Item,
-        defaultProps: { courseName: 'Cotton', courseDescription: '40°C · 1200rpm · 1h 30min', courseType: 'default', options: [{ title: 'Temp', value: '40°C' }, { title: 'Spin', value: '1200rpm' }], fastdlStatus: 'none', isFocused: true },
+        defaultProps: { courseName: 'Cotton', courseDescription: '40°C · 1200rpm · 1h 30min', courseType: 'default', options: [{ title: 'Temp', value: '40°C' }, { title: 'Spin', value: '1200rpm' }], fastdlStatus: 'none', fastdlDetectingText: 'Detecting...', fastdlHour: 0, fastdlMin: 0, showImgTM: false, showImgPentagon: false },
         variants: [
-            { id: 'default', description: 'Default course', data: { courseName: 'Cotton', courseDescription: '40°C · 1200rpm · 1h 30min', courseType: 'default', options: [{ title: 'Temp', value: '40°C' }], fastdlStatus: 'none', isFocused: true } },
-            { id: 'ai', description: 'AI course', data: { courseName: 'AI Wash', courseDescription: 'Smart auto detection', courseType: 'ai', options: [{ title: 'Mode', value: 'Auto' }], fastdlStatus: 'none', isFocused: true } },
+            { id: 'default', description: 'Default (설명 텍스트)', data: { courseName: 'Cotton', courseDescription: '40°C · 1200rpm · 1h 30min', courseType: 'default', options: [], fastdlStatus: 'none' } },
+            { id: 'options_2', description: 'Options 2개 (회전 없음)', data: { courseName: 'Cotton', courseType: 'default', options: [{ title: 'Temp', value: '40', unit: '°C' }, { title: 'Spin', value: '1200', unit: 'rpm' }], fastdlStatus: 'none' } },
+            { id: 'options_4', description: 'Options 4개 (A/B 회전)', data: { courseName: 'Cotton', courseType: 'default', options: [{ title: 'Temp', value: '40', unit: '°C' }, { title: 'Spin', value: '1200', unit: 'rpm' }, { title: 'Rinse', value: '3', unit: '회' }, { title: 'Time', value: '90', unit: 'min' }], fastdlStatus: 'none' } },
+            { id: 'ai', description: 'AI 코스', data: { courseName: 'AI Wash', courseType: 'ai', options: [{ title: 'Mode', value: 'Auto' }], fastdlStatus: 'none', showImgTM: false } },
+            { id: 'cloud', description: 'Cloud 코스', data: { courseName: 'ThinQ Special', courseType: 'cloud', options: [], fastdlStatus: 'none' } },
+            { id: 'fastdl_processing', description: 'FastDL 감지 중', data: { courseName: 'Cotton', courseType: 'default', options: [{ title: 'Temp', value: '40°C' }], fastdlStatus: 'processing', fastdlDetectingText: 'Detecting...' } },
+            { id: 'fastdl_remain', description: 'FastDL 남은 시간', data: { courseName: 'Cotton', courseType: 'default', options: [{ title: 'Temp', value: '40°C' }, { title: 'Spin', value: '800rpm' }], fastdlStatus: 'remain', fastdlHour: 1, fastdlMin: 30 } },
         ],
     },
     WD_COURSE_ItemOption: {
         Component: WD_COURSE_ItemOption,
-        defaultProps: { title: 'Temperature', value: '40°C' },
+        defaultProps: { title: '온도', value: '40', unit: '°C' },
         variants: [
-            { id: 'v1', description: 'Temp option', data: { title: 'Temperature', value: '40°C' } },
-            { id: 'v2', description: 'Spin option', data: { title: 'Spin Speed', value: '1200rpm' } },
+            { id: 'temp', description: '온도', data: { title: '온도', value: '40', unit: '°C' } },
+            { id: 'spin', description: '탈수', data: { title: '탈수', value: '1200', unit: 'rpm' } },
+            { id: 'rinse', description: '헹굼 횟수', data: { title: '헹굼', value: '3', unit: '회' } },
+            { id: 'no_value', description: '값 없음 (- 표시)', data: { title: '온도', value: '' } },
         ],
     },
     WD_COURSE_List: {
         Component: WD_COURSE_List,
-        defaultProps: { courses: sampleCourses, isFocused: true },
-        variants: [{ id: 'v1', description: 'Course list', data: { courses: sampleCourses, isFocused: true } }],
+        defaultProps: { courses: sampleCourses, selectedPageIndex: 0, energySaverEnabled: false, isFocused: true },
+        variants: [
+            { id: 'v1', description: '첫 번째 페이지', data: { courses: sampleCourses, selectedPageIndex: 0, energySaverEnabled: false, isFocused: true } },
+            { id: 'v2', description: '두 번째 페이지 (AI)', data: { courses: sampleCourses, selectedPageIndex: 1, energySaverEnabled: false, isFocused: true } },
+            { id: 'v3', description: 'Energy Saver 활성', data: { courses: sampleCourses, selectedPageIndex: 0, energySaverEnabled: true, isFocused: true } },
+        ],
     },
     WD_COURSE_ProgressBase: {
         Component: WD_COURSE_ProgressBase,
-        defaultProps: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, isFocused: true },
+        defaultProps: { course_name: 'Cotton', show_ai: false, show_pentagon: false, delay_text: '', course_status: 'Washing', course_progress: 55, description_text: '', remain_hour: 0, remain_min: 45, time_type: 'remain', blink_status: false, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true },
         variants: [
-            { id: 'washing', description: 'Washing 55%', data: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, isFocused: true } },
-            { id: 'rinsing', description: 'Rinsing 80%', data: { course_name: 'Cotton', course_status: 'Rinsing', course_progress: 80, remain_hour: 0, remain_min: 12, indicator_count: 5, indicator_current_idx: 3, show_indicator: true, contents_visible: true, isFocused: true } },
+            { id: 'washing', description: 'Washing 55%', data: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'rinsing', description: 'Rinsing 80%', data: { course_name: 'Cotton', course_status: 'Rinsing', course_progress: 80, remain_hour: 0, remain_min: 12, indicator_count: 5, indicator_current_idx: 3, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'ai_course', description: 'AI 코스', data: { course_name: 'AI Wash', show_ai: true, course_status: 'Washing', course_progress: 40, remain_hour: 0, remain_min: 30, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'pentagon', description: 'Pentagon 코스', data: { course_name: 'My Course', show_pentagon: true, course_status: 'Washing', course_progress: 20, remain_hour: 1, remain_min: 10, indicator_count: 5, indicator_current_idx: 0, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'dryer_orange', description: '건조기 (orange)', data: { course_name: 'Cotton Dry', course_status: 'Drying', course_progress: 65, remain_hour: 0, remain_min: 20, indicator_count: 3, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'orange', isFocused: true } },
+            { id: 'reservation', description: '예약 시간 표시', data: { course_name: 'Cotton', course_status: '예약 중', course_progress: 0, time_type: 'reservation', reservation_hour: 11, reservation_min: 30, reservation_ampm: 'AM', indicator_count: 5, indicator_current_idx: 0, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'blink', description: '상태 깜빡임', data: { course_name: 'Cotton', course_status: 'Spinning', course_progress: 90, remain_hour: 0, remain_min: 3, blink_status: true, indicator_count: 5, indicator_current_idx: 4, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'with_desc', description: '설명 텍스트 포함', data: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, description_text: '세탁 완료 후 꺼내주세요', indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
         ],
     },
     WD_COURSE_ProgressFinish: {
         Component: WD_COURSE_ProgressFinish,
-        defaultProps: { finish_info: { course_title_info: { course_name: 'Cotton', show_img_ai: false, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }], description_arr: [{ string_info: 'Wash complete!' }], number_of_img: 1, number_of_desc: 1, toggle_period: 1500, show_still_img: true }, isFocused: true },
+        defaultProps: { finish_info: { course_title_info: { course_name: 'Cotton', show_img_ai: false, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }], description_arr: [{ string_info: 'Wash complete!' }], number_of_img: 1, number_of_desc: 1, toggle_period: 1500, show_still_img: true }, theme: 'blue', isFocused: true },
         variants: [
-            { id: 'v1', description: 'Finished', data: { finish_info: { course_title_info: { course_name: 'Cotton', show_img_ai: false, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }], description_arr: [{ string_info: 'Wash complete!' }], number_of_img: 1, number_of_desc: 1, toggle_period: 1500, show_still_img: true }, isFocused: true } },
-            { id: 'v2', description: 'AI course finished', data: { finish_info: { course_title_info: { course_name: 'AI Wash', show_img_ai: true, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }, { image: '/ui/images/washer_dryer/img_info.png' }], description_arr: [{ string_info: 'AI wash complete!' }, { string_info: 'Please remove laundry.' }], number_of_img: 2, number_of_desc: 2, toggle_period: 1500, show_still_img: true }, isFocused: true } },
+            { id: 'v1', description: '세탁 완료', data: { finish_info: { course_title_info: { course_name: 'Cotton', show_img_ai: false, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }], description_arr: [{ string_info: 'Wash complete!' }], number_of_img: 1, number_of_desc: 1, toggle_period: 1500, show_still_img: true }, theme: 'blue', isFocused: true } },
+            { id: 'v2', description: 'AI 코스 완료', data: { finish_info: { course_title_info: { course_name: 'AI Wash', show_img_ai: true, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }, { image: '/ui/images/washer_dryer/img_info.png' }], description_arr: [{ string_info: 'AI wash complete!' }, { string_info: 'Please remove laundry.' }], number_of_img: 2, number_of_desc: 2, toggle_period: 1500, show_still_img: true }, theme: 'blue', isFocused: true } },
+            { id: 'v3', description: '건조 완료 (orange)', data: { finish_info: { course_title_info: { course_name: 'Cotton Dry', show_img_ai: false, show_img_pentagon: false }, img_arr: [{ image: '/ui/images/washer_dryer/img_ok.png' }], description_arr: [{ string_info: 'Dry complete!' }], number_of_img: 1, number_of_desc: 1, toggle_period: 1500, show_still_img: true }, theme: 'orange', isFocused: true } },
         ],
     },
     WD_COURSE_ProgressTitle: {
@@ -920,20 +993,33 @@ export const ComponentRegistry = {
         defaultProps: { title: 'Cotton', show_ai: false, show_pentagon: false, isFocused: false },
         variants: [
             { id: 'normal', description: 'Normal', data: { title: 'Cotton', show_ai: false, show_pentagon: false, isFocused: false } },
-            { id: 'ai', description: 'AI title', data: { title: 'AI Wash', show_ai: true, show_pentagon: false, isFocused: false } },
+            { id: 'focused', description: 'Focused', data: { title: 'Cotton', show_ai: false, show_pentagon: false, isFocused: true } },
+            { id: 'ai', description: 'AI 아이콘', data: { title: 'AI Wash', show_ai: true, show_pentagon: false, isFocused: false } },
+            { id: 'pentagon', description: 'Pentagon 아이콘', data: { title: 'My Course', show_ai: false, show_pentagon: true, isFocused: false } },
+            { id: 'ai_focused', description: 'AI + Focused', data: { title: 'AI Wash', show_ai: true, show_pentagon: false, isFocused: true } },
         ],
     },
     WD_COURSE_Running: {
         Component: WD_COURSE_Running,
-        defaultProps: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, isFocused: true },
-        variants: [{ id: 'washing', description: 'Washing 55%', data: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, isFocused: true } }],
+        defaultProps: { course_name: 'Cotton', show_ai: false, course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true },
+        variants: [
+            { id: 'washing', description: 'Washing 55%', data: { course_name: 'Cotton', course_status: 'Washing', course_progress: 55, remain_hour: 0, remain_min: 45, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'rinsing', description: 'Rinsing 80%', data: { course_name: 'Cotton', course_status: 'Rinsing', course_progress: 80, remain_hour: 0, remain_min: 10, indicator_count: 5, indicator_current_idx: 3, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'spinning', description: 'Spinning 95%', data: { course_name: 'Cotton', course_status: 'Spinning', course_progress: 95, remain_hour: 0, remain_min: 2, blink_status: true, indicator_count: 5, indicator_current_idx: 4, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'ai_running', description: 'AI 코스 진행', data: { course_name: 'AI Wash', show_ai: true, course_status: 'Washing', course_progress: 35, remain_hour: 0, remain_min: 52, indicator_count: 5, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'blue', isFocused: true } },
+            { id: 'dryer', description: '건조기 (orange)', data: { course_name: 'Cotton Dry', course_status: 'Drying', course_progress: 60, remain_hour: 0, remain_min: 25, indicator_count: 3, indicator_current_idx: 1, show_indicator: true, contents_visible: true, theme: 'orange', isFocused: true } },
+        ],
     },
 
     // ── Washer/Decoration ────────────────────────────────────────────────────
     WD_DECORATION_Divider: {
         Component: WD_DECORATION_Divider,
-        defaultProps: {},
-        variants: [{ id: 'v1', description: 'Divider', data: {} }],
+        defaultProps: { id: 'WD_DECORATION_Divider' },
+        variants: [
+            { id: 'default', description: '기본 (2x33px, 30% white)', data: {} },
+            { id: 'custom_height', description: '높이 커스텀 (2x20px)', data: { className: '!h-[20px]' } },
+            { id: 'full_opacity', description: '불투명 (100%)', data: { className: '!opacity-100' } },
+        ],
     },
 
     // ── Washer/Dialog ─────────────────────────────────────────────────────────
@@ -941,47 +1027,68 @@ export const ComponentRegistry = {
         Component: WD_DIALOG_Accessory,
         defaultProps: { accessoryIndex: 1, rackIndex: 1, isFocused: true },
         variants: [
-            { id: 'v1', description: 'Accessory 1 / Rack 1', data: { accessoryIndex: 1, rackIndex: 1, isFocused: true } },
-            { id: 'v2', description: 'Accessory 2 / Rack 2', data: { accessoryIndex: 2, rackIndex: 2, isFocused: true } },
+            { id: 'v1', description: '부속품 1 / 1단', data: { accessoryIndex: 1, rackIndex: 1, isFocused: true } },
+            { id: 'v2', description: '부속품 2 / 2단', data: { accessoryIndex: 2, rackIndex: 2, isFocused: true } },
+            { id: 'v3', description: '부속품 3 / 3단', data: { accessoryIndex: 3, rackIndex: 3, isFocused: true } },
+            { id: 'v4', description: '부속품 4 / 4단', data: { accessoryIndex: 4, rackIndex: 4, isFocused: true } },
+            { id: 'v5', description: '부속품 5 / 바닥', data: { accessoryIndex: 5, rackIndex: 0, isFocused: true } },
         ],
     },
     WD_DIALOG_AnimIcon: {
         Component: WD_DIALOG_AnimIcon,
-        defaultProps: { text: '세탁 중...', sequenceId: 'img_loading_large_orange', showLoadingAnimation: true, isFocused: true },
+        defaultProps: { text: '세탁 중...', sequenceId: 'img_loading_large_orange', showLoadingAnimation: true, showStaticImage: false, imagePath: '', gap: 16, isFocused: true },
         variants: [
-            { id: 'loading-orange', description: '로딩 (주황)', data: { text: '세탁 중...', sequenceId: 'img_loading_large_orange', showLoadingAnimation: true, isFocused: true } },
-            { id: 'loading-blue',   description: '로딩 (파랑)', data: { text: '연결 중...', sequenceId: 'img_loading_large_blue',   showLoadingAnimation: true, isFocused: true } },
-            { id: 'static-ok',     description: '완료 아이콘',  data: { text: '세탁 완료', imagePath: '/ui/images/img_ok.png',    showStaticImage: true, isFocused: true } },
-            { id: 'static-check',  description: '체크 아이콘',  data: { text: '확인되었습니다', imagePath: '/ui/images/img_check.png', showStaticImage: true, isFocused: true } },
+            { id: 'loading-orange', description: '로딩 애니 (주황)', data: { text: '세탁 중...', sequenceId: 'img_loading_large_orange', showLoadingAnimation: true, showStaticImage: false, gap: 16, isFocused: true } },
+            { id: 'loading-blue', description: '로딩 애니 (파랑)', data: { text: '연결 중...', sequenceId: 'img_loading_large_blue', showLoadingAnimation: true, showStaticImage: false, gap: 16, isFocused: true } },
+            { id: 'static-ok', description: '완료 아이콘 (OK)', data: { text: '세탁 완료', imagePath: '/ui/images/img_ok.png', showStaticImage: true, showLoadingAnimation: false, gap: 16, isFocused: true } },
+            { id: 'static-check', description: '확인 아이콘 (Check)', data: { text: '확인되었습니다', imagePath: '/ui/images/img_check.png', showStaticImage: true, showLoadingAnimation: false, gap: 16, isFocused: true } },
+            { id: 'text-only', description: '텍스트만', data: { text: '잠시 후 다시 시도해 주세요', showLoadingAnimation: false, showStaticImage: false, gap: 16, isFocused: true } },
         ],
     },
     WD_DIALOG_Basic: {
         Component: WD_DIALOG_Basic,
-        defaultProps: { titleText: '세탁 시작', descriptionText: '세탁 사이클을 시작할까요?', isFocused: true },
+        defaultProps: { titleText: '세탁 시작', descriptionText: '세탁 사이클을 시작할까요?', descriptionSize: 25, descriptionTextType: 'normal', iconType: 'none', isFocused: true },
         variants: [
-            { id: 'v1', description: 'Basic dialog', data: { titleText: '세탁 시작', descriptionText: '세탁 사이클을 시작할까요?', isFocused: true } },
-            { id: 'icon', description: 'With icon', data: { titleText: '오류 발생', descriptionText: '세탁을 일시정지합니다', iconType: 'normal', iconSource: '/ui/images/ic_error.png', isFocused: true } },
+            { id: 'v1', description: '기본 (제목+설명)', data: { titleText: '세탁 시작', descriptionText: '세탁 사이클을 시작할까요?', iconType: 'none', isFocused: true } },
+            { id: 'text-only', description: '텍스트만 (제목 없음)', data: { descriptionText: '잠시 후 다시 시도해 주세요', iconType: 'none', isFocused: true } },
+            { id: 'icon', description: '아이콘 포함 (경고)', data: { titleText: '오류 발생', descriptionText: '세탁을 일시정지합니다', iconType: 'normal', iconSource: '/ui/images/img_alert.png', isFocused: true } },
+            { id: 'large-font', description: '큰 글씨 (30px)', data: { descriptionText: '세탁 완료 세탁물을 꺼내 주세요', descriptionSize: 30, iconType: 'none', isFocused: true } },
         ],
     },
     WD_DIALOG_ChildLock: {
         Component: WD_DIALOG_ChildLock,
         defaultProps: { text: '소아안전 잠금 해제 중', isFocused: true },
-        variants: [{ id: 'unlock', description: 'Unlock screen', data: { text: '소아안전 잠금 해제 중', isFocused: true } }],
+        variants: [
+            { id: 'unlocking', description: '잠금 해제 중', data: { text: '소아안전 잠금 해제 중', isFocused: true } },
+            { id: 'locked', description: '잠금 활성 안내', data: { text: '소아안전 잠금이 설정되었습니다', isFocused: true } },
+            { id: 'guide', description: '잠금 해제 방법 안내', data: { text: '잠금 해제하려면 길게 누르세요', isFocused: true } },
+        ],
     },
     WD_DIALOG_QRCode: {
         Component: WD_DIALOG_QRCode,
-        defaultProps: { qrValue: 'https://lge.com', title: 'Scan QR', isFocused: true },
-        variants: [{ id: 'v1', description: 'QR code dialog', data: { qrValue: 'https://lge.com/thinq', title: 'Scan to connect', isFocused: true } }],
+        defaultProps: { titleText: '오류 안내', descriptionText: 'QR 코드를 스캔하여\n고객센터에 문의하세요', qrUrl: 'https://www.lge.com/', isFocused: true },
+        variants: [
+            { id: 'error', description: '오류 안내 QR', data: { titleText: '오류 안내', descriptionText: 'QR 코드를 스캔하여\n고객센터에 문의하세요', qrUrl: 'https://www.lge.com/', isFocused: true } },
+            { id: 'thinq', description: 'ThinQ 연결 QR', data: { titleText: 'ThinQ 연결', descriptionText: 'QR 코드를 스캔하여\nThinQ 앱에 연결하세요', qrUrl: 'https://www.lge.com/thinq', isFocused: true } },
+        ],
     },
     WD_DIALOG_TextOnly: {
         Component: WD_DIALOG_TextOnly,
-        defaultProps: { text: 'Text only dialog message.', isFocused: true },
-        variants: [{ id: 'v1', description: 'Text dialog', data: { text: 'Cycle paused.', isFocused: true } }],
+        defaultProps: { text: '잠시 후 다시 시도해 주세요', isFocused: true },
+        variants: [
+            { id: 'retry', description: '재시도 안내', data: { text: '잠시 후 다시 시도해 주세요', isFocused: true } },
+            { id: 'paused', description: '일시정지', data: { text: '세탁을 일시정지합니다', isFocused: true } },
+            { id: 'completed', description: '세탁 완료', data: { text: '세탁이 완료되었습니다 세탁물을 꺼내 주세요', isFocused: true } },
+            { id: 'error', description: '오류 안내', data: { text: '오류가 발생했습니다 A/S 센터에 문의하세요', isFocused: true } },
+        ],
     },
     WD_DIALOG_Unlock: {
         Component: WD_DIALOG_Unlock,
-        defaultProps: { isFocused: true },
-        variants: [{ id: 'v1', description: 'Unlock dialog', data: { isFocused: true } }],
+        defaultProps: { description: '소아안전 잠금 해제하려면\n길게 누르세요', isUnlocking: false, isFocused: true },
+        variants: [
+            { id: 'idle', description: '잠금 해제 대기', data: { description: '소아안전 잠금 해제하려면\n길게 누르세요', isUnlocking: false, isFocused: true } },
+            { id: 'unlocking', description: '잠금 해제 진행 중', data: { description: '소아안전 잠금 해제 중...', isUnlocking: true, isFocused: true } },
+        ],
     },
 
     // ── Washer/Pager ──────────────────────────────────────────────────────────
@@ -1015,11 +1122,13 @@ export const ComponentRegistry = {
     },
     WD_PROGRESS_Circle: {
         Component: WD_PROGRESS_Circle,
-        defaultProps: { progressPct: 65, descriptionText: '세탁 중', isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } },
+        defaultProps: { progressPct: 65, descriptionText: '세탁 중', showStillImage: true, infoImg: null, infoImgAnim: null, isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } },
         variants: [
-            { id: '65pct', description: '65%', data: { progressPct: 65, descriptionText: '세탁 중', isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
-            { id: '30pct', description: '30%', data: { progressPct: 30, descriptionText: '헹구 중', isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
-            { id: '100pct', description: '100%', data: { progressPct: 100, descriptionText: '완료', isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
+            { id: '65pct', description: '65% 세탁 중', data: { progressPct: 65, descriptionText: '세탁 중', showStillImage: true, infoImg: null, isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
+            { id: '30pct', description: '30% 헹굼 중', data: { progressPct: 30, descriptionText: '헹굼 중', showStillImage: true, infoImg: null, isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
+            { id: '100pct', description: '100% 완료', data: { progressPct: 100, descriptionText: '완료', showStillImage: true, infoImg: null, isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
+            { id: 'ai-icon', description: 'AI 아이콘 포함 50%', data: { progressPct: 50, descriptionText: 'AI 세탁 중', showStillImage: true, infoImg: '/ui/images/ic_ai.png', isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
+            { id: 'spinning', description: '탈수 중 80%', data: { progressPct: 80, descriptionText: '탈수 중', showStillImage: true, infoImg: null, isFocused: true, progressRingAnim: { CM_ANIM_Sequence: { path: '/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images', totalFrames: 10 }, duration: 1000 } } },
         ],
     },
     WD_PROGRESS_RemainTime: {
@@ -1027,24 +1136,30 @@ export const ComponentRegistry = {
         defaultProps: { remain_hour: 1, remain_min: 25 },
         variants: [
             { id: 'type1', description: 'Type 1: 시+분 (1hr 25min)', data: { remain_hour: 1, remain_min: 25 } },
-            { id: 'type2', description: 'Type 2: 시만 (2hr)',         data: { remain_hour: 2, remain_min: 0 } },
-            { id: 'type3', description: 'Type 3: 분만 (45min)',        data: { remain_hour: 0, remain_min: 45 } },
-            { id: 'type4', description: 'Type 4: 미정 (--hr --min)',   data: { remain_hour: -1, remain_min: -1 } },
-            { id: 'single-digit', description: '한 자리 (1hr 5min)',   data: { remain_hour: 1, remain_min: 5 } },
+            { id: 'type2', description: 'Type 2: 시만 (2hr)', data: { remain_hour: 2, remain_min: 0 } },
+            { id: 'type3', description: 'Type 3: 분만 (45min)', data: { remain_hour: 0, remain_min: 45 } },
+            { id: 'type4', description: 'Type 4: 미정 (--hr --min)', data: { remain_hour: -1, remain_min: -1 } },
+            { id: 'single-digit', description: '한 자리 (1hr 5min)', data: { remain_hour: 1, remain_min: 5 } },
         ],
     },
     WD_PROGRESS_SOTA: {
         Component: WD_PROGRESS_SOTA,
         defaultProps: { title: '업그레이드 중', progress: 45, theme: 'blue', isFocused: true },
         variants: [
-            { id: 'downloading', description: 'Downloading 45%', data: { title: '다운로드 중', progress: 45, theme: 'blue', isFocused: true } },
-            { id: 'installing', description: 'Installing 90%', data: { title: '설치 중', progress: 90, theme: 'orange', isFocused: true } },
+            { id: 'downloading', description: '다운로드 중 45% (세탁기)', data: { title: '다운로드 중', progress: 45, theme: 'blue', isFocused: true } },
+            { id: 'installing', description: '설치 중 90% (건조기)', data: { title: '설치 중', progress: 90, theme: 'orange', isFocused: true } },
+            { id: 'start', description: '시작 0%', data: { title: '업그레이드 준비 중', progress: 0, theme: 'blue', isFocused: true } },
+            { id: 'complete', description: '완료 100%', data: { title: '업그레이드 완료', progress: 100, theme: 'blue', isFocused: true } },
         ],
     },
     WD_PROGRESS_ValveCheck: {
         Component: WD_PROGRESS_ValveCheck,
-        defaultProps: { isFocused: true },
-        variants: [{ id: 'v1', description: 'Valve check', data: { isFocused: true } }],
+        defaultProps: { percent: 0, description: '급수 밸브를 점검하고 있습니다', theme: 'blue', isFocused: true },
+        variants: [
+            { id: 'washer-start', description: '세탁기 밸브 체크 시작', data: { percent: 0, description: '급수 밸브를 점검하고 있습니다', theme: 'blue', isFocused: true } },
+            { id: 'washer-mid', description: '세탁기 밸브 체크 50%', data: { percent: 50, description: '급수 밸브를 점검하고 있습니다', theme: 'blue', isFocused: true } },
+            { id: 'dryer', description: '건조기 밸브 체크', data: { percent: 30, description: '배수 밸브를 점검하고 있습니다', theme: 'orange', isFocused: true } },
+        ],
     },
 
     // ── Washer/Toast ──────────────────────────────────────────────────────────

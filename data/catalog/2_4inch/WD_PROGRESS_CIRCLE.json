@@ -1,11 +1,10 @@
 {
-    "name": "WD_PROGRESS_CIRCLE",
-    "type": "Widget",
-    "description": "Circular progress indicator with percentage display, center icon, and description text. Arc animates around circle showing progress (0-100%). Status icon shown in center. Used for cycle progress.",
-    "visualForm": "Circular arc progress ring → center status icon → description text below, percentage displayed",
+    "name": "WD_PROGRESS_Circle",
     "category": "Washer/Progress",
+    "type": "Widget",
     "descriptionKo": "원형 호 애니메이션으로 진행률(0~100%)을 표시하는 원형 진행 지시자입니다. 중앙에 상태 아이콘, 하단에 설명 텍스트를 배치하며, 세탁 주기 진행 화면에 사용됩니다.",
     "descriptionEn": "Circular progress indicator with percentage display, center icon, and description text. Arc animates around circle showing progress (0-100%). Status icon shown in center. Used for cycle progress.",
+    "visualForm": "Circular arc progress ring → center status icon → description text below, percentage displayed",
     "props": [
         "id",
         "progressPct",
@@ -43,5 +42,11 @@
         "isfocused",
         "onkey",
         "animation"
+    ],
+    "relatedScreens": [
+        "세탁중화면",
+        "헹굼중화면",
+        "탈수중화면",
+        "세탁완료화면"
     ]
 }
