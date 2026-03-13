@@ -1,4 +1,7 @@
 node_modules
-node_modules
 
 .next
+
+# Local env files (contains real server addresses — do not commit)
+.env.local
+.env.*.local

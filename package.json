@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev --port 3002",
     "build": "next build",
-    "start": "next start --port 3002"
+    "start": "next start --port 3002",
+    "chroma:ingest": "node scripts/ingest-components.js",
+    "chroma:ingest:one": "node scripts/ingest-components.js --no-recreate --name"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.10.9",
