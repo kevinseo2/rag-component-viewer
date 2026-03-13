@@ -1,12 +1,18 @@
 import { NextResponse } from 'next/server';
 
 const CHROMA_BASE_URL = process.env.CHROMA_BASE_URL || 'http://localhost:8000';
+const TENANT = process.env.CHROMA_TENANT || 'default_tenant';
+const DATABASE = process.env.CHROMA_DATABASE || 'default_database';
+const V2_PREFIX = `${CHROMA_BASE_URL}/api/v2/tenants/${TENANT}/databases/${DATABASE}`;
 
 export async function GET() {
     try {
-        const res = await fetch(`${CHROMA_BASE_URL}/api/v1/collections`, { next: { revalidate: 0 } });
+        const url = `${V2_PREFIX}/collections`;
+        const res = await fetch(url, { next: { revalidate: 0 } });
         if (!res.ok) {
-            return NextResponse.json({ error: `ChromaDB returned ${res.status}` }, { status: 502 });
+            const body = await res.text().catch(() => '');
+            console.error(`[chroma/collections] ${url} → ${res.status}: ${body}`);
+            return NextResponse.json({ error: `ChromaDB returned ${res.status}`, url, detail: body }, { status: 502 });
         }
         const list = await res.json();
         const collections = Array.isArray(list) ? list : [];
@@ -17,7 +23,7 @@ export async function GET() {
                 const name = col?.name ?? col?._name ?? 'unknown';
                 const metadata = col?.metadata ?? col?._metadata ?? {};
                 try {
-                    const countRes = await fetch(`${CHROMA_BASE_URL}/api/v1/collections/${encodeURIComponent(name)}/count`);
+                    const countRes = await fetch(`${V2_PREFIX}/collections/${encodeURIComponent(name)}/count`);
                     const count = countRes.ok ? await countRes.json() : 0;
                     return { name, count: typeof count === 'number' ? count : 0, metadata };
                 } catch {
@@ -28,6 +34,7 @@ export async function GET() {
 
         return NextResponse.json(enriched);
     } catch (e) {
-        return NextResponse.json({ error: e.message }, { status: 502 });
+        console.error(`[chroma/collections] fetch threw:`, e.message, '| CHROMA_BASE_URL =', CHROMA_BASE_URL);
+        return NextResponse.json({ error: e.message, url: `${V2_PREFIX}/collections` }, { status: 502 });
     }
 }

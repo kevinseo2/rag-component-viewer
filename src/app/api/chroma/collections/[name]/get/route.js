@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 
 const CHROMA_BASE_URL = process.env.CHROMA_BASE_URL || 'http://localhost:8000';
+const TENANT = process.env.CHROMA_TENANT || 'default_tenant';
+const DATABASE = process.env.CHROMA_DATABASE || 'default_database';
+const V2_PREFIX = `${CHROMA_BASE_URL}/api/v2/tenants/${TENANT}/databases/${DATABASE}`;
 
 export async function POST(request, { params }) {
     const { name } = await params;
@@ -28,7 +31,7 @@ export async function POST(request, { params }) {
 
     try {
         const res = await fetch(
-            `${CHROMA_BASE_URL}/api/v1/collections/${encodeURIComponent(name)}/get`,
+            `${V2_PREFIX}/collections/${encodeURIComponent(name)}/get`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

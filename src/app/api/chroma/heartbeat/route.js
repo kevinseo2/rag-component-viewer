@@ -4,7 +4,7 @@ const CHROMA_BASE_URL = process.env.CHROMA_BASE_URL || 'http://localhost:8000';
 
 export async function GET() {
     try {
-        const res = await fetch(`${CHROMA_BASE_URL}/api/v1/heartbeat`, { next: { revalidate: 0 } });
+        const res = await fetch(`${CHROMA_BASE_URL}/api/v2/heartbeat`, { next: { revalidate: 0 } });
         const data = await res.json();
         return NextResponse.json(data);
     } catch (e) {

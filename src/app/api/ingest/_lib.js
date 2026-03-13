@@ -12,6 +12,9 @@ export const WIDGETS_DIR   = path.join(process.cwd(), 'src', 'widgets', '2.4_inc
 export const REGISTRY_FILE = path.join(process.cwd(), 'src', 'registry', 'index.js');
 
 export const CHROMA_BASE_URL    = process.env.CHROMA_BASE_URL  || 'http://localhost:8000';
+export const CHROMA_TENANT      = process.env.CHROMA_TENANT    || 'default_tenant';
+export const CHROMA_DATABASE    = process.env.CHROMA_DATABASE  || 'default_database';
+export const CHROMA_V2_PREFIX   = `${process.env.CHROMA_BASE_URL || 'http://localhost:8000'}/api/v2/tenants/${process.env.CHROMA_TENANT || 'default_tenant'}/databases/${process.env.CHROMA_DATABASE || 'default_database'}`;
 export const OLLAMA_BASE_URL    = process.env.OLLAMA_BASE_URL  || 'http://localhost:11434';
 export const EMBEDDING_MODEL    = process.env.EMBEDDING_MODEL  || 'bge-m3';
 export const EMBEDDING_DIMENSION = 1024;
@@ -145,7 +148,7 @@ export async function embed(text) {
 
 /** ChromaDB 컬렉션 생성(없으면) */
 export async function ensureCollection(name, metadata) {
-    await fetch(`${CHROMA_BASE_URL}/api/v1/collections`, {
+    await fetch(`${CHROMA_V2_PREFIX}/collections`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, metadata, get_or_create: true }),
@@ -160,7 +163,7 @@ export async function chromaUpsert(collectionName, id, embedding, metadata, docu
         metadatas: [metadata],
         documents: [document],
     };
-    const res = await fetch(`${CHROMA_BASE_URL}/api/v1/collections/${collectionName}/upsert`, {
+    const res = await fetch(`${CHROMA_V2_PREFIX}/collections/${collectionName}/upsert`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
