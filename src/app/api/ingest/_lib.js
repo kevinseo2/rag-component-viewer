@@ -146,24 +146,45 @@ export async function embed(text) {
     return json.embeddings[0];
 }
 
-/** ChromaDB 컬렉션 생성(없으면) */
+// name → UUID 캐시 (프로세스 수명 동안 유지)
+const _collectionIdCache = {};
+
+/** ChromaDB 컬렉션 생성(없으면), UUID 반환 */
 export async function ensureCollection(name, metadata) {
-    await fetch(`${CHROMA_V2_PREFIX}/collections`, {
+    const res = await fetch(`${CHROMA_V2_PREFIX}/collections`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, metadata, get_or_create: true }),
     });
+    if (res.ok) {
+        const data = await res.json();
+        const id = data.id ?? data._id;
+        if (id) _collectionIdCache[name] = id;
+    }
+}
+
+/** collection name → UUID (캐시 → API 순으로 조회) */
+async function resolveCollectionId(name) {
+    if (_collectionIdCache[name]) return _collectionIdCache[name];
+    const res = await fetch(`${CHROMA_V2_PREFIX}/collections/${encodeURIComponent(name)}`);
+    if (!res.ok) throw new Error(`Cannot resolve collection UUID for "${name}": ${res.status}`);
+    const data = await res.json();
+    const id = data.id ?? data._id;
+    if (!id) throw new Error(`Collection "${name}" has no id field`);
+    _collectionIdCache[name] = id;
+    return id;
 }
 
 /** ChromaDB upsert */
 export async function chromaUpsert(collectionName, id, embedding, metadata, document) {
+    const collectionId = await resolveCollectionId(collectionName);
     const body = {
         ids: [id],
         embeddings: [embedding ?? Array(EMBEDDING_DIMENSION).fill(0)],
         metadatas: [metadata],
         documents: [document],
     };
-    const res = await fetch(`${CHROMA_V2_PREFIX}/collections/${collectionName}/upsert`, {
+    const res = await fetch(`${CHROMA_V2_PREFIX}/collections/${collectionId}/upsert`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
