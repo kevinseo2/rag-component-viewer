@@ -1,11 +1,10 @@
 {
-    "name": "CM_DISPLAY_BLACK",
-    "type": "Widget",
-    "description": "Simple full-black screen widget for screen-off state or transitions. Minimal component that renders black rectangle (310x240px). Used between screens or for power-saving display.",
-    "visualForm": "Solid black rectangle (310x240px), no content or interaction",
+    "name": "CM_DISPLAY_Black",
     "category": "General/Widget",
+    "type": "Widget",
     "descriptionKo": "화면 오프 상태나 화면 전환에 사용되는 전체 검정 화면 위젯입니다. 310x240px 크기의 검정 사각형을 렌더링하며, 절전 디스플레이나 화면 간 전환 용도로 사용됩니다.",
     "descriptionEn": "Simple full-black screen widget for screen-off state or transitions. Minimal component that renders black rectangle (310x240px). Used between screens or for power-saving display.",
+    "visualForm": "Solid black rectangle (310x240px), no content or interaction",
     "props": [
         "id",
         "style"
@@ -21,5 +20,9 @@
         "ui",
         "id",
         "style"
+    ],
+    "relatedScreens": [
+        "빈화면",
+        "전원오프화면"
     ]
 }

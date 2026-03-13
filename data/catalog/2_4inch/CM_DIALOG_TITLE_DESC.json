@@ -1,11 +1,10 @@
 {
-    "name": "CM_DIALOG_TITLE_DESC",
-    "type": "Widget",
-    "description": "Dialog with title bar at screen top and description in center region. Title displayed in fixed area (36px height) at top, description in center area (116px height starting at y=80px). No icon or buttons. Clean two-section layout.",
-    "visualForm": "Two text sections: title bar at very top (36px height), description centered below (starting y=80px, 116px height)",
+    "name": "CM_DIALOG_TitleDesc",
     "category": "Dialog/Popup",
+    "type": "Widget",
     "descriptionKo": "화면 상단 타이틀 바와 중앙 설명 영역으로 구성된 다이얼로그입니다. 타이틀 고정 영역(36px)과 설명 영역(y=80px, 116px)으로 이루어진 깔끔한 2섹션 레이아웃입니다.",
     "descriptionEn": "Dialog with title bar at screen top and description in center region. Title displayed in fixed area (36px height) at top, description in center area (116px height starting at y=80px). No icon or buttons. Clean two-section layout.",
+    "visualForm": "Two text sections: title bar at very top (36px height), description centered below (starting y=80px, 116px height)",
     "props": [
         "id",
         "title",
@@ -33,5 +32,8 @@
         "false",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "제목+설명 알림화면"
     ]
 }

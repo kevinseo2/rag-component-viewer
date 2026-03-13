@@ -1,11 +1,10 @@
 {
-    "name": "CM_LIST_REORDER",
-    "type": "Widget",
-    "description": "Vertical scrollable list with drag handles for reordering items. Enter key starts reorder mode, arrows move item, Enter confirms, Escape cancels. Each item shows label and drag handle icon (right side). Title bar with back arrow. Items 68px height, viewport 190px.",
-    "visualForm": "Title bar (50px) → scrollable list (190px) with items (68px): label text | drag handle icon on right, visual feedback during reorder",
+    "name": "CM_LIST_Reorder",
     "category": "List/Selection",
+    "type": "Widget",
     "descriptionKo": "드래그 핸들로 항목 순서를 변경할 수 있는 세로 스크롤 리스트입니다. Enter로 순서 변경 모드 시작, 방향키로 이동, Enter로 확인, Escape로 취소하는 흐름으로 동작합니다.",
     "descriptionEn": "Vertical scrollable list with drag handles for reordering items. Enter key starts reorder mode, arrows move item, Enter confirms, Escape cancels. Each item shows label and drag handle icon (right side). Title bar with back arrow. Items 68px height, viewport 190px.",
+    "visualForm": "Title bar (50px) → scrollable list (190px) with items (68px): label text | drag handle icon on right, visual feedback during reorder",
     "props": [
         "id",
         "title",
@@ -34,5 +33,8 @@
         "initialfocusindex",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "세로리스트 순서변경화면"
     ]
 }

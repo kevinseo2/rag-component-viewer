@@ -1,11 +1,10 @@
 {
-    "name": "CM_DIALOG_TEXT_ONLY",
-    "type": "Widget",
-    "description": "Minimal dialog showing only description text, no icon, title bar, or buttons. Text centered in specific vertical region (y=47px, height=145px). Simplest dialog variant for brief messages. Supports OK and BACK keyboard actions.",
-    "visualForm": "Description text only (25px font) centered in middle region of screen, no other UI elements",
+    "name": "CM_DIALOG_TextOnly",
     "category": "Dialog/Popup",
+    "type": "Widget",
     "descriptionKo": "설명 텍스트만 표시하는 최소 구성의 다이얼로그입니다. 아이콘, 타이틀, 버튼 없이 특정 세로 영역(y=47px, 높이 145px)에 텍스트를 중앙 정렬합니다. OK와 BACK 키를 지원합니다.",
     "descriptionEn": "Minimal dialog showing only description text, no icon, title bar, or buttons. Text centered in specific vertical region (y=47px, height=145px). Simplest dialog variant for brief messages. Supports OK and BACK keyboard actions.",
+    "visualForm": "Description text only (25px font) centered in middle region of screen, no other UI elements",
     "props": [
         "id",
         "description",
@@ -32,5 +31,8 @@
         "false",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "문자만있는 알림화면"
     ]
 }

@@ -1,11 +1,10 @@
 {
-    "name": "CM_LIST_SINGLE_SELECT",
-    "type": "Widget",
-    "description": "Vertical scrollable list with single selection (radio-style). Selected item shows blue checkmark icon. Items can be enabled/disabled (gray when disabled). Title bar with back arrow. Items 68px height, scrollable viewport 190px. Keyboard navigation and selection.",
-    "visualForm": "Title bar (50px) → scrollable list (190px) with items (68px): checkmark icon (if selected) | label text, disabled items shown in gray",
+    "name": "CM_LIST_SingleSelect",
     "category": "List/Selection",
+    "type": "Widget",
     "descriptionKo": "라디오 방식의 단일 선택 세로 스크롤 리스트입니다. 선택된 항목에 파란색 체크마크가 표시되며, 비활성화 항목은 회색으로 나타납니다. 타이틀 바와 함께 190px 뷰포트에서 68px 항목을 표시합니다.",
     "descriptionEn": "Vertical scrollable list with single selection (radio-style). Selected item shows blue checkmark icon. Items can be enabled/disabled (gray when disabled). Title bar with back arrow. Items 68px height, scrollable viewport 190px. Keyboard navigation and selection.",
+    "visualForm": "Title bar (50px) → scrollable list (190px) with items (68px): checkmark icon (if selected) | label text, disabled items shown in gray",
     "props": [
         "id",
         "title",
@@ -39,5 +38,8 @@
         "initialfocusindex",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "단일선택화면"
     ]
 }

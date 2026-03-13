@@ -1,11 +1,10 @@
 {
-    "name": "CM_LIST_SWITCH_LIST",
-    "type": "Widget",
-    "description": "Vertical scrollable list where each item has a toggle switch. Items show label and switch on right. Switches can be ON (0), OFF (1), or Hidden (2). Manages internal toggle states. Title bar with optional back arrow. Items 68px height, container 190px.",
-    "visualForm": "Title bar (optional) → scrollable list area (190px) with items (68px): label text | toggle switch on right side",
+    "name": "CM_LIST_SwitchList",
     "category": "List/Selection",
+    "type": "Widget",
     "descriptionKo": "각 항목에 토글 스위치가 달린 세로 스크롤 리스트입니다. 스위치는 ON(0)/OFF(1)/숨김(2) 상태를 지원하며 내부 상태를 관리합니다. 68px 항목과 190px 컨테이너를 사용합니다.",
     "descriptionEn": "Vertical scrollable list where each item has a toggle switch. Items show label and switch on right. Switches can be ON (0), OFF (1), or Hidden (2). Manages internal toggle states. Title bar with optional back arrow. Items 68px height, container 190px.",
+    "visualForm": "Title bar (optional) → scrollable list area (190px) with items (68px): label text | toggle switch on right side",
     "props": [
         "id",
         "title",
@@ -42,5 +41,8 @@
         "initialselectedindex",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "스위치리스트화면"
     ]
 }

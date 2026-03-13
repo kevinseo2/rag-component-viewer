@@ -1,11 +1,10 @@
 {
-    "name": "CM_DIALOG_ICON_TITLE_DESC",
-    "type": "Widget",
-    "description": "Dialog with icon, title, and description in vertical arrangement. Icon at top (62px), followed by title (30px), then description (25px) with 6px gap. All content centered. No buttons. Used for informational displays.",
-    "visualForm": "Vertically stacked centered content: icon (62x62px), title text (30px), description text (25px) with 6px spacing between title and description",
+    "name": "CM_DIALOG_IconTitleDesc",
     "category": "Dialog/Popup",
+    "type": "Widget",
     "descriptionKo": "아이콘, 타이틀, 설명을 세로 방향으로 배치한 다이얼로그입니다. 상단 아이콘(62px) → 타이틀(30px) → 설명(25px) 순으로 중앙 정렬되며, 버튼 없이 정보 표시 용도로 사용됩니다.",
     "descriptionEn": "Dialog with icon, title, and description in vertical arrangement. Icon at top (62px), followed by title (30px), then description (25px) with 6px gap. All content centered. No buttons. Used for informational displays.",
+    "visualForm": "Vertically stacked centered content: icon (62x62px), title text (30px), description text (25px) with 6px spacing between title and description",
     "props": [
         "id",
         "title",
@@ -30,5 +29,8 @@
         "description",
         "isfocused",
         "onkey"
+    ],
+    "relatedScreens": [
+        "아이콘+제목+설명 알림화면"
     ]
 }
