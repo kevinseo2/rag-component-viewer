@@ -17,9 +17,10 @@ import {
     EMBEDDING_MODEL,
     ensureCollection,
     ingestOne,
+    resolveCanonicalComponentName,
 } from '../ingest/_lib.js';
 
-export async function POST() {
+export async function POST(request) {
     // 카탈로그 파일 목록 수집
     let files;
     try {
@@ -46,7 +47,36 @@ export async function POST() {
     }
 
     // 컴포넌트 이름 목록 (파일명 → 대문자)
-    const names = files.map(f => f.replace('.json', '').toUpperCase());
+    const allNames = files.map(f => f.replace('.json', '').toUpperCase());
+
+    let selectedNames = null;
+    let hasExplicitSelection = false;
+    try {
+        const body = await request.json();
+        if (Array.isArray(body?.names)) {
+            hasExplicitSelection = true;
+            selectedNames = body.names
+                .map((n) => resolveCanonicalComponentName(n, null))
+                .filter((n) => allNames.includes(n));
+            selectedNames = [...new Set(selectedNames)];
+        }
+    } catch {
+        selectedNames = null;
+    }
+
+    const names = hasExplicitSelection ? (selectedNames || []) : allNames;
+
+    if (hasExplicitSelection && names.length === 0) {
+        return NextResponse.json({
+            ok: true,
+            total: 0,
+            succeeded: 0,
+            failed: 0,
+            failedList: [],
+            collections: [COL_DESCRIPTION, COL_CODE, COL_SAMPLES],
+            message: 'No selected components to ingest',
+        });
+    }
 
     const succeeded = [];
     const failed = [];

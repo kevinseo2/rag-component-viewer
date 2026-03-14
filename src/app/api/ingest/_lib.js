@@ -31,7 +31,7 @@ function normalizeNameForMatch(value) {
  * 입력 name/cataloData.name 과 매칭되는 카탈로그 파일명을 canonical component name으로 반환
  * 예: CM_LIST_HorizontalPager -> CM_LIST_HORIZONTAL_PAGER
  */
-function resolveCanonicalComponentName(name, catalogName) {
+export function resolveCanonicalComponentName(name, catalogName) {
     const candidates = [name, catalogName].filter(Boolean).map(normalizeNameForMatch);
     if (!fs.existsSync(CATALOG_DIR)) return String(name || catalogName || '').toUpperCase();
     const files = fs.readdirSync(CATALOG_DIR).filter(f => f.endsWith('.json'));
@@ -209,6 +209,22 @@ async function resolveCollectionId(name) {
     return id;
 }
 
+/** ChromaDB ids 삭제 */
+export async function chromaDeleteByIds(collectionName, ids) {
+    const collectionId = await resolveCollectionId(collectionName);
+    const body = { ids: Array.isArray(ids) ? ids : [ids] };
+    const res = await fetch(`${CHROMA_V2_PREFIX}/collections/${collectionId}/delete`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(30_000),
+    });
+    if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`ChromaDB delete failed (${collectionName}): ${res.status} ${text}`);
+    }
+}
+
 /** ChromaDB upsert */
 export async function chromaUpsert(collectionName, id, embedding, metadata, document) {
     const collectionId = await resolveCollectionId(collectionName);
@@ -338,4 +354,30 @@ export async function ingestOne(name, catalogData = null) {
     }
 
     return { ok: true, name };
+}
+
+/**
+ * 컴포넌트 1개의 description/code/samples 엔트리를 삭제
+ * @param {string} name 컴포넌트 이름 (registry/canonical 모두 허용)
+ * @returns {{ ok: boolean, name: string, canonicalName?: string, error?: string }}
+ */
+export async function deleteOne(name) {
+    const canonicalName = resolveCanonicalComponentName(name, null);
+    const ids = {
+        desc: `desc_${canonicalName}`,
+        code: `code_${canonicalName}`,
+        sample: `sample_${canonicalName}`,
+    };
+
+    try {
+        await Promise.all([
+            chromaDeleteByIds(COL_DESCRIPTION, ids.desc),
+            chromaDeleteByIds(COL_CODE, ids.code),
+            chromaDeleteByIds(COL_SAMPLES, ids.sample),
+        ]);
+    } catch (e) {
+        return { ok: false, name, canonicalName, error: `ChromaDB delete failed: ${e.message}` };
+    }
+
+    return { ok: true, name, canonicalName };
 }

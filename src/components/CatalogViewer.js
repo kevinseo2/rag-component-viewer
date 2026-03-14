@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { ComponentRegistry } from '../registry/index.js';
 import PropsEditor from './PropsEditor.js';
 
+const INGEST_SELECTION_STORAGE_KEY = 'catalogViewer.checkedForIngest.v1';
+
 // ─── Category helpers ─────────────────────────────────────────────────────────
 function getTopLevel(name) {
     if (name.startsWith('CM_')) return 'Common';
@@ -58,22 +60,38 @@ function LCDFrame({ children }) {
 }
 
 // ─── Left Panel List Item ─────────────────────────────────────────────────────
-function ListItem({ name, isSelected, onClick }) {
+function ListItem({ name, isSelected, isChecked, onClick, onToggleCheck }) {
     const match = name.match(/^([A-Z]+_[A-Z]+_?)(.+)$/);
     const prefix = match ? match[1] : '';
     const rest = match ? match[2] : name;
 
     return (
-        <button
-            onClick={onClick}
-            className={`w-full text-left px-3 py-1.5 rounded transition-colors text-[11px] font-mono whitespace-nowrap overflow-hidden text-ellipsis flex items-center
-                ${isSelected
-                    ? `bg-gray-200 text-black font-bold`
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 border-transparent'
-                }`}
+        <div
+            className={`w-full px-2 py-1 rounded transition-colors flex items-center gap-2
+                ${isSelected ? 'bg-gray-200' : 'hover:bg-gray-100'}`}
         >
-            <span className={`${isSelected ? 'text-gray-600' : 'text-gray-400'} font-normal`}>{prefix}</span>{rest}
-        </button>
+            <input
+                type="checkbox"
+                checked={!!isChecked}
+                onChange={(e) => {
+                    e.stopPropagation();
+                    onToggleCheck(name, e.target.checked);
+                }}
+                onClick={(e) => e.stopPropagation()}
+                className="w-3.5 h-3.5 accent-blue-600 cursor-pointer"
+                title="Ingest All 대상 선택"
+            />
+            <button
+                onClick={onClick}
+                className={`flex-1 text-left py-0.5 transition-colors text-[11px] font-mono whitespace-nowrap overflow-hidden text-ellipsis flex items-center
+                    ${isSelected
+                        ? 'text-black font-bold'
+                        : 'text-gray-600 hover:text-gray-900 border-transparent'
+                    }`}
+            >
+                <span className={`${isSelected ? 'text-gray-600' : 'text-gray-400'} font-normal`}>{prefix}</span>{rest}
+            </button>
+        </div>
     );
 }
 
@@ -93,19 +111,21 @@ function EmptyState() {
 }
 
 // ─── Down Catalog Editor ──────────────────────────────────────────────────────
-function CatalogEditor({ name, defaultPropsKeys }) {
+function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [], onIngested, onDeleted }) {
     const [draft, setDraft] = useState(null);
     const [saveStatus, setSaveStatus] = useState(null); // null | 'saving' | 'saved' | 'error'
     const [ingestStatus, setIngestStatus] = useState(null); // null | 'ingesting' | 'done' | 'error'
     const [showIngestAllModal, setShowIngestAllModal] = useState(false);
     const [ingestAllStatus, setIngestAllStatus] = useState(null); // null | 'ingesting' | 'done' | 'error'
     const [ingestAllResult, setIngestAllResult] = useState(null); // { total, succeeded, failed, failedList }
+    const [deleteStatus, setDeleteStatus] = useState(null); // null | 'deleting' | 'done' | 'error'
 
     // Load from API when component changes
     useEffect(() => {
-        if (!name) { setDraft(null); setSaveStatus(null); setIngestStatus(null); return; }
+        if (!name) { setDraft(null); setSaveStatus(null); setIngestStatus(null); setDeleteStatus(null); return; }
         setSaveStatus(null);
         setIngestStatus(null);
+        setDeleteStatus(null);
         fetch(`/api/catalog/${name}`)
             .then(r => r.ok ? r.json() : null)
             .then(data => {
@@ -171,6 +191,7 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                 body: JSON.stringify({ catalogData: finalDraft }),
             });
             setIngestStatus(res.ok ? 'done' : 'error');
+            if (res.ok) onIngested?.(name);
         } catch {
             setIngestStatus('error');
         }
@@ -181,7 +202,11 @@ function CatalogEditor({ name, defaultPropsKeys }) {
         setIngestAllStatus('ingesting');
         setIngestAllResult(null);
         try {
-            const res = await fetch('/api/ingest-all', { method: 'POST' });
+            const res = await fetch('/api/ingest-all', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ names: selectedNamesForIngestAll }),
+            });
             const json = await res.json();
             if (res.ok) {
                 setIngestAllResult(json);
@@ -191,6 +216,18 @@ function CatalogEditor({ name, defaultPropsKeys }) {
             }
         } catch {
             setIngestAllStatus('error');
+        }
+    };
+
+    const handleDelete = async () => {
+        if (!name) return;
+        setDeleteStatus('deleting');
+        try {
+            const res = await fetch(`/api/ingest/${name}`, { method: 'DELETE' });
+            setDeleteStatus(res.ok ? 'done' : 'error');
+            if (res.ok) onDeleted?.(name);
+        } catch {
+            setDeleteStatus('error');
         }
     };
 
@@ -205,6 +242,8 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                     {saveStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Save failed</span>}
                     {ingestStatus === 'done' && <span className="text-[10px] text-blue-600 font-semibold">↑ Ingested</span>}
                     {ingestStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Ingest failed</span>}
+                    {deleteStatus === 'done' && <span className="text-[10px] text-amber-700 font-semibold">🗑 Deleted</span>}
+                    {deleteStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Delete failed</span>}
                     {ingestAllStatus === 'ingesting' && <span className="text-[10px] text-purple-600 font-semibold animate-pulse">⏳ Ingesting all...</span>}
                     {ingestAllStatus === 'done' && ingestAllResult && (
                         <span className="text-[10px] text-purple-600 font-semibold">
@@ -215,21 +254,36 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                     {ingestAllStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Ingest all failed</span>}
                 </div>
                 <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-gray-500 font-mono">selected: {selectedNamesForIngestAll.length}</span>
                     {/* Ingest All 버튼 */}
                     <button
                         onClick={() => setShowIngestAllModal(true)}
-                        disabled={ingestAllStatus === 'ingesting'}
+                        disabled={ingestAllStatus === 'ingesting' || selectedNamesForIngestAll.length === 0}
                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white border ${
-                            ingestAllStatus === 'ingesting'
+                            ingestAllStatus === 'ingesting' || selectedNamesForIngestAll.length === 0
                                 ? 'bg-purple-300 border-purple-300 cursor-not-allowed'
                                 : 'bg-purple-600 border-purple-600 hover:bg-purple-700'
                         }`}
-                        title="모든 컴포넌트를 ChromaDB에 인제스트 (전체 3개 컬렉션)"
+                        title="체크된 컴포넌트만 ChromaDB에 인제스트 (3개 컬렉션)"
                     >
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                         Ingest All
+                    </button>
+                    {/* Delete 버튼 */}
+                    <button
+                        onClick={handleDelete}
+                        disabled={deleteStatus === 'deleting'}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
+                            deleteStatus === 'deleting' ? 'bg-amber-300 cursor-not-allowed' : 'bg-amber-600 hover:bg-amber-700'
+                        }`}
+                        title="현재 컴포넌트의 DB 엔트리(description/code/samples)를 삭제"
+                    >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 7h12M9 7V5h6v2m-8 0l1 12h8l1-12" />
+                        </svg>
+                        {deleteStatus === 'deleting' ? 'Deleting...' : 'Delete'}
                     </button>
                     {/* Ingest This 버튼 */}
                     <button
@@ -275,8 +329,8 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                             <div>
                                 <h2 className="text-sm font-bold text-gray-900 mb-1">전체 컬렉션 인제스트</h2>
                                 <p className="text-xs text-gray-600 leading-relaxed">
-                                    카탈로그 디렉토리의 <strong>모든 컴포넌트</strong>를 ChromaDB에 인제스트합니다.<br />
-                                    각 컴포넌트의 <strong>카탈로그(description), 코드(code), 샘플(samples)</strong> 3개 컬렉션이 모두 업데이트됩니다.<br /><br />
+                                    현재 체크된 <strong>{selectedNamesForIngestAll.length}개 컴포넌트</strong>만 ChromaDB에 인제스트합니다.<br />
+                                    각 컴포넌트의 <strong>카탈로그(description), 코드(code), 샘플(samples)</strong> 3개 컬렉션이 업데이트됩니다.<br /><br />
                                     컴포넌트 수에 따라 시간이 오래 걸릴 수 있습니다. 계속하시겠습니까?
                                 </p>
                             </div>
@@ -292,7 +346,7 @@ function CatalogEditor({ name, defaultPropsKeys }) {
                                 onClick={handleIngestAll}
                                 className="px-4 py-2 rounded text-xs text-white bg-purple-600 hover:bg-purple-700 transition-colors font-medium"
                             >
-                                확인 — 전체 인제스트
+                                확인 — 선택 항목 인제스트
                             </button>
                         </div>
                     </div>
@@ -374,6 +428,35 @@ export default function CatalogViewer() {
     const [liveProps, setLiveProps] = useState({});
     const [selectedVariant, setSelectedVariant] = useState(null);
     const [collapsedCats, setCollapsedCats] = useState({});
+    const [checkedForIngest, setCheckedForIngest] = useState(() => new Set(Object.keys(ComponentRegistry)));
+
+    // Restore persisted ingest selection on first load.
+    useEffect(() => {
+        try {
+            const raw = window.localStorage.getItem(INGEST_SELECTION_STORAGE_KEY);
+            if (!raw) return;
+            const parsed = JSON.parse(raw);
+            if (!Array.isArray(parsed)) return;
+
+            const valid = new Set(Object.keys(ComponentRegistry));
+            const restored = parsed.filter((name) => typeof name === 'string' && valid.has(name));
+            setCheckedForIngest(new Set(restored));
+        } catch {
+            // Ignore malformed localStorage payload.
+        }
+    }, []);
+
+    // Persist selection whenever it changes.
+    useEffect(() => {
+        try {
+            window.localStorage.setItem(
+                INGEST_SELECTION_STORAGE_KEY,
+                JSON.stringify(Array.from(checkedForIngest))
+            );
+        } catch {
+            // Ignore storage write failures (private mode, quota, etc).
+        }
+    }, [checkedForIngest]);
 
     // Prep components list
     const componentList = useMemo(() =>
@@ -419,6 +502,15 @@ export default function CatalogViewer() {
 
     const toggleCat = (key) => setCollapsedCats(p => ({ ...p, [key]: !p[key] }));
 
+    const handleToggleChecked = useCallback((name, checked) => {
+        setCheckedForIngest((prev) => {
+            const next = new Set(prev);
+            if (checked) next.add(name);
+            else next.delete(name);
+            return next;
+        });
+    }, []);
+
     const handleSelect = useCallback((name) => {
         setSelectedName(name);
         const reg = ComponentRegistry[name];
@@ -435,6 +527,24 @@ export default function CatalogViewer() {
         const v = reg.variants?.find(v => v.id === variantId);
         if (v) setLiveProps({ ...reg.defaultProps, ...v.data });
     }, [selectedName]);
+
+    const checkedNamesForIngestAll = useMemo(() => Object.keys(ComponentRegistry).filter((n) => checkedForIngest.has(n)), [checkedForIngest]);
+
+    const handleMarkedIngested = useCallback((name) => {
+        setCheckedForIngest((prev) => {
+            const next = new Set(prev);
+            next.add(name);
+            return next;
+        });
+    }, []);
+
+    const handleMarkedDeleted = useCallback((name) => {
+        setCheckedForIngest((prev) => {
+            const next = new Set(prev);
+            next.delete(name);
+            return next;
+        });
+    }, []);
 
 
 
@@ -537,7 +647,9 @@ export default function CatalogViewer() {
                                                             key={name} 
                                                             name={name} 
                                                             isSelected={name === selectedName} 
-                                                            onClick={() => handleSelect(name)} 
+                                                            isChecked={checkedForIngest.has(name)}
+                                                            onClick={() => handleSelect(name)}
+                                                            onToggleCheck={handleToggleChecked}
                                                         />
                                                     ))}
                                                 </div>
@@ -639,6 +751,9 @@ export default function CatalogViewer() {
                     <CatalogEditor 
                         name={selectedName} 
                         defaultPropsKeys={defaultPropsKeys}
+                        selectedNamesForIngestAll={checkedNamesForIngestAll}
+                        onIngested={handleMarkedIngested}
+                        onDeleted={handleMarkedDeleted}
                     />
                 </div>
             </div>
