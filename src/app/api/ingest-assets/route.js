@@ -1,4 +1,10 @@
 import { NextResponse } from 'next/server';
+import {
+    COL_ASSETS,
+    EMBEDDING_MODEL,
+    ensureCollection,
+    ingestAssetsFromIndex,
+} from './_lib.js';
 
 /**
  * POST /api/ingest-assets
@@ -9,17 +15,6 @@ import { NextResponse } from 'next/server';
  *   - assetIds: ["foo_bar", ...]
  */
 export async function POST(request) {
-    let ingestLib;
-    try {
-        const rawLib = await import('../ingest/_lib.js');
-        // Next runtime may wrap ESM exports under default depending on transpilation/interops.
-        ingestLib = typeof rawLib?.ingestAssetsFromIndex === 'function'
-            ? rawLib
-            : (rawLib?.default || rawLib);
-    } catch (e) {
-        return NextResponse.json({ error: `Failed to load ingest library: ${e.message}` }, { status: 500 });
-    }
-
     let options = null;
     try {
         const body = await request.json();
@@ -33,31 +28,23 @@ export async function POST(request) {
         options = null;
     }
 
-    if (typeof ingestLib?.ensureCollection !== 'function' || !ingestLib?.COL_ASSETS) {
-        return NextResponse.json({ error: 'ensureCollection/COL_ASSETS is not available from ingest/_lib.js' }, { status: 500 });
-    }
-
     try {
-        await ingestLib.ensureCollection(ingestLib.COL_ASSETS, {
+        await ensureCollection(COL_ASSETS, {
             description: 'UI image and image-sequence asset index',
-            model: ingestLib.EMBEDDING_MODEL,
+            model: EMBEDDING_MODEL,
         });
     } catch (e) {
         return NextResponse.json({ error: `ChromaDB collection setup failed: ${e.message}` }, { status: 502 });
     }
 
-    if (typeof ingestLib.ingestAssetsFromIndex !== 'function') {
-        return NextResponse.json({ error: 'ingestAssetsFromIndex is not available from ingest/_lib.js' }, { status: 500 });
-    }
-
-    const result = await ingestLib.ingestAssetsFromIndex(options);
+    const result = await ingestAssetsFromIndex(options);
     if (!result.ok) {
         return NextResponse.json({ error: result.error }, { status: 500 });
     }
 
     return NextResponse.json({
         ok: true,
-        collection: ingestLib.COL_ASSETS,
+        collection: COL_ASSETS,
         total: result.total,
         succeeded: result.succeeded,
         failed: result.failed,
