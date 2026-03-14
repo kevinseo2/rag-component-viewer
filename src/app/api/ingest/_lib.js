@@ -8,6 +8,7 @@ import path from 'path';
 
 // ─── 설정 ────────────────────────────────────────────────────────────────────
 export const CATALOG_DIR   = path.join(process.cwd(), 'data', 'catalog', '2_4inch');
+export const ASSET_INDEX_FILE = path.join(process.cwd(), 'data', 'catalog', 'asset_index.json');
 export const WIDGETS_DIR   = path.join(process.cwd(), 'src', 'widgets', '2.4_inches');
 export const REGISTRY_FILE = path.join(process.cwd(), 'src', 'registry', 'index.js');
 
@@ -22,6 +23,7 @@ export const EMBEDDING_DIMENSION = 1024;
 export const COL_DESCRIPTION = 'ui_components_description';
 export const COL_CODE        = 'ui_components_code';
 export const COL_SAMPLES     = 'ui_components_samples';
+export const COL_ASSETS      = 'ui_assets';
 
 function normalizeNameForMatch(value) {
     return String(value || '').replace(/_/g, '').toUpperCase();
@@ -172,6 +174,123 @@ export function buildSampleText(data, name, sampleSnippet, variants = []) {
     }).join('\n') : '  (없음)');
 
     return lines.join('\n');
+}
+
+function toStableAssetId(assetType, assetPath) {
+    const cleaned = String(assetPath || '').replace(/^\/+/, '').replace(/[^a-zA-Z0-9_./-]/g, '_');
+    return `asset_${assetType}_${cleaned.replace(/[/.]/g, '_')}`;
+}
+
+function buildAssetDocument(entry, indexMeta = {}) {
+    const tags = [];
+    if (entry.scope) tags.push(entry.scope);
+    if (entry.extension) tags.push(entry.extension.replace('.', ''));
+    if (entry.type === 'image_sequence') {
+        tags.push('sequence');
+        if (typeof entry.frameCount === 'number') tags.push(`frames:${entry.frameCount}`);
+    } else {
+        tags.push('image');
+    }
+
+    return [
+        `Asset Name: ${entry.name || ''}`,
+        `Asset Type: ${entry.type || ''}`,
+        `Path: ${entry.path || ''}`,
+        entry.scope ? `Scope: ${entry.scope}` : '',
+        entry.extension ? `Extension: ${entry.extension}` : '',
+        entry.namingPattern ? `Naming Pattern: ${entry.namingPattern}` : '',
+        typeof entry.frameCount === 'number' ? `Frame Count: ${entry.frameCount}` : '',
+        indexMeta.sourceRoot ? `Source Root: ${indexMeta.sourceRoot}` : '',
+        tags.length ? `Tags: ${tags.join(', ')}` : '',
+    ].filter(Boolean).join('\n');
+}
+
+/**
+ * asset_index.json을 ui_assets 컬렉션으로 인제스트
+ * @param {{types?: string[], limit?: number, paths?: string[], assetIds?: string[]}|null} options
+ */
+export async function ingestAssetsFromIndex(options = null) {
+    if (!fs.existsSync(ASSET_INDEX_FILE)) {
+        return { ok: false, error: `Asset index not found: ${ASSET_INDEX_FILE}` };
+    }
+
+    let index;
+    try {
+        index = JSON.parse(fs.readFileSync(ASSET_INDEX_FILE, 'utf-8'));
+    } catch (e) {
+        return { ok: false, error: `Asset index parse error: ${e.message}` };
+    }
+
+    const images = Array.isArray(index.images) ? index.images : [];
+    const sequences = Array.isArray(index.sequences) ? index.sequences : [];
+
+    const allowedTypes = Array.isArray(options?.types) && options.types.length > 0
+        ? new Set(options.types.map((t) => String(t).toLowerCase()))
+        : null;
+    const allowedPaths = Array.isArray(options?.paths) && options.paths.length > 0
+        ? new Set(options.paths.map((p) => String(p).trim()))
+        : null;
+    const allowedAssetIds = Array.isArray(options?.assetIds) && options.assetIds.length > 0
+        ? new Set(options.assetIds.map((id) => String(id).trim()))
+        : null;
+    const limit = Number.isInteger(options?.limit) && options.limit > 0 ? options.limit : null;
+
+    let entries = [
+        ...images.map((e) => ({ ...e, type: 'image' })),
+        ...sequences.map((e) => ({ ...e, type: 'image_sequence' })),
+    ];
+
+    if (allowedTypes) {
+        entries = entries.filter((e) => allowedTypes.has(String(e.type || '').toLowerCase()));
+    }
+    if (allowedPaths) {
+        entries = entries.filter((e) => allowedPaths.has(String(e.path || '')));
+    }
+    if (allowedAssetIds) {
+        entries = entries.filter((e) => allowedAssetIds.has(String(e.id || '')));
+    }
+    if (limit !== null) {
+        entries = entries.slice(0, limit);
+    }
+
+    const succeeded = [];
+    const failed = [];
+
+    for (const entry of entries) {
+        const assetType = entry.type === 'image_sequence' ? 'seq' : 'img';
+        const id = toStableAssetId(assetType, entry.path || entry.name || entry.id || 'unknown');
+        const doc = buildAssetDocument(entry, index);
+        try {
+            const embedding = await embed(doc);
+            await chromaUpsert(
+                COL_ASSETS,
+                id,
+                embedding,
+                {
+                    assetId: entry.id || '',
+                    assetName: entry.name || '',
+                    assetType: entry.type || '',
+                    path: entry.path || '',
+                    scope: entry.scope || '',
+                    extension: entry.extension || '',
+                    frameCount: typeof entry.frameCount === 'number' ? entry.frameCount : 0,
+                    namingPattern: entry.namingPattern || '',
+                },
+                doc
+            );
+            succeeded.push(entry.path || entry.name || id);
+        } catch (e) {
+            failed.push({ path: entry.path || entry.name || id, error: e.message });
+        }
+    }
+
+    return {
+        ok: true,
+        total: entries.length,
+        succeeded: succeeded.length,
+        failed: failed.length,
+        failedList: failed,
+    };
 }
 
 /** Ollama 단일 텍스트 임베딩 */

@@ -1,9 +1,9 @@
 {
-    "catalogVersion": "1.0.0",
-    "generatedDate": "2026-03-12",
+    "catalogVersion": "1.1.0",
+    "generatedDate": "2026-03-14",
     "totalComponents": 98,
     "directory": "ux-simulator-application-core/src/app/components/lcd/widgets/2.4/standard",
-    "ingestSchemaVersion": "1.0.0",
+    "ingestSchemaVersion": "1.1.0",
     "ingestSchema": {
         "requiredFields": [
             "name",
@@ -14,12 +14,18 @@
             "keywords",
             "props"
         ],
+        "optionalFields": [
+            "visualForm",
+            "relatedScreens",
+            "propNotes"
+        ],
         "rules": {
             "languagePriority": "Korean primary, English secondary",
             "descriptionKo": "2-4 sentences, scenario-focused, searchable Korean terms included",
             "descriptionEn": "1-3 concise sentences for bilingual retrieval",
             "keywords": "6-20 items, mixed KO/EN terms, include intent words",
             "props": "runtime props names only, no type annotations",
+            "propNotes": "Optional value-semantics mapping for enum/flag-like props. Format: { propName: \"0=off, 1=on\" }",
             "category": "Use stable taxonomy such as Dialog/Popup, List/Selection, Picker/Selection, Progress/Loading, Control/Input"
         }
     },
@@ -48,7 +54,10 @@
                 "btn2Text",
                 "isFocused",
                 "onKey"
-            ]
+            ],
+            "propNotes": {
+                "buttonCount": "1=Alert, 2=Confirm(기본)"
+            }
         },
         {
             "name": "CM_LIST_SINGLE_SELECT",
@@ -140,7 +149,10 @@
                 "theme_id",
                 "isFocused",
                 "onKey"
-            ]
+            ],
+            "propNotes": {
+                "theme_id": "1=Blue theme(기본), 2=Orange theme"
+            }
         }
     ]
 }
