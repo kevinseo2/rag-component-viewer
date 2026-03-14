@@ -216,6 +216,7 @@ export default function ChromaExplorer() {
     const [page, setPage]                   = useState(0);
     const [totalHint, setTotalHint]         = useState(0);
     const LIMIT = 50;
+    const SEARCH_SCAN_LIMIT = 10000;
     const searchRef = useRef();
 
     const showError = (msg) => {
@@ -249,10 +250,18 @@ export default function ChromaExplorer() {
         if (!colName) return;
         setLoading(true);
         try {
+            const q = query.trim();
+            const selectedCollection = collections.find(c => c.name === colName);
+            const isSearchMode = q.length > 0;
+
+            // Search must scan the full collection; page-sliced search misses many docs.
+            const effectiveLimit = isSearchMode ? SEARCH_SCAN_LIMIT : LIMIT;
+            const effectiveOffset = isSearchMode ? 0 : offset;
+
             const res = await fetch(`/api/chroma/collections/${encodeURIComponent(colName)}/get`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ include: ['metadatas', 'documents'], limit: LIMIT, offset }),
+                body: JSON.stringify({ include: ['metadatas', 'documents'], limit: effectiveLimit, offset: effectiveOffset }),
             });
             if (!res.ok) {
                 const err = await res.json();
@@ -264,12 +273,12 @@ export default function ChromaExplorer() {
             let documents  = data.documents || [];
 
             // Client-side filter
-            if (query.trim()) {
-                const q = query.toLowerCase();
+            if (isSearchMode) {
+                const qLower = q.toLowerCase();
                 const filtered = ids.reduce((acc, id, i) => {
                     const meta = JSON.stringify(metadatas[i] || {}).toLowerCase();
                     const doc  = (documents[i] || '').toLowerCase();
-                    if (id.toLowerCase().includes(q) || meta.includes(q) || doc.includes(q)) {
+                    if (id.toLowerCase().includes(qLower) || meta.includes(qLower) || doc.includes(qLower)) {
                         acc.push(i);
                     }
                     return acc;
@@ -280,7 +289,7 @@ export default function ChromaExplorer() {
             }
 
             setItems({ ids, metadatas, documents });
-            setTotalHint(collections.find(c => c.name === colName)?.count ?? ids.length);
+            setTotalHint(isSearchMode ? ids.length : (selectedCollection?.count ?? ids.length));
         } catch (e) {
             showError(`Failed to load: ${e.message}`);
         } finally {
@@ -305,12 +314,14 @@ export default function ChromaExplorer() {
     };
 
     const handlePageNext = () => {
+        if (searchQuery.trim()) return;
         const next = page + 1;
         setPage(next);
         loadItems(selectedCol, next * LIMIT, searchQuery);
     };
 
     const handlePagePrev = () => {
+        if (searchQuery.trim()) return;
         const prev = Math.max(0, page - 1);
         setPage(prev);
         loadItems(selectedCol, prev * LIMIT, searchQuery);
