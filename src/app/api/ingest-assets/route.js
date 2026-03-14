@@ -11,7 +11,11 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
     let ingestLib;
     try {
-        ingestLib = await import('../ingest/_lib.js');
+        const rawLib = await import('../ingest/_lib.js');
+        // Next runtime may wrap ESM exports under default depending on transpilation/interops.
+        ingestLib = typeof rawLib?.ingestAssetsFromIndex === 'function'
+            ? rawLib
+            : (rawLib?.default || rawLib);
     } catch (e) {
         return NextResponse.json({ error: `Failed to load ingest library: ${e.message}` }, { status: 500 });
     }
@@ -27,6 +31,10 @@ export async function POST(request) {
         };
     } catch {
         options = null;
+    }
+
+    if (typeof ingestLib?.ensureCollection !== 'function' || !ingestLib?.COL_ASSETS) {
+        return NextResponse.json({ error: 'ensureCollection/COL_ASSETS is not available from ingest/_lib.js' }, { status: 500 });
     }
 
     try {
