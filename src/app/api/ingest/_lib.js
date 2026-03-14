@@ -48,14 +48,29 @@ export function extractRegistryInfo(name) {
 
     const toRegistryKey = (n) => {
         const parts = n.split('_');
-        return parts.map((p, i) => {
-            if (i < 2) return p.toUpperCase();
-            return p.charAt(0).toUpperCase() + p.slice(1).toLowerCase();
-        }).join('_');
+        const prefix = parts.slice(0, 2).map(p => p.toUpperCase()).join('_');
+        const rest = parts.slice(2).map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join('');
+        return rest ? `${prefix}_${rest}` : prefix;
     };
 
-    for (const key of [name, toRegistryKey(name)]) {
-        const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const normalizeId = (s) => s.replace(/_/g, '').toLowerCase();
+    const findRegistryKey = (source, inputName, convertedKey) => {
+        for (const k of [inputName, convertedKey]) {
+            if (source.includes(`${k}:`)) return k;
+        }
+        // fallback: underscore/case-insensitive key scan
+        const normTarget = normalizeId(inputName);
+        const keyRe = /^\s{4}(\w+):\s*\{/gm;
+        let m;
+        while ((m = keyRe.exec(source)) !== null) {
+            if (normalizeId(m[1]) === normTarget) return m[1];
+        }
+        return null;
+    };
+
+    const resolvedKey = findRegistryKey(src, name, toRegistryKey(name));
+    if (resolvedKey) {
+        const escaped = resolvedKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         // defaultProps
         const dpRe = new RegExp(
@@ -67,7 +82,7 @@ export function extractRegistryInfo(name) {
         }
 
         // variants 배열 추출
-        const blockStart = src.indexOf(`${key}:`);
+        const blockStart = src.indexOf(`${resolvedKey}:`);
         if (blockStart !== -1) {
             const variantsPos = src.indexOf('variants: [', blockStart);
             if (variantsPos !== -1 && variantsPos < blockStart + 3000) {
@@ -79,15 +94,13 @@ export function extractRegistryInfo(name) {
                     pos++;
                 }
                 const varBlock = src.slice(arrStart, pos - 1);
-                const itemRe = /\{\s*id:\s*['"]([ ^'"]+)['"]\s*,\s*description:\s*['"]([ ^'"]+)['"]/g;
+                const itemRe = /\{\s*id:\s*['"]([^'"]+)['"]\s*,\s*description:\s*['"]([^'"]+)['"]/g;
                 let m;
                 while ((m = itemRe.exec(varBlock)) !== null) {
                     result.variants.push({ id: m[1], description: m[2] });
                 }
             }
         }
-
-        if (result.defaultPropsSnippet !== null || result.variants.length > 0) break;
     }
 
     if (result.defaultPropsSnippet === null) {
