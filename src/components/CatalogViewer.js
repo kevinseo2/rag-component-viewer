@@ -7,6 +7,26 @@ import PropsEditor from './PropsEditor.js';
 
 const INGEST_SELECTION_STORAGE_KEY = 'catalogViewer.checkedForIngest.v1';
 
+function getInitialCheckedForIngestSet() {
+    const allNames = Object.keys(ComponentRegistry);
+    const valid = new Set(allNames);
+
+    if (typeof window === 'undefined') {
+        return new Set(allNames);
+    }
+
+    try {
+        const raw = window.localStorage.getItem(INGEST_SELECTION_STORAGE_KEY);
+        if (!raw) return new Set(allNames);
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed)) return new Set(allNames);
+        const restored = parsed.filter((name) => typeof name === 'string' && valid.has(name));
+        return new Set(restored);
+    } catch {
+        return new Set(allNames);
+    }
+}
+
 // ─── Category helpers ─────────────────────────────────────────────────────────
 function getTopLevel(name) {
     if (name.startsWith('CM_')) return 'Common';
@@ -70,17 +90,6 @@ function ListItem({ name, isSelected, isChecked, onClick, onToggleCheck }) {
             className={`w-full px-2 py-1 rounded transition-colors flex items-center gap-2
                 ${isSelected ? 'bg-gray-200' : 'hover:bg-gray-100'}`}
         >
-            <input
-                type="checkbox"
-                checked={!!isChecked}
-                onChange={(e) => {
-                    e.stopPropagation();
-                    onToggleCheck(name, e.target.checked);
-                }}
-                onClick={(e) => e.stopPropagation()}
-                className="w-3.5 h-3.5 accent-blue-600 cursor-pointer"
-                title="Ingest All 대상 선택"
-            />
             <button
                 onClick={onClick}
                 className={`flex-1 text-left py-0.5 transition-colors text-[11px] font-mono whitespace-nowrap overflow-hidden text-ellipsis flex items-center
@@ -91,6 +100,17 @@ function ListItem({ name, isSelected, isChecked, onClick, onToggleCheck }) {
             >
                 <span className={`${isSelected ? 'text-gray-600' : 'text-gray-400'} font-normal`}>{prefix}</span>{rest}
             </button>
+            <input
+                type="checkbox"
+                checked={!!isChecked}
+                onChange={(e) => {
+                    e.stopPropagation();
+                    onToggleCheck(name, e.target.checked);
+                }}
+                onClick={(e) => e.stopPropagation()}
+                className="w-3.5 h-3.5 accent-gray-500 cursor-pointer opacity-80 hover:opacity-100"
+                title="Ingest All 대상 선택"
+            />
         </div>
     );
 }
@@ -240,10 +260,10 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
                     <span className="text-gray-900 font-mono text-[10px] bg-white px-2 py-0.5 rounded border border-gray-300 shadow-sm">{name}</span>
                     {saveStatus === 'saved' && <span className="text-[10px] text-green-600 font-semibold">✓ Saved</span>}
                     {saveStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Save failed</span>}
-                    {ingestStatus === 'done' && <span className="text-[10px] text-blue-600 font-semibold">↑ Ingested</span>}
-                    {ingestStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Ingest failed</span>}
-                    {deleteStatus === 'done' && <span className="text-[10px] text-amber-700 font-semibold">🗑 Deleted</span>}
-                    {deleteStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Delete failed</span>}
+                    {ingestStatus === 'done' && <span className="text-[10px] text-blue-600 font-semibold">↑ DB Updated</span>}
+                    {ingestStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ DB Update failed</span>}
+                    {deleteStatus === 'done' && <span className="text-[10px] text-amber-700 font-semibold">DB Entry Removed</span>}
+                    {deleteStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ DB Remove failed</span>}
                     {ingestAllStatus === 'ingesting' && <span className="text-[10px] text-purple-600 font-semibold animate-pulse">⏳ Ingesting all...</span>}
                     {ingestAllStatus === 'done' && ingestAllResult && (
                         <span className="text-[10px] text-purple-600 font-semibold">
@@ -251,7 +271,7 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
                             {ingestAllResult.failed > 0 && <span className="text-red-500 ml-1">{ingestAllResult.failed} failed</span>}
                         </span>
                     )}
-                    {ingestAllStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Ingest all failed</span>}
+                    {ingestAllStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Selected ingest failed</span>}
                 </div>
                 <div className="flex items-center gap-2">
                     <span className="text-[10px] text-gray-500 font-mono">selected: {selectedNamesForIngestAll.length}</span>
@@ -269,23 +289,23 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                        Ingest All
+                        Ingest Selected
                     </button>
-                    {/* Delete 버튼 */}
+                    {/* Remove DB Entry 버튼 */}
                     <button
                         onClick={handleDelete}
                         disabled={deleteStatus === 'deleting'}
                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
                             deleteStatus === 'deleting' ? 'bg-amber-300 cursor-not-allowed' : 'bg-amber-600 hover:bg-amber-700'
                         }`}
-                        title="현재 컴포넌트의 DB 엔트리(description/code/samples)를 삭제"
+                        title="현재 컴포넌트의 DB 엔트리(description/code/samples)만 제거"
                     >
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 7h12M9 7V5h6v2m-8 0l1 12h8l1-12" />
                         </svg>
-                        {deleteStatus === 'deleting' ? 'Deleting...' : 'Delete'}
+                        {deleteStatus === 'deleting' ? 'Removing...' : 'Remove DB Entry'}
                     </button>
-                    {/* Ingest This 버튼 */}
+                    {/* Ingest This to DB 버튼 */}
                     <button
                         onClick={handleIngest}
                         disabled={ingestStatus === 'ingesting'}
@@ -297,7 +317,7 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                         </svg>
-                        {ingestStatus === 'ingesting' ? 'Ingesting...' : 'Ingest This'}
+                        {ingestStatus === 'ingesting' ? 'Updating DB...' : 'Ingest This to DB'}
                     </button>
                     {/* Save 버튼 */}
                     <button 
@@ -428,23 +448,7 @@ export default function CatalogViewer() {
     const [liveProps, setLiveProps] = useState({});
     const [selectedVariant, setSelectedVariant] = useState(null);
     const [collapsedCats, setCollapsedCats] = useState({});
-    const [checkedForIngest, setCheckedForIngest] = useState(() => new Set(Object.keys(ComponentRegistry)));
-
-    // Restore persisted ingest selection on first load.
-    useEffect(() => {
-        try {
-            const raw = window.localStorage.getItem(INGEST_SELECTION_STORAGE_KEY);
-            if (!raw) return;
-            const parsed = JSON.parse(raw);
-            if (!Array.isArray(parsed)) return;
-
-            const valid = new Set(Object.keys(ComponentRegistry));
-            const restored = parsed.filter((name) => typeof name === 'string' && valid.has(name));
-            setCheckedForIngest(new Set(restored));
-        } catch {
-            // Ignore malformed localStorage payload.
-        }
-    }, []);
+    const [checkedForIngest, setCheckedForIngest] = useState(() => getInitialCheckedForIngestSet());
 
     // Persist selection whenever it changes.
     useEffect(() => {
@@ -529,6 +533,16 @@ export default function CatalogViewer() {
     }, [selectedName]);
 
     const checkedNamesForIngestAll = useMemo(() => Object.keys(ComponentRegistry).filter((n) => checkedForIngest.has(n)), [checkedForIngest]);
+    const totalComponentCount = componentList.length;
+    const checkedCount = checkedNamesForIngestAll.length;
+    const isAllChecked = checkedCount === totalComponentCount;
+
+    const handleToggleAllChecked = useCallback(() => {
+        setCheckedForIngest(() => {
+            if (isAllChecked) return new Set();
+            return new Set(Object.keys(ComponentRegistry));
+        });
+    }, [isAllChecked]);
 
     const handleMarkedIngested = useCallback((name) => {
         setCheckedForIngest((prev) => {
@@ -577,7 +591,16 @@ export default function CatalogViewer() {
                     <div className="flex items-start justify-between gap-2">
                         <div>
                             <h1 className="text-xs font-black text-black tracking-widest uppercase">UI Widget Catalog</h1>
-                            <p className="text-[10px] text-gray-500 mt-1 font-mono">{componentList.length} components</p>
+                            <div className="mt-1 flex items-center gap-2">
+                                <p className="text-[10px] text-gray-500 font-mono">{componentList.length} components</p>
+                                <button
+                                    onClick={handleToggleAllChecked}
+                                    className="text-[10px] px-2 py-0.5 rounded border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 bg-white"
+                                    title="체크박스 일괄 선택/해제"
+                                >
+                                    {isAllChecked ? 'Uncheck All' : 'Check All'}
+                                </button>
+                            </div>
                         </div>
                         <Link
                             href="/explorer"
