@@ -131,6 +131,8 @@ export function extractRegistryInfo(name) {
 /** 설명 임베딩용 텍스트 빌드 */
 export function buildDescriptionText(data, name) {
     const relatedScreens = Array.isArray(data.relatedScreens) ? data.relatedScreens : [];
+    const propNotes = data.propNotes && typeof data.propNotes === 'object' ? data.propNotes : {};
+    const propNotesLines = Object.entries(propNotes).map(([k, v]) => `  - ${k}: ${v}`);
     return [
         `Component: ${name}`,
         data.category ? `Category: ${data.category}` : '',
@@ -140,12 +142,14 @@ export function buildDescriptionText(data, name) {
         data.keywords?.length ? `Keywords: ${data.keywords.join(', ')}` : '',
         relatedScreens.length ? `Related Screens: ${relatedScreens.join(', ')}` : '',
         data.props?.length ? `Props: ${data.props.join(', ')}` : '',
+        propNotesLines.length ? `Prop Value Notes:\n${propNotesLines.join('\n')}` : '',
     ].filter(Boolean).join('\n');
 }
 
 /** 샘플 컬렉션용 텍스트 빌드 */
 export function buildSampleText(data, name, sampleSnippet, variants = []) {
     const props = Array.isArray(data.props) ? data.props : [];
+    const propNotes = data.propNotes && typeof data.propNotes === 'object' ? data.propNotes : {};
     const lines = [
         `Component: ${name}`,
         data.category ? `Category: ${data.category}` : '',
@@ -162,7 +166,10 @@ export function buildSampleText(data, name, sampleSnippet, variants = []) {
 
     lines.push('');
     lines.push('## Props');
-    lines.push(props.length ? props.map(p => `  - ${p}`).join('\n') : '  (없음)');
+    lines.push(props.length ? props.map(p => {
+        const note = propNotes[p];
+        return note ? `  - ${p}: ${note}` : `  - ${p}`;
+    }).join('\n') : '  (없음)');
 
     return lines.join('\n');
 }

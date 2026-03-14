@@ -41,5 +41,8 @@
         "reorderable",
         "ontoggle",
         "hasswitch"
-    ]
+    ],
+    "propNotes": {
+        "initialSelectedIndex": "0=Scroll list(기본), 3=Mid selection"
+    }
 }

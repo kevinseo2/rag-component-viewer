@@ -41,5 +41,8 @@
     "relatedScreens": [
         "요리모드화면",
         "조리모드화면"
-    ]
+    ],
+    "propNotes": {
+        "initialIndex": "0=First mode(기본), 2=Third mode"
+    }
 }

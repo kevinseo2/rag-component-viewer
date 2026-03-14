@@ -37,5 +37,8 @@
     ],
     "relatedScreens": [
         "아날로그시계화면"
-    ]
+    ],
+    "propNotes": {
+        "theme_id": "1=Blue theme(기본), 2=Orange theme"
+    }
 }

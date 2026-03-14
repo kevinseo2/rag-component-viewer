@@ -44,5 +44,8 @@
     ],
     "relatedScreens": [
         "스위치리스트화면"
-    ]
+    ],
+    "propNotes": {
+        "switchState": "2=Switch list(기본), 0=item"
+    }
 }

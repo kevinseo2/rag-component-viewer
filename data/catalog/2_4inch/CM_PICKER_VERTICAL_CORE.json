@@ -32,5 +32,8 @@
         "onchange",
         "selectedindex",
         "list"
-    ]
+    ],
+    "propNotes": {
+        "selectedIndex": "0=First item(기본), 2=Third item"
+    }
 }

@@ -27,5 +27,8 @@
         "items",
         "initialselectedindex",
         "onkey"
-    ]
+    ],
+    "propNotes": {
+        "initialSelectedIndex": "0=First item(기본), 3=Mid selection"
+    }
 }

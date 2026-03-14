@@ -46,5 +46,8 @@
     ],
     "relatedScreens": [
         "자동요리화면"
-    ]
+    ],
+    "propNotes": {
+        "currentPage": "0=First page(기본), 2=Third page"
+    }
 }

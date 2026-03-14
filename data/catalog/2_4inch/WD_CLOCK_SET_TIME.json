@@ -46,5 +46,9 @@
     ],
     "relatedScreens": [
         "시계시간설정화면"
-    ]
+    ],
+    "propNotes": {
+        "initialAmPm": "1=AM (Hour focus)(기본), 2=PM (Minute focus)",
+        "initialFocusState": "1=AM (Hour focus)(기본), 2=PM (Minute focus)"
+    }
 }

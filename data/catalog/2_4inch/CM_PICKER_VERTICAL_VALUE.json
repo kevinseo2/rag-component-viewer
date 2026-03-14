@@ -31,5 +31,8 @@
         "isfocused",
         "initialselectedindex",
         "animation"
-    ]
+    ],
+    "propNotes": {
+        "initialSelectedIndex": "1=Value picker, 3=Time picker"
+    }
 }

@@ -41,5 +41,8 @@
     "relatedScreens": [
         "아이콘+설명+버튼 알림화면 (1버튼",
         "2버튼)"
-    ]
+    ],
+    "propNotes": {
+        "buttonCount": "1=Alert (1 btn), 2=Confirm (2 btn)(기본)"
+    }
 }

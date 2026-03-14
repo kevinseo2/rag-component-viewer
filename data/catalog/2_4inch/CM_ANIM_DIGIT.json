@@ -30,5 +30,8 @@
         "delay",
         "classname",
         "style"
-    ]
+    ],
+    "propNotes": {
+        "direction": "-1=Value 3, Down, 0=Value 0, No anim, 1=Value 7, Up(기본)"
+    }
 }

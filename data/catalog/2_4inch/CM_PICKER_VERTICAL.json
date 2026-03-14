@@ -40,5 +40,8 @@
         "onkey",
         "isfocused",
         "initialselectedindex"
-    ]
+    ],
+    "propNotes": {
+        "initialSelectedIndex": "1=Semantic item styles, 2=Standard picker(기본)"
+    }
 }

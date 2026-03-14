@@ -41,5 +41,8 @@
         "onkey",
         "style",
         "list"
-    ]
+    ],
+    "propNotes": {
+        "initialSelectedIndex": "0=2개 항목(기본), 1=필수 포함 3개"
+    }
 }

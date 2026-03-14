@@ -46,5 +46,8 @@
         "classname",
         "isfocused",
         "onkey"
-    ]
+    ],
+    "propNotes": {
+        "descriptionSize": "25=기본값, 30=큰 글씨 (30px), 28=regular"
+    }
 }

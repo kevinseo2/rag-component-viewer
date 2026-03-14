@@ -60,5 +60,9 @@
         "예약시간표시화면",
         "상태깜빡임화면",
         "설명 텍스트 포함 진행중 화면"
-    ]
+    ],
+    "propNotes": {
+        "indicator_count": "3=건조기 (orange), 5=Washing 55%(기본)",
+        "indicator_current_idx": "1=Washing 55%(기본), 3=Rinsing 80%, 4=Spinning 95%"
+    }
 }

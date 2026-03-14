@@ -44,5 +44,8 @@
         "isfocused",
         "onkey",
         "animation"
-    ]
+    ],
+    "propNotes": {
+        "currentIndex": "0=Multi Select (Checkbox), 1=Single Select(기본)"
+    }
 }

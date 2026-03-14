@@ -37,5 +37,8 @@
     ],
     "relatedScreens": [
         "기본 페이저 컴포넌트"
-    ]
+    ],
+    "propNotes": {
+        "currentPage": "0=Page 1 of 3(기본), 1=Page 2 of 3, 2=Page 3 of 3"
+    }
 }

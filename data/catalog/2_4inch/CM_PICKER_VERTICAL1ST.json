@@ -38,5 +38,8 @@
         "titleshowalways",
         "initialindex",
         "isfocused"
-    ]
+    ],
+    "propNotes": {
+        "initialIndex": "0=No title(기본), 1=With title"
+    }
 }

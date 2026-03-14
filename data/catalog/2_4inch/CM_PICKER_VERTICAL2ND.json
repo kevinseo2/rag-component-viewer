@@ -39,5 +39,8 @@
     ],
     "relatedScreens": [
         "시간설정화면"
-    ]
+    ],
+    "propNotes": {
+        "initialSelectedIndex": "0=With mask, 2=Time (min)(기본)"
+    }
 }

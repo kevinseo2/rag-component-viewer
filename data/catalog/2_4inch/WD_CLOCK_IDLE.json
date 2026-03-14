@@ -38,5 +38,8 @@
     ],
     "relatedScreens": [
         "시간표시대기화면"
-    ]
+    ],
+    "propNotes": {
+        "ampm": "1=AM(기본), 2=PM"
+    }
 }
