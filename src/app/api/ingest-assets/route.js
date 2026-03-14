@@ -1,10 +1,5 @@
 import { NextResponse } from 'next/server';
-import {
-    COL_ASSETS,
-    EMBEDDING_MODEL,
-    ensureCollection,
-    ingestAssetsFromIndex,
-} from '../ingest/_lib.js';
+import * as ingestLib from '../ingest/_lib.js';
 
 /**
  * POST /api/ingest-assets
@@ -29,22 +24,26 @@ export async function POST(request) {
     }
 
     try {
-        await ensureCollection(COL_ASSETS, {
+        await ingestLib.ensureCollection(ingestLib.COL_ASSETS, {
             description: 'UI image and image-sequence asset index',
-            model: EMBEDDING_MODEL,
+            model: ingestLib.EMBEDDING_MODEL,
         });
     } catch (e) {
         return NextResponse.json({ error: `ChromaDB collection setup failed: ${e.message}` }, { status: 502 });
     }
 
-    const result = await ingestAssetsFromIndex(options);
+    if (typeof ingestLib.ingestAssetsFromIndex !== 'function') {
+        return NextResponse.json({ error: 'ingestAssetsFromIndex is not available from ingest/_lib.js' }, { status: 500 });
+    }
+
+    const result = await ingestLib.ingestAssetsFromIndex(options);
     if (!result.ok) {
         return NextResponse.json({ error: result.error }, { status: 500 });
     }
 
     return NextResponse.json({
         ok: true,
-        collection: COL_ASSETS,
+        collection: ingestLib.COL_ASSETS,
         total: result.total,
         succeeded: result.succeeded,
         failed: result.failed,
