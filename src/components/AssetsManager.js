@@ -284,7 +284,7 @@ export default function AssetsManager() {
                 <div className="px-4 py-4 border-b border-slate-800/90">
                     <div className="flex items-start justify-between gap-3">
                         <div>
-                            <h1 className="text-xs uppercase tracking-[0.24em] font-black text-slate-100">Asset Index Manager</h1>
+                            <h1 className="text-[11px] uppercase tracking-[0.22em] font-black text-slate-100">Asset Index Manager</h1>
                             <p className="text-[11px] text-slate-400 mt-1">
                                 {loading ? 'Loading asset index...' : `${filteredEntries.length} / ${allEntries.length} assets`}
                             </p>
@@ -331,7 +331,7 @@ export default function AssetsManager() {
                     {error ? <p className="text-[11px] text-rose-300">{error}</p> : null}
                 </div>
 
-                <div className="flex-1 overflow-y-auto p-2 space-y-2">
+                <div className="flex-1 overflow-y-auto p-2 space-y-1.5">
                     {filteredEntries.map((entry) => {
                         const checked = selectedPaths.has(entry.path);
                         const active = entry.key === activeKey;
@@ -339,28 +339,25 @@ export default function AssetsManager() {
                             <div
                                 key={entry.key}
                                 onClick={() => setActiveKey(entry.key)}
-                                className={`rounded-xl border px-3 py-3 cursor-pointer transition ${active ? 'border-cyan-500 bg-cyan-500/10' : 'border-slate-800 bg-slate-900/80 hover:bg-slate-800/90'}`}
+                                className={`rounded-lg border px-2.5 py-2 cursor-pointer transition ${active ? 'border-cyan-500 bg-cyan-500/10' : 'border-slate-800 bg-slate-900/80 hover:bg-slate-800/90'}`}
                             >
-                                <div className="flex items-start gap-3">
+                                <div className="flex items-center gap-2.5 min-w-0">
                                     <input
                                         type="checkbox"
                                         checked={checked}
                                         onChange={() => toggleSelect(entry.path)}
                                         onClick={(e) => e.stopPropagation()}
-                                        className="mt-0.5 accent-cyan-500"
+                                        className="accent-cyan-500"
                                     />
                                     <div className="min-w-0 flex-1">
-                                        <div className="flex items-center justify-between gap-2">
-                                            <p className="text-[12px] font-semibold text-slate-100 truncate">{entry.name}</p>
-                                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">{entry.type}</span>
-                                        </div>
-                                        <p className="text-[10px] text-slate-400 truncate mt-1">{entry.path}</p>
-                                        <div className="flex items-center gap-1 mt-2 flex-wrap">
-                                            {entry.scope ? <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">{entry.scope}</span> : null}
-                                            {typeof entry.frameCount === 'number' ? <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">frames {entry.frameCount}</span> : null}
-                                            {entry.extension ? <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700">{entry.extension}</span> : null}
-                                        </div>
+                                        <p className="text-[11px] text-slate-200 truncate">
+                                            <span className="font-semibold text-slate-100">{entry.name || '(unnamed)'}</span>
+                                            <span className="text-slate-500"> · {entry.path}</span>
+                                        </p>
                                     </div>
+                                    {entry.scope ? <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">{entry.scope}</span> : null}
+                                    {typeof entry.frameCount === 'number' ? <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">{entry.frameCount}f</span> : null}
+                                    <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">{entry.type === 'image_sequence' ? 'seq' : 'img'}</span>
                                 </div>
                             </div>
                         );
@@ -368,8 +365,8 @@ export default function AssetsManager() {
                 </div>
             </aside>
 
-            <main className={`flex-1 min-w-0 ${showRawJson ? 'grid grid-cols-[1.15fr_0.95fr]' : 'flex'} bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.08),_transparent_38%),linear-gradient(180deg,_#07111d,_#0a1220)]`}>
-                <section className="min-w-0 flex flex-col border-r border-slate-800/80">
+            <main className="flex-1 min-w-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.08),_transparent_38%),linear-gradient(180deg,_#07111d,_#0a1220)]">
+                <section className="min-w-0 h-full flex flex-col">
                     <div className="px-5 py-4 border-b border-slate-800/80 bg-slate-950/50">
                         <div className="flex items-start justify-between gap-3">
                             <div>
@@ -444,23 +441,23 @@ export default function AssetsManager() {
                                 spellCheck={false}
                             />
                         </div>
+
+                        {showRawJson ? (
+                            <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
+                                <div>
+                                    <h3 className="text-[13px] font-semibold text-slate-100">Full asset_index.json</h3>
+                                    <p className="text-[11px] text-slate-400 mt-1">파일 전체를 직접 편집하고 저장할 수 있습니다. 항목 단위 편집 후에도 이 뷰는 자동으로 동기화됩니다.</p>
+                                </div>
+                                <textarea
+                                    value={rawJsonText}
+                                    onChange={(e) => setRawJsonText(e.target.value)}
+                                    className="w-full min-h-[320px] rounded-xl border border-slate-800 bg-slate-950/90 text-slate-200 text-[12px] font-mono p-4 outline-none focus:border-cyan-500"
+                                    spellCheck={false}
+                                />
+                            </div>
+                        ) : null}
                     </div>
                 </section>
-
-                {showRawJson ? <section className="min-w-0 flex flex-col">
-                    <div className="px-5 py-4 border-b border-slate-800/80 bg-slate-950/50">
-                        <h2 className="text-sm font-semibold text-slate-100">Full asset_index.json</h2>
-                        <p className="text-[11px] text-slate-400 mt-1">파일 전체를 직접 편집하고 저장할 수 있습니다. 항목 단위 편집 후에도 이 뷰는 자동으로 동기화됩니다.</p>
-                    </div>
-                    <div className="flex-1 p-5 overflow-hidden">
-                        <textarea
-                            value={rawJsonText}
-                            onChange={(e) => setRawJsonText(e.target.value)}
-                            className="w-full h-full rounded-2xl border border-slate-800 bg-slate-950/90 text-slate-200 text-[12px] font-mono p-4 outline-none focus:border-cyan-500"
-                            spellCheck={false}
-                        />
-                    </div>
-                </section> : null}
             </main>
         </div>
     );

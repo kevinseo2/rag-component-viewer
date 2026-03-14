@@ -590,7 +590,7 @@ export default function CatalogViewer() {
                 <div className="px-5 py-4 border-b border-gray-200">
                     <div className="flex items-start justify-between gap-2">
                         <div>
-                            <h1 className="text-xs font-black text-black tracking-widest uppercase">UI Widget Catalog</h1>
+                            <h1 className="text-[11px] font-black text-black tracking-[0.22em] uppercase">UI Widget Catalog</h1>
                             <div className="mt-1 flex items-center gap-2">
                                 <p className="text-[10px] text-gray-500 font-mono">{componentList.length} components</p>
                                 <button
@@ -602,7 +602,7 @@ export default function CatalogViewer() {
                                 </button>
                             </div>
                         </div>
-                        <div className="shrink-0 flex items-center gap-1 rounded-md border border-gray-200 bg-white p-1">
+                        <div className="shrink-0 flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1">
                             <Link href="/catalog" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-800 bg-gray-100 border border-gray-200">Catalog</Link>
                             <Link href="/explorer" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">DB</Link>
                             <Link href="/assets" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">Assets</Link>
