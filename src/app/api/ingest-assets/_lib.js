@@ -101,6 +101,21 @@ export async function chromaUpsert(collectionName, id, embedding, metadata, docu
     }
 }
 
+export async function chromaDeleteByIds(collectionName, ids) {
+    const collectionId = await resolveCollectionId(collectionName);
+    const body = { ids };
+    const res = await fetch(`${CHROMA_V2_PREFIX}/collections/${collectionId}/delete`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(30_000),
+    });
+    if (!res.ok) {
+        const text = await res.text().catch(() => '');
+        throw new Error(`ChromaDB delete failed (${collectionName}): ${res.status} ${text}`);
+    }
+}
+
 /**
  * asset_index.json을 ui_assets 컬렉션으로 인제스트
  * @param {{types?: string[], limit?: number, paths?: string[], assetIds?: string[]}|null} options
@@ -179,4 +194,68 @@ export async function ingestAssetsFromIndex(options = null) {
         failed: failed.length,
         failedList: failed,
     };
+}
+
+/**
+ * asset_index.json 기준으로 ui_assets 컬렉션 엔트리 삭제
+ * @param {{types?: string[], limit?: number, paths?: string[], assetIds?: string[]}|null} options
+ */
+export async function deleteAssetsFromIndex(options = null) {
+    if (!fs.existsSync(ASSET_INDEX_FILE)) {
+        return { ok: false, error: `Asset index not found: ${ASSET_INDEX_FILE}` };
+    }
+
+    let index;
+    try {
+        index = JSON.parse(fs.readFileSync(ASSET_INDEX_FILE, 'utf-8'));
+    } catch (e) {
+        return { ok: false, error: `Asset index parse error: ${e.message}` };
+    }
+
+    const images = Array.isArray(index.images) ? index.images : [];
+    const sequences = Array.isArray(index.sequences) ? index.sequences : [];
+
+    const allowedTypes = Array.isArray(options?.types) && options.types.length > 0
+        ? new Set(options.types.map((t) => String(t).toLowerCase()))
+        : null;
+    const allowedPaths = Array.isArray(options?.paths) && options.paths.length > 0
+        ? new Set(options.paths.map((p) => String(p).trim()))
+        : null;
+    const allowedAssetIds = Array.isArray(options?.assetIds) && options.assetIds.length > 0
+        ? new Set(options.assetIds.map((id) => String(id).trim()))
+        : null;
+    const limit = Number.isInteger(options?.limit) && options.limit > 0 ? options.limit : null;
+
+    let entries = [
+        ...images.map((e) => ({ ...e, type: 'image' })),
+        ...sequences.map((e) => ({ ...e, type: 'image_sequence' })),
+    ];
+
+    if (allowedTypes) entries = entries.filter((e) => allowedTypes.has(String(e.type || '').toLowerCase()));
+    if (allowedPaths) entries = entries.filter((e) => allowedPaths.has(String(e.path || '')));
+    if (allowedAssetIds) entries = entries.filter((e) => allowedAssetIds.has(String(e.id || '')));
+    if (limit !== null) entries = entries.slice(0, limit);
+
+    const ids = entries.map((entry) => {
+        const assetType = entry.type === 'image_sequence' ? 'seq' : 'img';
+        return toStableAssetId(assetType, entry.path || entry.name || entry.id || 'unknown');
+    });
+
+    if (ids.length === 0) {
+        return { ok: true, total: 0, deleted: 0, failed: 0, failedList: [] };
+    }
+
+    try {
+        await chromaDeleteByIds(COL_ASSETS, ids);
+        return { ok: true, total: ids.length, deleted: ids.length, failed: 0, failedList: [] };
+    } catch (e) {
+        return {
+            ok: false,
+            error: e.message,
+            total: ids.length,
+            deleted: 0,
+            failed: ids.length,
+            failedList: ids,
+        };
+    }
 }

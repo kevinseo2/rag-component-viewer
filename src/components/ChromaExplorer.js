@@ -330,33 +330,41 @@ export default function ChromaExplorer() {
     const itemCount = items?.ids?.length ?? 0;
 
     return (
-        <div className="flex h-screen overflow-hidden text-slate-200" style={{ background: '#1a1b1e', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        <div className="h-screen overflow-hidden text-slate-200 flex flex-col" style={{ background: '#1a1b1e', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <header className="h-12 px-4 border-b border-white/10 bg-[#0f1012] flex items-center justify-between gap-3 flex-shrink-0">
+                <div className="min-w-0">
+                    <h1 className="text-[11px] font-black text-slate-100 tracking-[0.22em] uppercase">ChromaDB Explorer</h1>
+                    <p className="text-[10px] text-slate-500 font-mono">{selectedCol || 'No collection selected'}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={connect}
+                        disabled={connecting}
+                        className="text-[11px] px-2.5 py-1 rounded border border-white/15 bg-white/5 text-slate-300 hover:bg-white/10 disabled:opacity-50"
+                        title="DB 상태 새로고침"
+                    >
+                        Refresh DB
+                    </button>
+                    <div className="shrink-0 flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 p-1 ml-1">
+                        <Link href="/catalog" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-white/10">Catalog</Link>
+                        <Link href="/assets" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-white/10">Asset</Link>
+                        <Link href="/explorer" className="text-[10px] px-2 py-1 rounded text-slate-100 bg-white/10 border border-white/15">DB</Link>
+                    </div>
+                </div>
+            </header>
+
+            <div className="flex flex-1 min-h-0">
 
             {/* ── LEFT SIDEBAR ── */}
             <aside className="w-72 flex-shrink-0 flex flex-col border-r border-white/10" style={{ background: '#0f1012' }}>
                 {/* Header */}
-                <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between">
+                <div className="px-5 py-4 border-b border-white/10">
                     <div>
                         <div className="flex items-center gap-2 mb-2">
-                            <h1 className="text-[11px] font-black text-slate-100 tracking-widest uppercase">ChromaDB Explorer</h1>
-                        </div>
-                        <div className="flex items-center gap-2 mb-2 rounded-md border border-white/10 bg-white/5 p-1 w-fit">
-                            <Link href="/catalog" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-white/10">Catalog</Link>
-                            <Link href="/explorer" className="text-[10px] px-2 py-1 rounded text-cyan-300 bg-cyan-500/15 border border-cyan-400/30">DB</Link>
-                            <Link href="/assets" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-white/10">Assets</Link>
+                            <h2 className="text-[11px] font-black text-slate-100 tracking-[0.16em] uppercase">Collections</h2>
                         </div>
                         <StatusBadge connected={connected} />
                     </div>
-                    <button
-                        onClick={connect}
-                        disabled={connecting}
-                        className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-white/10 transition-all"
-                        title="Refresh"
-                    >
-                        <svg className={`w-4 h-4 ${connecting ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                    </button>
                 </div>
 
                 {/* Collections list */}
@@ -497,6 +505,7 @@ export default function ChromaExplorer() {
                     </>
                 )}
             </main>
+            </div>
         </div>
     );
 }

@@ -246,6 +246,32 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
         }
     };
 
+    useEffect(() => {
+        const onToolbarAction = (event) => {
+            const action = event?.detail;
+            if (action === 'save') {
+                handleSave();
+                return;
+            }
+            if (action === 'ingest-current') {
+                handleIngest();
+                return;
+            }
+            if (action === 'delete-current') {
+                handleDelete();
+                return;
+            }
+            if (action === 'ingest-selected-all') {
+                if (selectedNamesForIngestAll.length > 0) {
+                    setShowIngestAllModal(true);
+                }
+            }
+        };
+
+        window.addEventListener('catalog-toolbar-action', onToolbarAction);
+        return () => window.removeEventListener('catalog-toolbar-action', onToolbarAction);
+    }, [selectedNamesForIngestAll.length, handleDelete, handleIngest, handleSave]);
+
     return (
         <div className="flex h-full bg-white flex-col text-sm border-t border-gray-200">
             {/* Header */}
@@ -268,67 +294,7 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
                     )}
                     {ingestAllStatus === 'error' && <span className="text-[10px] text-red-500 font-semibold">✕ Selected ingest failed</span>}
                 </div>
-                <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-gray-500 font-mono">selected: {selectedNamesForIngestAll.length}</span>
-                    {/* Ingest All 버튼 */}
-                    <button
-                        onClick={() => setShowIngestAllModal(true)}
-                        disabled={ingestAllStatus === 'ingesting' || selectedNamesForIngestAll.length === 0}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white border ${
-                            ingestAllStatus === 'ingesting' || selectedNamesForIngestAll.length === 0
-                                ? 'bg-purple-300 border-purple-300 cursor-not-allowed'
-                                : 'bg-purple-600 border-purple-600 hover:bg-purple-700'
-                        }`}
-                        title="체크된 컴포넌트만 ChromaDB에 인제스트 (3개 컬렉션)"
-                    >
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                        Ingest Selected
-                    </button>
-                    {/* Remove DB Entry 버튼 */}
-                    <button
-                        onClick={handleDelete}
-                        disabled={deleteStatus === 'deleting'}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
-                            deleteStatus === 'deleting' ? 'bg-amber-300 cursor-not-allowed' : 'bg-amber-600 hover:bg-amber-700'
-                        }`}
-                        title="현재 컴포넌트의 DB 엔트리(description/code/samples)만 제거"
-                    >
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 7h12M9 7V5h6v2m-8 0l1 12h8l1-12" />
-                        </svg>
-                        {deleteStatus === 'deleting' ? 'Removing...' : 'Remove DB Entry'}
-                    </button>
-                    {/* Ingest This to DB 버튼 */}
-                    <button
-                        onClick={handleIngest}
-                        disabled={ingestStatus === 'ingesting'}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
-                            ingestStatus === 'ingesting' ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
-                        }`}
-                        title="현재 컴포넌트만 ChromaDB에 인제스트 (카탈로그, 코드, 샘플 — 3개 컬렉션)"
-                    >
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                        </svg>
-                        {ingestStatus === 'ingesting' ? 'Updating DB...' : 'Ingest This to DB'}
-                    </button>
-                    {/* Save 버튼 */}
-                    <button 
-                        onClick={handleSave}
-                        disabled={saveStatus === 'saving'}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs transition-colors text-white ${
-                            saveStatus === 'saving' ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-black'
-                        }`}
-                        title="카탈로그 데이터를 JSON 파일로 저장 (ChromaDB 인제스트 없음)"
-                    >
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
-                        </svg>
-                        {saveStatus === 'saving' ? 'Saving...' : 'Save'}
-                    </button>
-                </div>
+                <div className="text-[10px] text-gray-500 font-mono">selected: {selectedNamesForIngestAll.length}</div>
             </div>
 
             {/* Ingest All 확인 모달 */}
@@ -537,12 +503,17 @@ export default function CatalogViewer() {
     const checkedCount = checkedNamesForIngestAll.length;
     const isAllChecked = checkedCount === totalComponentCount;
 
-    const handleToggleAllChecked = useCallback(() => {
-        setCheckedForIngest(() => {
-            if (isAllChecked) return new Set();
-            return new Set(Object.keys(ComponentRegistry));
-        });
-    }, [isAllChecked]);
+    const handleSelectAllChecked = useCallback(() => {
+        setCheckedForIngest(new Set(Object.keys(ComponentRegistry)));
+    }, []);
+
+    const handleClearAllChecked = useCallback(() => {
+        setCheckedForIngest(new Set());
+    }, []);
+
+    const emitCatalogToolbarAction = useCallback((action) => {
+        window.dispatchEvent(new CustomEvent('catalog-toolbar-action', { detail: action }));
+    }, []);
 
     const handleMarkedIngested = useCallback((name) => {
         setCheckedForIngest((prev) => {
@@ -580,34 +551,62 @@ export default function CatalogViewer() {
     }, [selectedName]);
 
     return (
-        <div className="flex h-screen overflow-hidden bg-white text-gray-900" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        <div className="h-screen overflow-hidden bg-white text-gray-900 flex flex-col" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <header className="h-12 px-4 border-b border-gray-200 bg-gray-50 flex items-center justify-between gap-3 flex-shrink-0">
+                <div className="min-w-0">
+                    <h1 className="text-[11px] font-black text-black tracking-[0.22em] uppercase">UI Widget Catalog</h1>
+                    <p className="text-[10px] text-gray-500 font-mono">{componentList.length} components · {checkedCount} checked</p>
+                </div>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={() => emitCatalogToolbarAction('save')}
+                        disabled={!selectedName}
+                        className="text-[11px] px-2.5 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+                        title="현재 카탈로그 항목 JSON 저장"
+                    >
+                        Save Catalog
+                    </button>
+                    <button
+                        onClick={() => emitCatalogToolbarAction('ingest-current')}
+                        disabled={!selectedName}
+                        className="text-[11px] px-2.5 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+                        title="현재 항목을 DB에 저장"
+                    >
+                        Save To DB
+                    </button>
+                    <button
+                        onClick={() => emitCatalogToolbarAction('delete-current')}
+                        disabled={!selectedName}
+                        className="text-[11px] px-2.5 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+                        title="현재 항목을 DB에서 삭제"
+                    >
+                        Delete From DB
+                    </button>
+                    <button
+                        onClick={() => emitCatalogToolbarAction('ingest-selected-all')}
+                        disabled={checkedCount === 0}
+                        className="text-[11px] px-2.5 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 disabled:opacity-50"
+                        title="체크한 모든 항목을 DB에 저장"
+                    >
+                        Save Checked To DB
+                    </button>
+                    <div className="shrink-0 flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1 ml-1">
+                        <Link href="/catalog" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-800 bg-gray-100 border border-gray-200">Catalog</Link>
+                        <Link href="/assets" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">Asset</Link>
+                        <Link href="/explorer" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">DB</Link>
+                    </div>
+                </div>
+            </header>
+
+            <div className="flex flex-1 min-h-0">
 
             {/* ═══════════════════════════════════════════════════════════
                 LEFT PANEL  –  Tree View Browser
             ══════════════════════════════════════════════════════════════ */}
             <aside className="w-72 flex-shrink-0 bg-gray-50 border-r border-gray-200 flex flex-col z-20">
                 {/* App header */}
-                <div className="px-5 py-4 border-b border-gray-200">
-                    <div className="flex items-start justify-between gap-2">
-                        <div>
-                            <h1 className="text-[11px] font-black text-black tracking-[0.22em] uppercase">UI Widget Catalog</h1>
-                            <div className="mt-1 flex items-center gap-2">
-                                <p className="text-[10px] text-gray-500 font-mono">{componentList.length} components</p>
-                                <button
-                                    onClick={handleToggleAllChecked}
-                                    className="text-[10px] px-2 py-0.5 rounded border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 bg-white"
-                                    title="체크박스 일괄 선택/해제"
-                                >
-                                    {isAllChecked ? 'Uncheck All' : 'Check All'}
-                                </button>
-                            </div>
-                        </div>
-                        <div className="shrink-0 flex items-center gap-1 rounded-lg border border-gray-200 bg-white p-1">
-                            <Link href="/catalog" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-800 bg-gray-100 border border-gray-200">Catalog</Link>
-                            <Link href="/explorer" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">DB</Link>
-                            <Link href="/assets" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">Assets</Link>
-                        </div>
-                    </div>
+                <div className="px-5 py-3 border-b border-gray-200 bg-gray-100">
+                    <p className="text-[10px] text-gray-600 font-mono">Widget Tree</p>
                 </div>
 
                 {/* Search */}
@@ -630,6 +629,27 @@ export default function CatalogViewer() {
                                 </svg>
                             </button>
                         )}
+                    </div>
+                    <div className="mt-2 flex items-center justify-between">
+                        <p className="text-[10px] text-gray-500 font-mono">Checked {checkedCount}/{totalComponentCount}</p>
+                        <div className="flex items-center gap-1">
+                            <button
+                                onClick={handleSelectAllChecked}
+                                disabled={isAllChecked}
+                                className="text-[10px] px-2 py-1 rounded border border-gray-300 bg-white text-gray-600 hover:bg-gray-100 disabled:opacity-50"
+                                title="전체 항목 체크"
+                            >
+                                Select All
+                            </button>
+                            <button
+                                onClick={handleClearAllChecked}
+                                disabled={checkedCount === 0}
+                                className="text-[10px] px-2 py-1 rounded border border-gray-300 bg-white text-gray-600 hover:bg-gray-100 disabled:opacity-50"
+                                title="체크 전체 해제"
+                            >
+                                Clear
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -774,6 +794,7 @@ export default function CatalogViewer() {
                         onDeleted={handleMarkedDeleted}
                     />
                 </div>
+            </div>
             </div>
         </div>
     );

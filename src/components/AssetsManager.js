@@ -278,23 +278,87 @@ export default function AssetsManager() {
         await runIngest({ paths }, 'Ingest selected assets');
     }, [selectedPaths, runIngest]);
 
+    const runDelete = useCallback(async (payload, label) => {
+        setIngesting(true);
+        setError('');
+        setStatus('');
+        try {
+            const res = await fetch('/api/ingest-assets', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload || {}),
+            });
+            const json = await res.json();
+            if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
+            setStatus(`${label}: ${json.deleted}/${json.total} deleted, ${json.failed} failed`);
+        } catch (e) {
+            setError(`Delete failed: ${e.message}`);
+        } finally {
+            setIngesting(false);
+        }
+    }, []);
+
+    const handleDeleteSelected = useCallback(async () => {
+        const paths = Array.from(selectedPaths);
+        if (paths.length === 0) {
+            setError('Select at least one asset first.');
+            return;
+        }
+        await runDelete({ paths }, 'Delete selected assets from DB');
+    }, [selectedPaths, runDelete]);
+
     return (
-        <div className="h-screen flex bg-[#07111d] text-slate-100" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+        <div className="h-screen bg-[#07111d] text-slate-100 flex flex-col" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+            <header className="h-12 px-4 border-b border-slate-800/90 bg-[#0b1726] flex items-center justify-between gap-3 flex-shrink-0">
+                <div className="min-w-0">
+                    <h1 className="text-[11px] uppercase tracking-[0.22em] font-black text-slate-100">Asset Index Manager</h1>
+                    <p className="text-[10px] text-slate-400 font-mono">{loading ? 'Loading...' : `${filteredEntries.length}/${allEntries.length} assets · ${selectedCount} selected`}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                    <button
+                        disabled={saving}
+                        onClick={handleSaveJson}
+                        className="text-[11px] px-2.5 py-1 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 disabled:opacity-50"
+                        title="asset_index.json 저장"
+                    >
+                        Save Index
+                    </button>
+                    <button
+                        disabled={ingesting}
+                        onClick={handleIngestSelected}
+                        className="text-[11px] px-2.5 py-1 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 disabled:opacity-50"
+                        title="선택 항목만 DB에 저장"
+                    >
+                        Save Selected To DB
+                    </button>
+                    <button
+                        disabled={ingesting}
+                        onClick={handleDeleteSelected}
+                        className="text-[11px] px-2.5 py-1 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 disabled:opacity-50"
+                        title="선택 항목을 DB에서 삭제"
+                    >
+                        Delete Selected From DB
+                    </button>
+                    <button
+                        disabled={ingesting}
+                        onClick={handleIngestAll}
+                        className="text-[11px] px-2.5 py-1 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 disabled:opacity-50"
+                        title="전체 항목을 DB에 저장"
+                    >
+                        Save All To DB
+                    </button>
+                    <div className="shrink-0 flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900 p-1 ml-1">
+                        <Link href="/catalog" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-slate-800">Catalog</Link>
+                        <Link href="/assets" className="text-[10px] px-2 py-1 rounded text-slate-100 bg-slate-800 border border-slate-700">Asset</Link>
+                        <Link href="/explorer" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-slate-800">DB</Link>
+                    </div>
+                </div>
+            </header>
+
+            <div className="flex flex-1 min-h-0">
             <aside className="w-[380px] flex-shrink-0 border-r border-slate-800/90 flex flex-col bg-[#0b1726]">
                 <div className="px-4 py-4 border-b border-slate-800/90">
-                    <div className="flex items-start justify-between gap-3">
-                        <div>
-                            <h1 className="text-[11px] uppercase tracking-[0.22em] font-black text-slate-100">Asset Index Manager</h1>
-                            <p className="text-[11px] text-slate-400 mt-1">
-                                {loading ? 'Loading asset index...' : `${filteredEntries.length} / ${allEntries.length} assets`}
-                            </p>
-                        </div>
-                        <div className="flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900/80 p-1">
-                            <Link href="/catalog" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-slate-800">Catalog</Link>
-                            <Link href="/explorer" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-slate-800">DB</Link>
-                            <Link href="/assets" className="text-[10px] px-2 py-1 rounded bg-cyan-600/20 text-cyan-300 border border-cyan-400/30">Assets</Link>
-                        </div>
-                    </div>
+                    <p className="text-[10px] text-slate-400 font-mono">Asset List</p>
                 </div>
 
                 <div className="p-3 border-b border-slate-800/90 space-y-2 bg-[#0e1d30]">
@@ -319,12 +383,6 @@ export default function AssetsManager() {
                         <button onClick={handleSelectFiltered} className="text-[11px] px-2 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600">Select Filtered</button>
                         <button onClick={handleClearSelection} className="text-[11px] px-2 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600">Clear</button>
                         <button onClick={loadIndex} className="text-[11px] px-2 py-1.5 rounded-lg bg-slate-700 hover:bg-slate-600">Reload</button>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-2">
-                        <button disabled={saving} onClick={handleSaveJson} className="text-[11px] px-2 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50">Save JSON</button>
-                        <button disabled={ingesting} onClick={handleIngestSelected} className="text-[11px] px-2 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-50">Ingest Selected ({selectedCount})</button>
-                        <button disabled={ingesting} onClick={handleIngestAll} className="col-span-2 text-[11px] px-2 py-1.5 rounded-lg bg-sky-700 hover:bg-sky-600 disabled:opacity-50">Ingest All Assets</button>
                     </div>
 
                     {status ? <p className="text-[11px] text-emerald-300">{status}</p> : null}
@@ -459,6 +517,7 @@ export default function AssetsManager() {
                     </div>
                 </section>
             </main>
+            </div>
         </div>
     );
 }

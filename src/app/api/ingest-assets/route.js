@@ -3,6 +3,7 @@ import {
     COL_ASSETS,
     EMBEDDING_MODEL,
     ensureCollection,
+    deleteAssetsFromIndex,
     ingestAssetsFromIndex,
 } from './_lib.js';
 
@@ -47,6 +48,49 @@ export async function POST(request) {
         collection: COL_ASSETS,
         total: result.total,
         succeeded: result.succeeded,
+        failed: result.failed,
+        failedList: result.failedList,
+    });
+}
+
+/**
+ * DELETE /api/ingest-assets
+ * body(optional):
+ *   - types: ["image", "image_sequence"]
+ *   - limit: number
+ *   - paths: ["/ui/images/foo.png", ...]
+ *   - assetIds: ["foo_bar", ...]
+ */
+export async function DELETE(request) {
+    let options = null;
+    try {
+        const body = await request.json();
+        options = {
+            types: Array.isArray(body?.types) ? body.types : undefined,
+            limit: Number.isInteger(body?.limit) ? body.limit : undefined,
+            paths: Array.isArray(body?.paths) ? body.paths : undefined,
+            assetIds: Array.isArray(body?.assetIds) ? body.assetIds : undefined,
+        };
+    } catch {
+        options = null;
+    }
+
+    const result = await deleteAssetsFromIndex(options);
+    if (!result.ok) {
+        return NextResponse.json({
+            error: result.error,
+            total: result.total ?? 0,
+            deleted: result.deleted ?? 0,
+            failed: result.failed ?? 0,
+            failedList: result.failedList ?? [],
+        }, { status: 500 });
+    }
+
+    return NextResponse.json({
+        ok: true,
+        collection: COL_ASSETS,
+        total: result.total,
+        deleted: result.deleted,
         failed: result.failed,
         failedList: result.failedList,
     });
