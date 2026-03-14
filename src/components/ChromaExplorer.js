@@ -345,7 +345,10 @@ export default function ChromaExplorer() {
                             </Link>
                             <h1 className="text-[11px] font-black text-slate-100 tracking-widest uppercase">ChromaDB Explorer</h1>
                         </div>
-                        <StatusBadge connected={connected} />
+                        <div className="flex items-center gap-3">
+                            <StatusBadge connected={connected} />
+                            <Link href="/assets" className="text-[10px] px-2 py-0.5 rounded border border-cyan-400/30 text-cyan-300 hover:bg-cyan-400/10 transition-colors">Assets</Link>
+                        </div>
                     </div>
                     <button
                         onClick={connect}

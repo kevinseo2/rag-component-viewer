@@ -1,0 +1,2616 @@
+{
+  "indexVersion": "1.0.0",
+  "generatedDate": "2026-03-14",
+  "sourceRoot": "ux-simulator-application-core/src/public",
+  "includeExtensions": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".webp",
+    ".gif",
+    ".svg"
+  ],
+  "summary": {
+    "totalImageFiles": 2619,
+    "indexedImages": 261,
+    "indexedSequences": 22
+  },
+  "images": [
+    {
+      "id": "btn_arrow",
+      "name": "btn_arrow.png",
+      "type": "image",
+      "path": "/assets/btn_arrow.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "btn_collapse",
+      "name": "btn_collapse.png",
+      "type": "image",
+      "path": "/assets/btn_collapse.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "btn_expand",
+      "name": "btn_expand.png",
+      "type": "image",
+      "path": "/assets/btn_expand.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "btn_list_info",
+      "name": "btn_list_info.png",
+      "type": "image",
+      "path": "/assets/btn_list_info.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_ai_focused",
+      "name": "ic_ai_focused.png",
+      "type": "image",
+      "path": "/assets/ic_ai_focused.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_back",
+      "name": "ic_back.png",
+      "type": "image",
+      "path": "/assets/ic_back.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_dry_n",
+      "name": "ic_dry_n.png",
+      "type": "image",
+      "path": "/assets/ic_dry_n.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_info_detergent_10",
+      "name": "ic_info_detergent_10.png",
+      "type": "image",
+      "path": "/assets/ic_info_detergent_10.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_info_detergent_14",
+      "name": "ic_info_detergent_14.png",
+      "type": "image",
+      "path": "/assets/ic_info_detergent_14.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_info_detergent_3",
+      "name": "ic_info_detergent_3.png",
+      "type": "image",
+      "path": "/assets/ic_info_detergent_3.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_info_detergent_5",
+      "name": "ic_info_detergent_5.png",
+      "type": "image",
+      "path": "/assets/ic_info_detergent_5.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_info_detergent_7",
+      "name": "ic_info_detergent_7.png",
+      "type": "image",
+      "path": "/assets/ic_info_detergent_7.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_light",
+      "name": "ic_light.png",
+      "type": "image",
+      "path": "/assets/ic_light.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_mode",
+      "name": "ic_mode.png",
+      "type": "image",
+      "path": "/assets/ic_mode.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_settings",
+      "name": "ic_settings.png",
+      "type": "image",
+      "path": "/assets/ic_settings.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_wash_n",
+      "name": "ic_wash_n.png",
+      "type": "image",
+      "path": "/assets/ic_wash_n.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_circle_frame",
+      "name": "img_circle_frame.png",
+      "type": "image",
+      "path": "/assets/img_circle_frame.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_course_bg_ai",
+      "name": "img_course_bg_ai.png",
+      "type": "image",
+      "path": "/assets/img_course_bg_ai.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_course_bg_blanket",
+      "name": "img_course_bg_blanket.png",
+      "type": "image",
+      "path": "/assets/img_course_bg_blanket.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_course_bg_delicated",
+      "name": "img_course_bg_delicated.png",
+      "type": "image",
+      "path": "/assets/img_course_bg_delicated.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_course_bg_functional",
+      "name": "img_course_bg_functional.png",
+      "type": "image",
+      "path": "/assets/img_course_bg_functional.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_course_bg_old_stain",
+      "name": "img_course_bg_old_stain.png",
+      "type": "image",
+      "path": "/assets/img_course_bg_old_stain.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "img_course_card_focused",
+      "name": "img_course_card_focused.png",
+      "type": "image",
+      "path": "/assets/img_course_card_focused.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "mask_common_contents_area_bottom",
+      "name": "mask_common_contents_area_bottom.png",
+      "type": "image",
+      "path": "/assets/mask_common_contents_area_bottom.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "mask_common_contents_area_top",
+      "name": "mask_common_contents_area_top.png",
+      "type": "image",
+      "path": "/assets/mask_common_contents_area_top.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "mask_contents_area_common_bottom",
+      "name": "mask_contents_area_common_bottom.png",
+      "type": "image",
+      "path": "/assets/mask_contents_area_common_bottom.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "mask_contents_area_common_top",
+      "name": "mask_contents_area_common_top.png",
+      "type": "image",
+      "path": "/assets/mask_contents_area_common_top.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "progress_bar_bg",
+      "name": "progress_bar_bg.png",
+      "type": "image",
+      "path": "/assets/progress_bar_bg.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "progress_bar",
+      "name": "progress_bar.png",
+      "type": "image",
+      "path": "/assets/progress_bar.png",
+      "extension": ".png",
+      "scope": "assets"
+    },
+    {
+      "id": "ic_accessory_ceramicgrill",
+      "name": "ic_accessory_ceramicgrill.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_ceramicgrill.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_enamel",
+      "name": "ic_accessory_enamel.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_enamel.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_gridiron",
+      "name": "ic_accessory_gridiron.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_gridiron.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_rack_01",
+      "name": "ic_accessory_rack_01.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_rack_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_rack_02",
+      "name": "ic_accessory_rack_02.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_rack_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_rack_03",
+      "name": "ic_accessory_rack_03.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_rack_03.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_rack_04",
+      "name": "ic_accessory_rack_04.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_rack_04.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_rack_05",
+      "name": "ic_accessory_rack_05.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_rack_05.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_accessory_rack_06",
+      "name": "ic_accessory_rack_06.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_accessory_rack_06.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_noti_accessory_arrow",
+      "name": "ic_noti_accessory_arrow.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_noti_accessory_arrow.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_preheat_steam",
+      "name": "ic_preheat_steam.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_preheat_steam.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_steam",
+      "name": "ic_steam.png",
+      "type": "image",
+      "path": "/ui/images/accessory/ic_steam.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_01",
+      "name": "img_noti_accessory_01.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_02",
+      "name": "img_noti_accessory_02.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_03",
+      "name": "img_noti_accessory_03.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_03.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_04",
+      "name": "img_noti_accessory_04.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_04.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_05",
+      "name": "img_noti_accessory_05.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_05.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_rack_01",
+      "name": "img_noti_accessory_rack_01.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_rack_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_rack_02",
+      "name": "img_noti_accessory_rack_02.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_rack_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_rack_03",
+      "name": "img_noti_accessory_rack_03.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_rack_03.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_rack_04",
+      "name": "img_noti_accessory_rack_04.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_rack_04.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_rack_05",
+      "name": "img_noti_accessory_rack_05.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_rack_05.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_noti_accessory_rack_06",
+      "name": "img_noti_accessory_rack_06.png",
+      "type": "image",
+      "path": "/ui/images/accessory/img_noti_accessory_rack_06.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_alert",
+      "name": "img_alert.png",
+      "type": "image",
+      "path": "/ui/images/Alert/img_alert.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "empty_icon_136x136",
+      "name": "empty_icon_136x136.png",
+      "type": "image",
+      "path": "/ui/images/assets/empty_icon_136x136.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_overlay_guide",
+      "name": "bg_overlay_guide.png",
+      "type": "image",
+      "path": "/ui/images/Background/bg_overlay_guide.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_toast_01",
+      "name": "bg_toast_01.png",
+      "type": "image",
+      "path": "/ui/images/Background/bg_toast_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_toast_02",
+      "name": "bg_toast_02.png",
+      "type": "image",
+      "path": "/ui/images/Background/bg_toast_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_upgrade",
+      "name": "bg_upgrade.png",
+      "type": "image",
+      "path": "/ui/images/Background/bg_upgrade.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_opreate",
+      "name": "mask_opreate.png",
+      "type": "image",
+      "path": "/ui/images/Background/mask_opreate.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_01",
+      "name": "mask_picker_01.png",
+      "type": "image",
+      "path": "/ui/images/Background/mask_picker_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_02",
+      "name": "mask_picker_02.png",
+      "type": "image",
+      "path": "/ui/images/Background/mask_picker_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "barcode_de",
+      "name": "barcode_dE.png",
+      "type": "image",
+      "path": "/ui/images/barcode_dE.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "barcode_ed1",
+      "name": "barcode_ed1.png",
+      "type": "image",
+      "path": "/ui/images/barcode_ed1.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "barcode_ff",
+      "name": "barcode_FF.png",
+      "type": "image",
+      "path": "/ui/images/barcode_FF.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "barcode_ie",
+      "name": "barcode_IE.png",
+      "type": "image",
+      "path": "/ui/images/barcode_IE.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "barcode_oe",
+      "name": "barcode_OE.png",
+      "type": "image",
+      "path": "/ui/images/barcode_OE.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "barcode_ue",
+      "name": "barcode_UE.png",
+      "type": "image",
+      "path": "/ui/images/barcode_UE.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_demo",
+      "name": "bg_demo.png",
+      "type": "image",
+      "path": "/ui/images/bg_demo.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_grid_view",
+      "name": "bg_grid_view.png",
+      "type": "image",
+      "path": "/ui/images/bg_grid_view.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_master_card",
+      "name": "bg_master_card.png",
+      "type": "image",
+      "path": "/ui/images/bg_master_card.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_overlay_guide",
+      "name": "bg_overlay_guide.png",
+      "type": "image",
+      "path": "/ui/images/bg_overlay_guide.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_scroll_btm",
+      "name": "bg_scroll_btm.png",
+      "type": "image",
+      "path": "/ui/images/bg_scroll_btm.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_scroll_mid",
+      "name": "bg_scroll_mid.png",
+      "type": "image",
+      "path": "/ui/images/bg_scroll_mid.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_scroll_top",
+      "name": "bg_scroll_top.png",
+      "type": "image",
+      "path": "/ui/images/bg_scroll_top.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_toast_1",
+      "name": "bg_toast_1.png",
+      "type": "image",
+      "path": "/ui/images/bg_toast_1.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_toast_2",
+      "name": "bg_toast_2.png",
+      "type": "image",
+      "path": "/ui/images/bg_toast_2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "black",
+      "name": "black.png",
+      "type": "image",
+      "path": "/ui/images/black.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_arrow_left_d",
+      "name": "btn_arrow_left_d.png",
+      "type": "image",
+      "path": "/ui/images/btn_arrow_left_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_arrow_left_n",
+      "name": "btn_arrow_left_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_arrow_left_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_arrow_right_d",
+      "name": "btn_arrow_right_d.png",
+      "type": "image",
+      "path": "/ui/images/btn_arrow_right_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_arrow_right_n",
+      "name": "btn_arrow_right_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_arrow_right_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_check_off_blue_d",
+      "name": "btn_check_off_blue_d.png",
+      "type": "image",
+      "path": "/ui/images/btn_check_off_blue_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_check_off_blue_n",
+      "name": "btn_check_off_blue_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_check_off_blue_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_check_on_blue_d",
+      "name": "btn_check_on_blue_d.png",
+      "type": "image",
+      "path": "/ui/images/btn_check_on_blue_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_check_on_blue_n",
+      "name": "btn_check_on_blue_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_check_on_blue_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_command",
+      "name": "btn_command.png",
+      "type": "image",
+      "path": "/ui/images/btn_command.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_dialog_f",
+      "name": "btn_dialog_f.png",
+      "type": "image",
+      "path": "/ui/images/btn_dialog_f.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_dialog_n",
+      "name": "btn_dialog_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_dialog_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_multiple_seletion_off_n",
+      "name": "btn_multiple_seletion_off_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_multiple_seletion_off_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_multiple_seletion_on_blue_d",
+      "name": "btn_multiple_seletion_on_blue_d.png",
+      "type": "image",
+      "path": "/ui/images/btn_multiple_seletion_on_blue_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_multiple_seletion_on_blue_n",
+      "name": "btn_multiple_seletion_on_blue_n.png",
+      "type": "image",
+      "path": "/ui/images/btn_multiple_seletion_on_blue_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_vertical_list_reorder",
+      "name": "btn_vertical_list_reorder.png",
+      "type": "image",
+      "path": "/ui/images/btn_vertical_list_reorder.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_check_orange",
+      "name": "img_check_orange.png",
+      "type": "image",
+      "path": "/ui/images/Check/img_check_orange.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_clock_am",
+      "name": "img_clock_am.png",
+      "type": "image",
+      "path": "/ui/images/Clock/img_clock_am.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_clock_colon",
+      "name": "img_clock_colon.png",
+      "type": "image",
+      "path": "/ui/images/Clock/img_clock_colon.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_clock_pm",
+      "name": "img_clock_pm.png",
+      "type": "image",
+      "path": "/ui/images/Clock/img_clock_pm.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_check_off_disabled",
+      "name": "btn_check_off_disabled.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/btn_check_off_disabled.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_check_off_normal",
+      "name": "btn_check_off_normal.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/btn_check_off_normal.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_a_lg_core",
+      "name": "bg_clock_a_lg_core.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_a_lg_core.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_a_signature",
+      "name": "bg_clock_a_signature.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_a_signature.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_a_sks",
+      "name": "bg_clock_a_sks.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_a_sks.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_b_lg_core",
+      "name": "bg_clock_b_lg_core.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_b_lg_core.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_b_signature",
+      "name": "bg_clock_b_signature.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_b_signature.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_b_sks",
+      "name": "bg_clock_b_sks.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_b_sks.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_c_lg_core",
+      "name": "bg_clock_c_lg_core.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_c_lg_core.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_c_signature",
+      "name": "bg_clock_c_signature.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_c_signature.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_c_sks",
+      "name": "bg_clock_c_sks.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/bg_clock_c_sks.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_hr_blue",
+      "name": "clock_analog_hr_blue.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/clock_analog_hr_blue.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_hr_orange",
+      "name": "clock_analog_hr_orange.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/clock_analog_hr_orange.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_min",
+      "name": "clock_analog_min.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/clock_analog_min.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_sec",
+      "name": "clock_analog_sec.png",
+      "type": "image",
+      "path": "/ui/images/Common assets/clock/clock_analog_sec.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_a_lg_core",
+      "name": "bg_clock_a_lg_core.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_a_lg_core.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_a_signature",
+      "name": "bg_clock_a_signature.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_a_signature.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_a_sks",
+      "name": "bg_clock_a_sks.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_a_sks.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_b_lg_core",
+      "name": "bg_clock_b_lg_core.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_b_lg_core.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_b_signature",
+      "name": "bg_clock_b_signature.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_b_signature.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_b_sks",
+      "name": "bg_clock_b_sks.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_b_sks.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_c_lg_core",
+      "name": "bg_clock_c_lg_core.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_c_lg_core.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_c_signature",
+      "name": "bg_clock_c_signature.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_c_signature.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "bg_clock_c_sks",
+      "name": "bg_clock_c_sks.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/bg_clock_c_sks.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_hr_blue",
+      "name": "clock_analog_hr_blue.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/clock_analog_hr_blue.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_hr_orange",
+      "name": "clock_analog_hr_orange.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/clock_analog_hr_orange.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_min",
+      "name": "clock_analog_min.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/clock_analog_min.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "clock_analog_sec",
+      "name": "clock_analog_sec.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/clock/clock_analog_sec.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_n",
+      "name": "ic_page_indicator_n.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/ic_page_indicator_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_s",
+      "name": "ic_page_indicator_s.png",
+      "type": "image",
+      "path": "/ui/images/Common_assets/ic_page_indicator_s.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "cookmode_back",
+      "name": "cookmode_back.png",
+      "type": "image",
+      "path": "/ui/images/cookmode_back.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "cookmode_next",
+      "name": "cookmode_next.png",
+      "type": "image",
+      "path": "/ui/images/cookmode_next.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_eco",
+      "name": "ic_eco.png",
+      "type": "image",
+      "path": "/ui/images/dryer/ic_eco.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_on_d",
+      "name": "ic_multiple_selection_on_d.png",
+      "type": "image",
+      "path": "/ui/images/dryer/ic_multiple_selection_on_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_on",
+      "name": "ic_multiple_selection_on.png",
+      "type": "image",
+      "path": "/ui/images/dryer/ic_multiple_selection_on.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar",
+      "name": "progress_bar.png",
+      "type": "image",
+      "path": "/ui/images/dryer/progress_bar.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "gray_arriw",
+      "name": "gray_arriw.png",
+      "type": "image",
+      "path": "/ui/images/gray_arriw.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_ai_2",
+      "name": "ic_ai_2.png",
+      "type": "image",
+      "path": "/ui/images/ic_ai_2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_ai",
+      "name": "ic_ai.png",
+      "type": "image",
+      "path": "/ui/images/ic_ai.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_back",
+      "name": "ic_back.png",
+      "type": "image",
+      "path": "/ui/images/ic_back.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_off",
+      "name": "ic_multiple_selection_off.png",
+      "type": "image",
+      "path": "/ui/images/ic_multiple_selection_off.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_on_d",
+      "name": "ic_multiple_selection_on_d.png",
+      "type": "image",
+      "path": "/ui/images/ic_multiple_selection_on_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_on",
+      "name": "ic_multiple_selection_on.png",
+      "type": "image",
+      "path": "/ui/images/ic_multiple_selection_on.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_f",
+      "name": "ic_page_indicator_f.png",
+      "type": "image",
+      "path": "/ui/images/ic_page_indicator_f.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_n",
+      "name": "ic_page_indicator_n.png",
+      "type": "image",
+      "path": "/ui/images/ic_page_indicator_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_s",
+      "name": "ic_page_indicator_s.png",
+      "type": "image",
+      "path": "/ui/images/ic_page_indicator_s.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_pause_2",
+      "name": "ic_pause_2.png",
+      "type": "image",
+      "path": "/ui/images/ic_pause_2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_pause",
+      "name": "ic_pause.png",
+      "type": "image",
+      "path": "/ui/images/ic_pause.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_single_selection_off",
+      "name": "ic_single_selection_off.png",
+      "type": "image",
+      "path": "/ui/images/ic_single_selection_off.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_single_selection_on",
+      "name": "ic_single_selection_on.png",
+      "type": "image",
+      "path": "/ui/images/ic_single_selection_on.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_smart_diagnosis",
+      "name": "ic_smart_diagnosis.png",
+      "type": "image",
+      "path": "/ui/images/ic_smart_diagnosis.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_vertical_list_single_selection_blue",
+      "name": "ic_vertical_list_single_selection_blue.png",
+      "type": "image",
+      "path": "/ui/images/ic_vertical_list_single_selection_blue.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_idle",
+      "name": "img_idle.png",
+      "type": "image",
+      "path": "/ui/images/Idle/img_idle.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_additional",
+      "name": "img_additional.png",
+      "type": "image",
+      "path": "/ui/images/img_additional.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_alert_2",
+      "name": "img_alert_2.png",
+      "type": "image",
+      "path": "/ui/images/img_alert_2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_alert",
+      "name": "img_alert.png",
+      "type": "image",
+      "path": "/ui/images/img_alert.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_back",
+      "name": "img_back.png",
+      "type": "image",
+      "path": "/ui/images/img_back.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_check",
+      "name": "img_check.png",
+      "type": "image",
+      "path": "/ui/images/img_check.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_continuous_slider_bar_primary",
+      "name": "img_continuous_slider_bar_primary.png",
+      "type": "image",
+      "path": "/ui/images/img_continuous_slider_bar_primary.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_continuous_slider_bar_track",
+      "name": "img_continuous_slider_bar_track.png",
+      "type": "image",
+      "path": "/ui/images/img_continuous_slider_bar_track.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_course_indicator",
+      "name": "img_course_indicator.png",
+      "type": "image",
+      "path": "/ui/images/img_course_indicator.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_discrete_slider_bar_5_primary",
+      "name": "img_discrete_slider_bar_5_primary.png",
+      "type": "image",
+      "path": "/ui/images/img_discrete_slider_bar_5_primary.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_discrete_slider_bar_5_track",
+      "name": "img_discrete_slider_bar_5_track.png",
+      "type": "image",
+      "path": "/ui/images/img_discrete_slider_bar_5_track.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_dryer",
+      "name": "img_dryer.png",
+      "type": "image",
+      "path": "/ui/images/img_dryer.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_drying_00",
+      "name": "img_drying_00.png",
+      "type": "image",
+      "path": "/ui/images/img_drying_00.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_info",
+      "name": "img_info.png",
+      "type": "image",
+      "path": "/ui/images/img_info.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_ok",
+      "name": "img_ok.png",
+      "type": "image",
+      "path": "/ui/images/img_ok.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_picker_bg",
+      "name": "img_picker_bg.png",
+      "type": "image",
+      "path": "/ui/images/img_picker_bg.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_reservation",
+      "name": "img_reservation.png",
+      "type": "image",
+      "path": "/ui/images/img_reservation.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_slider_thumb",
+      "name": "img_slider_thumb.png",
+      "type": "image",
+      "path": "/ui/images/img_slider_thumb.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_thinq",
+      "name": "img_thinQ.png",
+      "type": "image",
+      "path": "/ui/images/img_thinQ.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_n",
+      "name": "ic_page_indicator_n.png",
+      "type": "image",
+      "path": "/ui/images/Indicator/ic_page_indicator_n.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_page_indicator_s",
+      "name": "ic_page_indicator_s.png",
+      "type": "image",
+      "path": "/ui/images/Indicator/ic_page_indicator_s.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "l_accesory_ic_enamel",
+      "name": "l_accesory_ic_enamel.png",
+      "type": "image",
+      "path": "/ui/images/l_accesory_ic_enamel.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "l_accesory_ic_gridiron",
+      "name": "l_accesory_ic_gridiron.png",
+      "type": "image",
+      "path": "/ui/images/l_accesory_ic_gridiron.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "l_accesory_ic_rack2_05",
+      "name": "l_accesory_ic_rack2_05.png",
+      "type": "image",
+      "path": "/ui/images/l_accesory_ic_rack2_05.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "l_title_ic_steam",
+      "name": "l_title_ic_steam.png",
+      "type": "image",
+      "path": "/ui/images/l_title_ic_steam.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "btn_unlock",
+      "name": "btn_unlock.png",
+      "type": "image",
+      "path": "/ui/images/Lock/btn_unlock.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_0_s_blk",
+      "name": "M_NUM_0_0_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_0_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_1_s_blk",
+      "name": "M_NUM_0_1_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_1_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_2_s_blk",
+      "name": "M_NUM_0_2_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_2_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_3_s_blk",
+      "name": "M_NUM_0_3_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_3_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_4_s_blk",
+      "name": "M_NUM_0_4_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_4_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_5_s_blk",
+      "name": "M_NUM_0_5_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_5_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_6_s_blk",
+      "name": "M_NUM_0_6_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_6_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_7_s_blk",
+      "name": "M_NUM_0_7_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_7_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_8_s_blk",
+      "name": "M_NUM_0_8_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_8_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "m_num_0_9_s_blk",
+      "name": "M_NUM_0_9_S_BLK.png",
+      "type": "image",
+      "path": "/ui/images/M_NUM_0_9_S_BLK.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_01",
+      "name": "mask_01.png",
+      "type": "image",
+      "path": "/ui/images/mask_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_02",
+      "name": "mask_02.png",
+      "type": "image",
+      "path": "/ui/images/mask_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_03",
+      "name": "mask_03.png",
+      "type": "image",
+      "path": "/ui/images/mask_03.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_contents_area_common_bottom",
+      "name": "mask_contents_area_common_bottom.png",
+      "type": "image",
+      "path": "/ui/images/mask_contents_area_common_bottom.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_contents_area_common_top",
+      "name": "mask_contents_area_common_top.png",
+      "type": "image",
+      "path": "/ui/images/mask_contents_area_common_top.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_horizontal_list_common_left",
+      "name": "mask_horizontal_list_common_left.png",
+      "type": "image",
+      "path": "/ui/images/mask_horizontal_list_common_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_horizontal_list_common_right",
+      "name": "mask_horizontal_list_common_right.png",
+      "type": "image",
+      "path": "/ui/images/mask_horizontal_list_common_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_number",
+      "name": "mask_number.png",
+      "type": "image",
+      "path": "/ui/images/mask_number.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_01",
+      "name": "mask_picker_01.png",
+      "type": "image",
+      "path": "/ui/images/mask_picker_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_02",
+      "name": "mask_picker_02.png",
+      "type": "image",
+      "path": "/ui/images/mask_picker_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_selection_list_left",
+      "name": "mask_selection_list_left.png",
+      "type": "image",
+      "path": "/ui/images/mask_selection_list_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_selection_list_right",
+      "name": "mask_selection_list_right.png",
+      "type": "image",
+      "path": "/ui/images/mask_selection_list_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_vertical_list_depth_first",
+      "name": "mask_vertical_list_depth_first.png",
+      "type": "image",
+      "path": "/ui/images/mask_vertical_list_depth_first.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar_bg",
+      "name": "progress_bar_bg.png",
+      "type": "image",
+      "path": "/ui/images/progress_bar_bg.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar",
+      "name": "progress_bar.png",
+      "type": "image",
+      "path": "/ui/images/progress_bar.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar_primary_orange",
+      "name": "progress_bar_primary_orange.png",
+      "type": "image",
+      "path": "/ui/images/ProgressBar/progress_bar_primary_orange.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar_track",
+      "name": "progress_bar_track.png",
+      "type": "image",
+      "path": "/ui/images/ProgressBar/progress_bar_track.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_setting",
+      "name": "img_setting.png",
+      "type": "image",
+      "path": "/ui/images/Setting/img_setting.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_smart_diagnosis",
+      "name": "img_smart_diagnosis.png",
+      "type": "image",
+      "path": "/ui/images/SmartDiagnosis/img_smart_diagnosis.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_01_autumn_kr",
+      "name": "img_upgradable_01_autumn_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_01_autumn_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_02_chistmas_kr",
+      "name": "img_upgradable_02_chistmas_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_02_chistmas_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_03_halloween_kr",
+      "name": "img_upgradable_03_halloween_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_03_halloween_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_04_happynewyear_kr",
+      "name": "img_upgradable_04_happynewyear_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_04_happynewyear_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_05_spring_01_kr",
+      "name": "img_upgradable_05_spring_01_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_05_spring_01_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_06_spring_02_kr",
+      "name": "img_upgradable_06_spring_02_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_06_spring_02_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_07_summer_01_kr",
+      "name": "img_upgradable_07_summer_01_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_07_summer_01_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_08_summer_02_kr",
+      "name": "img_upgradable_08_summer_02_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_08_summer_02_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_09_winter_01_kr",
+      "name": "img_upgradable_09_winter_01_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_09_winter_01_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_10_winter_02_kr",
+      "name": "img_upgradable_10_winter_02_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_10_winter_02_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_upgradable_11_winter_03_kr",
+      "name": "img_upgradable_11_winter_03_kr.png",
+      "type": "image",
+      "path": "/ui/images/Upgradable/img_upgradable_11_winter_03_kr.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_ai_2",
+      "name": "ic_ai_2.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_ai_2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_ai",
+      "name": "ic_ai.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_ai.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_clock_colon",
+      "name": "ic_clock_colon.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_clock_colon.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_clock_colon2",
+      "name": "ic_clock_colon2.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_clock_colon2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_off",
+      "name": "ic_multiple_selection_off.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_multiple_selection_off.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_pentagon",
+      "name": "ic_pentagon.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_pentagon.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_pop_pentagon",
+      "name": "ic_pop_pentagon.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_pop_pentagon.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_title_pentagon",
+      "name": "ic_title_pentagon.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/ic_title_pentagon.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_alert_2",
+      "name": "img_alert_2.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_alert_2.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_alert",
+      "name": "img_alert.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_alert.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_back",
+      "name": "img_back.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_back.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_info",
+      "name": "img_info.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_info.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_ok",
+      "name": "img_ok.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_ok.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_smart_diagnosis",
+      "name": "img_smart_diagnosis.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_smart_diagnosis.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "img_tm",
+      "name": "img_tm.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/img_tm.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_02",
+      "name": "mask_02.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3b3b3b_bottom",
+      "name": "mask_3b3b3b_bottom.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3b3b3b_bottom.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3b3b3b_left",
+      "name": "mask_3b3b3b_left.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3b3b3b_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3b3b3b_right",
+      "name": "mask_3b3b3b_right.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3b3b3b_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3b3b3b_top",
+      "name": "mask_3b3b3b_top.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3b3b3b_top.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3d3d3d_bottom",
+      "name": "mask_3d3d3d_bottom.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3d3d3d_bottom.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3d3d3d_left",
+      "name": "mask_3d3d3d_left.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3d3d3d_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3d3d3d_right",
+      "name": "mask_3d3d3d_right.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3d3d3d_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_3d3d3d_top",
+      "name": "mask_3d3d3d_top.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_3d3d3d_top.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_contents_area_common_bottom",
+      "name": "mask_contents_area_common_bottom.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_contents_area_common_bottom.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_contents_area_common_left",
+      "name": "mask_contents_area_common_left.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_contents_area_common_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_contents_area_common_right",
+      "name": "mask_contents_area_common_right.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_contents_area_common_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_contents_area_common_top",
+      "name": "mask_contents_area_common_top.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_contents_area_common_top.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_overlay_contents_area_common_bottom",
+      "name": "mask_overlay_contents_area_common_bottom.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_overlay_contents_area_common_bottom.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_overlay_contents_area_common_left",
+      "name": "mask_overlay_contents_area_common_left.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_overlay_contents_area_common_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_overlay_contents_area_common_right",
+      "name": "mask_overlay_contents_area_common_right.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_overlay_contents_area_common_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_overlay_contents_area_common_top",
+      "name": "mask_overlay_contents_area_common_top.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_overlay_contents_area_common_top.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_overlay_loading_left",
+      "name": "mask_overlay_loading_left.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_overlay_loading_left.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_overlay_loading_right",
+      "name": "mask_overlay_loading_right.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_overlay_loading_right.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_01",
+      "name": "mask_picker_01.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_picker_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_02",
+      "name": "mask_picker_02.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_picker_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "mask_picker_03",
+      "name": "mask_picker_03.png",
+      "type": "image",
+      "path": "/ui/images/washer_dryer/Mask/mask_picker_03.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_laundry_detergent_01",
+      "name": "ic_laundry_detergent_01.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_laundry_detergent_01.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_laundry_detergent_02",
+      "name": "ic_laundry_detergent_02.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_laundry_detergent_02.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_laundry_detergent_03",
+      "name": "ic_laundry_detergent_03.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_laundry_detergent_03.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_laundry_detergent_04",
+      "name": "ic_laundry_detergent_04.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_laundry_detergent_04.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_laundry_detergent_05",
+      "name": "ic_laundry_detergent_05.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_laundry_detergent_05.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_on_d",
+      "name": "ic_multiple_selection_on_d.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_multiple_selection_on_d.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "ic_multiple_selection_on",
+      "name": "ic_multiple_selection_on.png",
+      "type": "image",
+      "path": "/ui/images/washer/ic_multiple_selection_on.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar_bg",
+      "name": "progress_bar_bg.png",
+      "type": "image",
+      "path": "/ui/images/washer/progress_bar_bg.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "progress_bar",
+      "name": "progress_bar.png",
+      "type": "image",
+      "path": "/ui/images/washer/progress_bar.png",
+      "extension": ".png",
+      "scope": "ui/images"
+    },
+    {
+      "id": "vite",
+      "name": "vite.svg",
+      "type": "image",
+      "path": "/vite.svg",
+      "extension": ".svg",
+      "scope": "vite.svg"
+    }
+  ],
+  "sequences": [
+    {
+      "id": "intro_thinq",
+      "name": "Intro_ThinQ",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/Intro_ThinQ",
+      "frameCount": 30,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_booting_thinq_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/Intro_ThinQ/img_booting_thinq_001.png",
+          "/ui/image_sequences/Intro_ThinQ/img_booting_thinq_002.png",
+          "/ui/image_sequences/Intro_ThinQ/img_booting_thinq_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/Intro_ThinQ/img_booting_thinq_028.png",
+          "/ui/image_sequences/Intro_ThinQ/img_booting_thinq_029.png",
+          "/ui/image_sequences/Intro_ThinQ/img_booting_thinq_030.png"
+        ]
+      }
+    },
+    {
+      "id": "loading_spinner",
+      "name": "Loading Spinner",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/Loading Spinner",
+      "frameCount": 200,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_loading_large_blue_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/Loading Spinner/large_blue/img_loading_large_blue_001.png",
+          "/ui/image_sequences/Loading Spinner/large_blue/img_loading_large_blue_002.png",
+          "/ui/image_sequences/Loading Spinner/large_blue/img_loading_large_blue_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/Loading Spinner/small_orange/img_loading_small_orange_048.png",
+          "/ui/image_sequences/Loading Spinner/small_orange/img_loading_small_orange_049.png",
+          "/ui/image_sequences/Loading Spinner/small_orange/img_loading_small_orange_050.png"
+        ]
+      }
+    },
+    {
+      "id": "operate",
+      "name": "Operate",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/Operate",
+      "frameCount": 162,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_sensing_blue_intro_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/Operate/sensing_blue/intro/img_sensing_blue_intro_001.png",
+          "/ui/image_sequences/Operate/sensing_blue/intro/img_sensing_blue_intro_002.png",
+          "/ui/image_sequences/Operate/sensing_blue/intro/img_sensing_blue_intro_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/Operate/sensing_orange/Loop/img_sensing_orange_loop_058.png",
+          "/ui/image_sequences/Operate/sensing_orange/Loop/img_sensing_orange_loop_059.png",
+          "/ui/image_sequences/Operate/sensing_orange/Loop/img_sensing_orange_loop_060.png"
+        ]
+      }
+    },
+    {
+      "id": "update",
+      "name": "Update",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/Update",
+      "frameCount": 102,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "progress_circle_bar_blue_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/Update/update_blue/progress_circle_bar_blue_000.png",
+          "/ui/image_sequences/Update/update_blue/progress_circle_bar_blue_001.png",
+          "/ui/image_sequences/Update/update_blue/progress_circle_bar_blue_002.png"
+        ],
+        "last": [
+          "/ui/image_sequences/Update/update_orange/progress_circle_bar_orange_048.png",
+          "/ui/image_sequences/Update/update_orange/progress_circle_bar_orange_049.png",
+          "/ui/image_sequences/Update/update_orange/progress_circle_bar_orange_050.png"
+        ]
+      }
+    },
+    {
+      "id": "btn_unlock_progress",
+      "name": "btn_unlock_progress",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/btn_unlock_progress",
+      "frameCount": 90,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "btn_unlock_progress_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/btn_unlock_progress/.orig_images/btn_unlock_progress_001.png",
+          "/ui/image_sequences/btn_unlock_progress/.orig_images/btn_unlock_progress_002.png",
+          "/ui/image_sequences/btn_unlock_progress/.orig_images/btn_unlock_progress_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/btn_unlock_progress/.orig_images/btn_unlock_progress_088.png",
+          "/ui/image_sequences/btn_unlock_progress/.orig_images/btn_unlock_progress_089.png",
+          "/ui/image_sequences/btn_unlock_progress/.orig_images/btn_unlock_progress_090.png"
+        ]
+      }
+    },
+    {
+      "id": "dryer",
+      "name": "dryer",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/dryer",
+      "frameCount": 378,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "btn_unlock_progress_orange_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/dryer/btn_unlock_progress_orange/.orig_images/btn_unlock_progress_orange_01.png",
+          "/ui/image_sequences/dryer/btn_unlock_progress_orange/.orig_images/btn_unlock_progress_orange_02.png",
+          "/ui/image_sequences/dryer/btn_unlock_progress_orange/.orig_images/btn_unlock_progress_orange_03.png"
+        ],
+        "last": [
+          "/ui/image_sequences/dryer/progress_circle_bar_orange/.orig_images/progress_circle_bar_orange_08.png",
+          "/ui/image_sequences/dryer/progress_circle_bar_orange/.orig_images/progress_circle_bar_orange_09.png",
+          "/ui/image_sequences/dryer/progress_circle_bar_orange/.orig_images/progress_circle_bar_orange_10.png"
+        ]
+      }
+    },
+    {
+      "id": "img_booting_thinq",
+      "name": "img_booting_thinq",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_booting_thinq",
+      "frameCount": 30,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_booting_thinq_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_booting_thinq/.orig_images/img_booting_thinq_01.png",
+          "/ui/image_sequences/img_booting_thinq/.orig_images/img_booting_thinq_02.png",
+          "/ui/image_sequences/img_booting_thinq/.orig_images/img_booting_thinq_03.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_booting_thinq/.orig_images/img_booting_thinq_28.png",
+          "/ui/image_sequences/img_booting_thinq/.orig_images/img_booting_thinq_29.png",
+          "/ui/image_sequences/img_booting_thinq/.orig_images/img_booting_thinq_30.png"
+        ]
+      }
+    },
+    {
+      "id": "img_complete_check_orange",
+      "name": "img_complete_check_orange",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_complete_check_orange",
+      "frameCount": 25,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_complete_check_orange_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_complete_check_orange/.orig_images/img_complete_check_orange_001.png",
+          "/ui/image_sequences/img_complete_check_orange/.orig_images/img_complete_check_orange_002.png",
+          "/ui/image_sequences/img_complete_check_orange/.orig_images/img_complete_check_orange_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_complete_check_orange/.orig_images/img_complete_check_orange_023.png",
+          "/ui/image_sequences/img_complete_check_orange/.orig_images/img_complete_check_orange_024.png",
+          "/ui/image_sequences/img_complete_check_orange/.orig_images/img_complete_check_orange_025.png"
+        ]
+      }
+    },
+    {
+      "id": "img_intro",
+      "name": "img_intro",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_intro",
+      "frameCount": 25,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_intro_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_intro/.orig_images/img_intro_001.png",
+          "/ui/image_sequences/img_intro/.orig_images/img_intro_002.png",
+          "/ui/image_sequences/img_intro/.orig_images/img_intro_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_intro/.orig_images/img_intro_023.png",
+          "/ui/image_sequences/img_intro/.orig_images/img_intro_024.png",
+          "/ui/image_sequences/img_intro/.orig_images/img_intro_025.png"
+        ]
+      }
+    },
+    {
+      "id": "img_intro_blue",
+      "name": "img_intro_blue",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_intro_blue",
+      "frameCount": 25,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_intro_blue_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_intro_blue/.orig_images/img_intro_blue_00.png",
+          "/ui/image_sequences/img_intro_blue/.orig_images/img_intro_blue_01.png",
+          "/ui/image_sequences/img_intro_blue/.orig_images/img_intro_blue_02.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_intro_blue/.orig_images/img_intro_blue_22.png",
+          "/ui/image_sequences/img_intro_blue/.orig_images/img_intro_blue_23.png",
+          "/ui/image_sequences/img_intro_blue/.orig_images/img_intro_blue_24.png"
+        ]
+      }
+    },
+    {
+      "id": "img_loading",
+      "name": "img_loading",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_loading",
+      "frameCount": 61,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "{index:1}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_loading/0.png",
+          "/ui/image_sequences/img_loading/1.png",
+          "/ui/image_sequences/img_loading/10.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_loading/7.png",
+          "/ui/image_sequences/img_loading/8.png",
+          "/ui/image_sequences/img_loading/9.png"
+        ]
+      }
+    },
+    {
+      "id": "img_loading_large_blue",
+      "name": "img_loading_large_blue",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_loading_large_blue",
+      "frameCount": 56,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "{index:1}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_loading_large_blue/0.png",
+          "/ui/image_sequences/img_loading_large_blue/1.png",
+          "/ui/image_sequences/img_loading_large_blue/10.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_loading_large_blue/7.png",
+          "/ui/image_sequences/img_loading_large_blue/8.png",
+          "/ui/image_sequences/img_loading_large_blue/9.png"
+        ]
+      }
+    },
+    {
+      "id": "img_loading_small_blue",
+      "name": "img_loading_small_blue",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_loading_small_blue",
+      "frameCount": 56,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "{index:1}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_loading_small_blue/0.png",
+          "/ui/image_sequences/img_loading_small_blue/1.png",
+          "/ui/image_sequences/img_loading_small_blue/10.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_loading_small_blue/7.png",
+          "/ui/image_sequences/img_loading_small_blue/8.png",
+          "/ui/image_sequences/img_loading_small_blue/9.png"
+        ]
+      }
+    },
+    {
+      "id": "img_loading_small_orange",
+      "name": "img_loading_small_orange",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_loading_small_orange",
+      "frameCount": 50,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_loading_small_orange_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_loading_small_orange/.orig_images/img_loading_small_orange_001.png",
+          "/ui/image_sequences/img_loading_small_orange/.orig_images/img_loading_small_orange_002.png",
+          "/ui/image_sequences/img_loading_small_orange/.orig_images/img_loading_small_orange_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_loading_small_orange/.orig_images/img_loading_small_orange_048.png",
+          "/ui/image_sequences/img_loading_small_orange/.orig_images/img_loading_small_orange_049.png",
+          "/ui/image_sequences/img_loading_small_orange/.orig_images/img_loading_small_orange_050.png"
+        ]
+      }
+    },
+    {
+      "id": "img_noti_add_food_intro",
+      "name": "img_noti_add_food_intro",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_noti_add_food_intro",
+      "frameCount": 45,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_noti_add_food_intro_{index:3}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_noti_add_food_intro/.orig_images/img_noti_add_food_intro_001.png",
+          "/ui/image_sequences/img_noti_add_food_intro/.orig_images/img_noti_add_food_intro_002.png",
+          "/ui/image_sequences/img_noti_add_food_intro/.orig_images/img_noti_add_food_intro_003.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_noti_add_food_intro/.orig_images/img_noti_add_food_intro_043.png",
+          "/ui/image_sequences/img_noti_add_food_intro/.orig_images/img_noti_add_food_intro_044.png",
+          "/ui/image_sequences/img_noti_add_food_intro/.orig_images/img_noti_add_food_intro_045.png"
+        ]
+      }
+    },
+    {
+      "id": "img_notification2_intro",
+      "name": "img_notification2_intro",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_notification2_intro",
+      "frameCount": 65,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "{index:1}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_notification2_intro/0.png",
+          "/ui/image_sequences/img_notification2_intro/1.png",
+          "/ui/image_sequences/img_notification2_intro/10.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_notification2_intro/7.png",
+          "/ui/image_sequences/img_notification2_intro/8.png",
+          "/ui/image_sequences/img_notification2_intro/9.png"
+        ]
+      }
+    },
+    {
+      "id": "img_sensing_blue_loop",
+      "name": "img_sensing_blue_loop",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/img_sensing_blue_loop",
+      "frameCount": 60,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "{index:1}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/img_sensing_blue_loop/0.png",
+          "/ui/image_sequences/img_sensing_blue_loop/1.png",
+          "/ui/image_sequences/img_sensing_blue_loop/10.png"
+        ],
+        "last": [
+          "/ui/image_sequences/img_sensing_blue_loop/7.png",
+          "/ui/image_sequences/img_sensing_blue_loop/8.png",
+          "/ui/image_sequences/img_sensing_blue_loop/9.png"
+        ]
+      }
+    },
+    {
+      "id": "intro",
+      "name": "intro",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/intro",
+      "frameCount": 74,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "{index:1}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/intro/0.png",
+          "/ui/image_sequences/intro/1.png",
+          "/ui/image_sequences/intro/10.png"
+        ],
+        "last": [
+          "/ui/image_sequences/intro/intro_orange/img_intro_orange_023.png",
+          "/ui/image_sequences/intro/intro_orange/img_intro_orange_024.png",
+          "/ui/image_sequences/intro/intro_orange/img_intro_orange_025.png"
+        ]
+      }
+    },
+    {
+      "id": "sensing_intro",
+      "name": "sensing_intro",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/sensing_intro",
+      "frameCount": 30,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "sensing_intro_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_00.png",
+          "/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_01.png",
+          "/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_02.png"
+        ],
+        "last": [
+          "/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_27.png",
+          "/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_28.png",
+          "/ui/image_sequences/sensing_intro/.orig_images/sensing_intro_29.png"
+        ]
+      }
+    },
+    {
+      "id": "sensing_loop",
+      "name": "sensing_loop",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/sensing_loop",
+      "frameCount": 60,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "sensing_loop_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_00.png",
+          "/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_01.png",
+          "/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_02.png"
+        ],
+        "last": [
+          "/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_57.png",
+          "/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_58.png",
+          "/ui/image_sequences/sensing_loop/.orig_images/sensing_loop_59.png"
+        ]
+      }
+    },
+    {
+      "id": "washer",
+      "name": "washer",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/washer",
+      "frameCount": 663,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "btn_unlock_progress_blue_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/washer/btn_unlock_progress_blue/.orig_images/btn_unlock_progress_blue_01.png",
+          "/ui/image_sequences/washer/btn_unlock_progress_blue/.orig_images/btn_unlock_progress_blue_02.png",
+          "/ui/image_sequences/washer/btn_unlock_progress_blue/.orig_images/btn_unlock_progress_blue_03.png"
+        ],
+        "last": [
+          "/ui/image_sequences/washer/sensing_loop/.orig_images/sensing_loop_57.png",
+          "/ui/image_sequences/washer/sensing_loop/.orig_images/sensing_loop_58.png",
+          "/ui/image_sequences/washer/sensing_loop/.orig_images/sensing_loop_59.png"
+        ]
+      }
+    },
+    {
+      "id": "washer_dryer",
+      "name": "washer_dryer",
+      "type": "image_sequence",
+      "path": "/ui/image_sequences/washer_dryer",
+      "frameCount": 71,
+      "extensions": [
+        ".png"
+      ],
+      "namingPattern": "img_booting_thinq_{index:2}.png",
+      "sampleFrames": {
+        "first": [
+          "/ui/image_sequences/washer_dryer/img_booting_thinq/.orig_images/img_booting_thinq_01.png",
+          "/ui/image_sequences/washer_dryer/img_booting_thinq/.orig_images/img_booting_thinq_02.png",
+          "/ui/image_sequences/washer_dryer/img_booting_thinq/.orig_images/img_booting_thinq_03.png"
+        ],
+        "last": [
+          "/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images/progress_circle_bar_combo_08.png",
+          "/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images/progress_circle_bar_combo_09.png",
+          "/ui/image_sequences/washer_dryer/progress_circle_bar_combo/.orig_images/progress_circle_bar_combo_10.png"
+        ]
+      }
+    }
+  ]
+}
