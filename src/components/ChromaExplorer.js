@@ -41,22 +41,24 @@ function CollectionCard({ col, selected, onClick }) {
     return (
         <button
             onClick={onClick}
-            className={`w-full text-left p-4 rounded-lg border-l-4 transition-all duration-150 ${accent}
+            className={`w-full text-left px-3 py-2 rounded-md border-l-4 transition-all duration-150 ${accent}
                 ${selected
                     ? 'bg-white/10 ring-1 ring-white/20'
                     : 'bg-white/5 hover:bg-white/8'
                 }`}
         >
             <div className="flex items-center justify-between gap-2">
-                <span className="text-[13px] font-bold text-slate-100 font-mono truncate">{col.name}</span>
-                <span className="shrink-0 text-[12px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded">{col.count.toLocaleString()}</span>
+                <span className="text-[12px] font-bold text-slate-100 font-mono truncate">{col.name}</span>
+                <span className="shrink-0 text-[10px] font-bold text-amber-300 bg-amber-400/10 px-1.5 py-0.5 rounded">{col.count.toLocaleString()}</span>
             </div>
-            {col.metadata?.description && (
-                <p className="text-[11px] text-slate-400 mt-1 truncate">{col.metadata.description}</p>
-            )}
-            {col.metadata?.model && col.metadata.model !== 'none' && (
-                <p className="text-[10px] text-sky-400/60 mt-0.5">model: {col.metadata.model}</p>
-            )}
+            <div className="mt-1 flex items-center gap-2">
+                {col.metadata?.description && (
+                    <p className="text-[10px] text-slate-500 truncate">{col.metadata.description}</p>
+                )}
+                {col.metadata?.model && col.metadata.model !== 'none' && (
+                    <p className="text-[10px] text-sky-400/60 shrink-0">{col.metadata.model}</p>
+                )}
+            </div>
         </button>
     );
 }

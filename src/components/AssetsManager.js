@@ -24,6 +24,10 @@ function fileNameFromPath(path) {
     return parts.length ? parts[parts.length - 1] : String(path || '');
 }
 
+function toAssetProxySrc(webPath) {
+    return `/api/assets/file?path=${encodeURIComponent(String(webPath || ''))}`;
+}
+
 function buildSequenceFrames(entry) {
     const frameCount = Number.isInteger(entry?.frameCount) && entry.frameCount > 0 ? entry.frameCount : 0;
     const firstFrames = Array.isArray(entry?.sampleFrames?.first) ? entry.sampleFrames.first : [];
@@ -50,7 +54,7 @@ function buildSequenceFrames(entry) {
     });
 }
 
-function AssetPreview({ entry }) {
+function AssetPreview({ entry, sequenceFrames = [], sequenceFramesLoading = false }) {
     if (!entry) {
         return (
             <div className="h-full min-h-[220px] rounded-xl border border-dashed border-slate-700 bg-slate-900/60 flex items-center justify-center text-[12px] text-slate-400">
@@ -69,7 +73,7 @@ function AssetPreview({ entry }) {
         );
     }
 
-    const previewFrames = buildSequenceFrames(entry);
+    const previewFrames = sequenceFrames.length > 0 ? sequenceFrames : buildSequenceFrames(entry);
 
     return (
         <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
@@ -79,7 +83,7 @@ function AssetPreview({ entry }) {
                         {previewFrames.map((framePath) => (
                             <div key={framePath} className="shrink-0 w-[130px] rounded-lg border border-slate-800 bg-slate-950 p-2">
                                 <div className="flex items-center justify-center h-[78px] overflow-hidden rounded bg-slate-950">
-                                    <img src={framePath} alt={framePath} className="max-h-full max-w-full object-contain" />
+                                    <img src={toAssetProxySrc(framePath)} alt={framePath} className="max-h-full max-w-full object-contain" />
                                 </div>
                                 <p className="mt-1 text-[9px] text-slate-400 font-mono truncate" title={framePath}>{fileNameFromPath(framePath)}</p>
                             </div>
@@ -87,7 +91,7 @@ function AssetPreview({ entry }) {
                     </div>
                 ) : (
                     <div className="h-[92px] rounded-lg border border-dashed border-slate-700 bg-slate-950 flex items-center justify-center text-[11px] text-slate-400">
-                        No preview frames available.
+                        {sequenceFramesLoading ? 'Loading frames...' : 'No preview frames available.'}
                     </div>
                 )}
             </div>
@@ -111,6 +115,8 @@ export default function AssetsManager() {
     const [loading, setLoading] = useState(false);
     const [saving, setSaving] = useState(false);
     const [ingesting, setIngesting] = useState(false);
+    const [sequenceFrames, setSequenceFrames] = useState([]);
+    const [sequenceFramesLoading, setSequenceFramesLoading] = useState(false);
 
     const loadIndex = useCallback(async () => {
         setLoading(true);
@@ -170,6 +176,31 @@ export default function AssetsManager() {
 
     useEffect(() => {
         setEntryJsonText(activeEntry ? pretty(activeEntry) : '');
+    }, [activeEntry]);
+
+    useEffect(() => {
+        const loadSequenceFrames = async () => {
+            if (!activeEntry || activeEntry.type !== 'image_sequence' || !activeEntry.path) {
+                setSequenceFrames([]);
+                setSequenceFramesLoading(false);
+                return;
+            }
+
+            setSequenceFramesLoading(true);
+            try {
+                const res = await fetch(`/api/assets/sequence-frames?sequencePath=${encodeURIComponent(activeEntry.path)}`, { cache: 'no-store' });
+                const json = await res.json();
+                if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
+                setSequenceFrames(Array.isArray(json.frames) ? json.frames : []);
+            } catch {
+                // Fallback to client-side path generation if server listing fails.
+                setSequenceFrames([]);
+            } finally {
+                setSequenceFramesLoading(false);
+            }
+        };
+
+        loadSequenceFrames();
     }, [activeEntry]);
 
     const selectedCount = selectedPaths.size;
@@ -508,7 +539,7 @@ export default function AssetsManager() {
                     </div>
 
                     <div className="flex-1 overflow-y-auto p-5 space-y-4">
-                        <AssetPreview entry={activeEntry} />
+                        <AssetPreview entry={activeEntry} sequenceFrames={sequenceFrames} sequenceFramesLoading={sequenceFramesLoading} />
 
                             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-stretch">
                             <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-2 h-[420px] flex flex-col">
