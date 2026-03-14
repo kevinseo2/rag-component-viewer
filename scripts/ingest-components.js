@@ -344,6 +344,7 @@ function enrich(entry) {
   const descKo      = (entry.descriptionKo || '').trim();
   const visualForm  = (entry.visualForm || '').trim();
   const keywords    = Array.isArray(entry.keywords) ? entry.keywords : [];
+  const relatedScreens = Array.isArray(entry.relatedScreens) ? entry.relatedScreens : [];
   const catalogProps = Array.isArray(entry.props) ? entry.props : [];
 
   const sourcePath = findWidgetSource(name);
@@ -365,6 +366,7 @@ function enrich(entry) {
     descriptionEn: descEn || `${name} component. Category: ${category}.`,
     visualForm,
     keywords: dedupe(keywords),
+    relatedScreens: dedupe(relatedScreens),
     props,
     code,
     sourceRelativePath,
@@ -385,6 +387,7 @@ function buildDescriptionText(e) {
     e.descriptionEn  ? `Description(EN): ${e.descriptionEn}` : '',
     e.visualForm     ? `Visual Form: ${e.visualForm}` : '',
     e.keywords.length > 0 ? `Keywords: ${e.keywords.join(', ')}` : '',
+    e.relatedScreens.length > 0 ? `Related Screens: ${e.relatedScreens.join(', ')}` : '',
     e.props.length   > 0 ? `Props: ${e.props.join(', ')}` : '',
   ].filter(Boolean).join('\n');
 }
@@ -457,6 +460,7 @@ async function ingestEntries(entries) {
       descriptionEn: e.descriptionEn.slice(0, 512),
       props:         e.props.join(', '),
       keywords:      e.keywords.join(', '),
+      relatedScreens: e.relatedScreens.join(', '),
       sourcePath:    e.sourceRelativePath,
     })),
     descTexts

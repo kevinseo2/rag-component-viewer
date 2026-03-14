@@ -111,6 +111,7 @@ export function extractRegistryInfo(name) {
 
 /** 설명 임베딩용 텍스트 빌드 */
 export function buildDescriptionText(data, name) {
+    const relatedScreens = Array.isArray(data.relatedScreens) ? data.relatedScreens : [];
     return [
         `Component: ${name}`,
         data.category ? `Category: ${data.category}` : '',
@@ -118,6 +119,7 @@ export function buildDescriptionText(data, name) {
         data.descriptionEn ? `Description(EN): ${data.descriptionEn}` : '',
         data.visualForm ? `Visual Form: ${data.visualForm}` : '',
         data.keywords?.length ? `Keywords: ${data.keywords.join(', ')}` : '',
+        relatedScreens.length ? `Related Screens: ${relatedScreens.join(', ')}` : '',
         data.props?.length ? `Props: ${data.props.join(', ')}` : '',
     ].filter(Boolean).join('\n');
 }
@@ -262,6 +264,7 @@ export async function ingestOne(name, catalogData = null) {
     // Upsert
     const props    = Array.isArray(catalogData.props)    ? catalogData.props    : [];
     const keywords = Array.isArray(catalogData.keywords) ? catalogData.keywords : [];
+    const relatedScreens = Array.isArray(catalogData.relatedScreens) ? catalogData.relatedScreens : [];
 
     try {
         await Promise.all([
@@ -276,6 +279,7 @@ export async function ingestOne(name, catalogData = null) {
                     descriptionEn: (catalogData.descriptionEn || '').slice(0, 512),
                     props: props.join(', '),
                     keywords: keywords.join(', '),
+                    relatedScreens: relatedScreens.join(', '),
                     sourcePath: sourceRelativePath,
                 },
                 descText
