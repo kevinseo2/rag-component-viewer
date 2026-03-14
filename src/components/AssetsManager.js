@@ -80,6 +80,7 @@ export default function AssetsManager() {
     const [loading, setLoading] = useState(false);
     const [saving, setSaving] = useState(false);
     const [ingesting, setIngesting] = useState(false);
+    const [showRawJson, setShowRawJson] = useState(false);
 
     const loadIndex = useCallback(async () => {
         setLoading(true);
@@ -277,22 +278,6 @@ export default function AssetsManager() {
         await runIngest({ paths }, 'Ingest selected assets');
     }, [selectedPaths, runIngest]);
 
-    const handleIngestCurrent = useCallback(async () => {
-        if (!activeEntry?.path) {
-            setError('Select an asset first.');
-            return;
-        }
-        await runIngest({ paths: [activeEntry.path] }, 'Ingest current asset');
-    }, [activeEntry, runIngest]);
-
-    const handleIngestImages = useCallback(async () => {
-        await runIngest({ types: ['image'] }, 'Ingest all images');
-    }, [runIngest]);
-
-    const handleIngestSequences = useCallback(async () => {
-        await runIngest({ types: ['image_sequence'] }, 'Ingest all sequences');
-    }, [runIngest]);
-
     return (
         <div className="h-screen flex bg-[#07111d] text-slate-100" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             <aside className="w-[380px] flex-shrink-0 border-r border-slate-800/90 flex flex-col bg-[#0b1726]">
@@ -304,9 +289,10 @@ export default function AssetsManager() {
                                 {loading ? 'Loading asset index...' : `${filteredEntries.length} / ${allEntries.length} assets`}
                             </p>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Link href="/catalog" className="text-[11px] px-2 py-1 rounded border border-slate-700 text-slate-300 hover:bg-slate-800">Catalog</Link>
-                            <Link href="/explorer" className="text-[11px] px-2 py-1 rounded border border-slate-700 text-slate-300 hover:bg-slate-800">DB</Link>
+                        <div className="flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900/80 p-1">
+                            <Link href="/catalog" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-slate-800">Catalog</Link>
+                            <Link href="/explorer" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-slate-800">DB</Link>
+                            <Link href="/assets" className="text-[10px] px-2 py-1 rounded bg-cyan-600/20 text-cyan-300 border border-cyan-400/30">Assets</Link>
                         </div>
                     </div>
                 </div>
@@ -336,12 +322,9 @@ export default function AssetsManager() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-2">
-                        <button disabled={ingesting} onClick={handleIngestCurrent} className="text-[11px] px-2 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-50">Ingest Current</button>
+                        <button disabled={saving} onClick={handleSaveJson} className="text-[11px] px-2 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50">Save JSON</button>
                         <button disabled={ingesting} onClick={handleIngestSelected} className="text-[11px] px-2 py-1.5 rounded-lg bg-amber-700 hover:bg-amber-600 disabled:opacity-50">Ingest Selected ({selectedCount})</button>
-                        <button disabled={ingesting} onClick={handleIngestImages} className="text-[11px] px-2 py-1.5 rounded-lg bg-sky-700 hover:bg-sky-600 disabled:opacity-50">Ingest Images</button>
-                        <button disabled={ingesting} onClick={handleIngestSequences} className="text-[11px] px-2 py-1.5 rounded-lg bg-sky-700 hover:bg-sky-600 disabled:opacity-50">Ingest Sequences</button>
-                        <button disabled={saving} onClick={handleSaveJson} className="col-span-2 text-[11px] px-2 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 disabled:opacity-50">Save asset_index.json</button>
-                        <button disabled={ingesting} onClick={handleIngestAll} className="col-span-2 text-[11px] px-2 py-1.5 rounded-lg bg-fuchsia-700 hover:bg-fuchsia-600 disabled:opacity-50">Ingest All Assets</button>
+                        <button disabled={ingesting} onClick={handleIngestAll} className="col-span-2 text-[11px] px-2 py-1.5 rounded-lg bg-sky-700 hover:bg-sky-600 disabled:opacity-50">Ingest All Assets</button>
                     </div>
 
                     {status ? <p className="text-[11px] text-emerald-300">{status}</p> : null}
@@ -385,11 +368,21 @@ export default function AssetsManager() {
                 </div>
             </aside>
 
-            <main className="flex-1 min-w-0 grid grid-cols-[1.15fr_0.95fr] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.08),_transparent_38%),linear-gradient(180deg,_#07111d,_#0a1220)]">
+            <main className={`flex-1 min-w-0 ${showRawJson ? 'grid grid-cols-[1.15fr_0.95fr]' : 'flex'} bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.08),_transparent_38%),linear-gradient(180deg,_#07111d,_#0a1220)]`}>
                 <section className="min-w-0 flex flex-col border-r border-slate-800/80">
                     <div className="px-5 py-4 border-b border-slate-800/80 bg-slate-950/50">
-                        <h2 className="text-sm font-semibold text-slate-100">Asset Review</h2>
-                        <p className="text-[11px] text-slate-400 mt-1">썸네일/프레임 미리보기와 항목 메타데이터를 보고 현재 항목만 선택 인제스트할 수 있습니다.</p>
+                        <div className="flex items-start justify-between gap-3">
+                            <div>
+                                <h2 className="text-sm font-semibold text-slate-100">Asset Review</h2>
+                                <p className="text-[11px] text-slate-400 mt-1">썸네일/프레임 미리보기와 항목 메타데이터를 확인하고, 필요 시 항목 JSON만 수정하세요.</p>
+                            </div>
+                            <button
+                                onClick={() => setShowRawJson((v) => !v)}
+                                className="text-[11px] px-2 py-1 rounded border border-slate-700 text-slate-300 hover:bg-slate-800"
+                            >
+                                {showRawJson ? 'Hide Full JSON' : 'Show Full JSON'}
+                            </button>
+                        </div>
                     </div>
 
                     <div className="flex-1 overflow-y-auto p-5 space-y-4">
@@ -454,7 +447,7 @@ export default function AssetsManager() {
                     </div>
                 </section>
 
-                <section className="min-w-0 flex flex-col">
+                {showRawJson ? <section className="min-w-0 flex flex-col">
                     <div className="px-5 py-4 border-b border-slate-800/80 bg-slate-950/50">
                         <h2 className="text-sm font-semibold text-slate-100">Full asset_index.json</h2>
                         <p className="text-[11px] text-slate-400 mt-1">파일 전체를 직접 편집하고 저장할 수 있습니다. 항목 단위 편집 후에도 이 뷰는 자동으로 동기화됩니다.</p>
@@ -467,7 +460,7 @@ export default function AssetsManager() {
                             spellCheck={false}
                         />
                     </div>
-                </section>
+                </section> : null}
             </main>
         </div>
     );

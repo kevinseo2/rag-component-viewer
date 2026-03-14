@@ -337,18 +337,15 @@ export default function ChromaExplorer() {
                 {/* Header */}
                 <div className="px-5 py-4 border-b border-white/10 flex items-center justify-between">
                     <div>
-                        <div className="flex items-center gap-2 mb-1">
-                            <Link href="/catalog" className="text-slate-400 hover:text-white transition-colors" title="← Widget Catalog">
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </Link>
+                        <div className="flex items-center gap-2 mb-2">
                             <h1 className="text-[11px] font-black text-slate-100 tracking-widest uppercase">ChromaDB Explorer</h1>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <StatusBadge connected={connected} />
-                            <Link href="/assets" className="text-[10px] px-2 py-0.5 rounded border border-cyan-400/30 text-cyan-300 hover:bg-cyan-400/10 transition-colors">Assets</Link>
+                        <div className="flex items-center gap-2 mb-2 rounded-md border border-white/10 bg-white/5 p-1 w-fit">
+                            <Link href="/catalog" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-white/10">Catalog</Link>
+                            <Link href="/explorer" className="text-[10px] px-2 py-1 rounded text-cyan-300 bg-cyan-500/15 border border-cyan-400/30">DB</Link>
+                            <Link href="/assets" className="text-[10px] px-2 py-1 rounded text-slate-300 hover:bg-white/10">Assets</Link>
                         </div>
+                        <StatusBadge connected={connected} />
                     </div>
                     <button
                         onClick={connect}

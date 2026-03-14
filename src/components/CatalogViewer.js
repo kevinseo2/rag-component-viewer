@@ -7,14 +7,9 @@ import PropsEditor from './PropsEditor.js';
 
 const INGEST_SELECTION_STORAGE_KEY = 'catalogViewer.checkedForIngest.v1';
 
-function getInitialCheckedForIngestSet() {
+function restoreCheckedFromStorage() {
     const allNames = Object.keys(ComponentRegistry);
     const valid = new Set(allNames);
-
-    if (typeof window === 'undefined') {
-        return new Set(allNames);
-    }
-
     try {
         const raw = window.localStorage.getItem(INGEST_SELECTION_STORAGE_KEY);
         if (!raw) return new Set(allNames);
@@ -448,7 +443,12 @@ export default function CatalogViewer() {
     const [liveProps, setLiveProps] = useState({});
     const [selectedVariant, setSelectedVariant] = useState(null);
     const [collapsedCats, setCollapsedCats] = useState({});
-    const [checkedForIngest, setCheckedForIngest] = useState(() => getInitialCheckedForIngestSet());
+    const [checkedForIngest, setCheckedForIngest] = useState(() => new Set(Object.keys(ComponentRegistry)));
+
+    // Restore from localStorage after mount (avoids SSR/hydration mismatch).
+    useEffect(() => {
+        setCheckedForIngest(restoreCheckedFromStorage());
+    }, []);
 
     // Persist selection whenever it changes.
     useEffect(() => {
@@ -602,16 +602,11 @@ export default function CatalogViewer() {
                                 </button>
                             </div>
                         </div>
-                        <Link
-                            href="/explorer"
-                            className="shrink-0 flex items-center gap-1 px-2 py-1 rounded text-[10px] font-semibold text-slate-600 bg-slate-100 hover:bg-slate-800 hover:text-slate-100 border border-slate-200 transition-all"
-                            title="ChromaDB Explorer"
-                        >
-                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582 4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                            </svg>
-                            DB
-                        </Link>
+                        <div className="shrink-0 flex items-center gap-1 rounded-md border border-gray-200 bg-white p-1">
+                            <Link href="/catalog" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-800 bg-gray-100 border border-gray-200">Catalog</Link>
+                            <Link href="/explorer" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">DB</Link>
+                            <Link href="/assets" className="px-2 py-1 rounded text-[10px] font-semibold text-gray-600 hover:bg-gray-100">Assets</Link>
+                        </div>
                     </div>
                 </div>
 
