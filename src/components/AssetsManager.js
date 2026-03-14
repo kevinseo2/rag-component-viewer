@@ -26,16 +26,23 @@ function fileNameFromPath(path) {
 
 function buildSequenceFrames(entry) {
     const frameCount = Number.isInteger(entry?.frameCount) && entry.frameCount > 0 ? entry.frameCount : 0;
+    const firstFrames = Array.isArray(entry?.sampleFrames?.first) ? entry.sampleFrames.first : [];
+    const lastFrames = Array.isArray(entry?.sampleFrames?.last) ? entry.sampleFrames.last : [];
+    const sampleFrames = [...firstFrames, ...lastFrames].filter(Boolean);
+
     const tokenMatch = String(entry?.namingPattern || '').match(/\{index:(\d+)\}/);
     if (!tokenMatch || frameCount === 0) {
-        const firstFrames = Array.isArray(entry?.sampleFrames?.first) ? entry.sampleFrames.first : [];
-        const lastFrames = Array.isArray(entry?.sampleFrames?.last) ? entry.sampleFrames.last : [];
-        return [...firstFrames, ...lastFrames];
+        return sampleFrames;
     }
 
     const pad = Number(tokenMatch[1]);
     const pattern = String(entry.namingPattern);
-    const basePath = String(entry.path || '').replace(/\/$/, '');
+    // Prefer the real directory seen in sample frames (e.g. "/.orig_images")
+    // so generated URLs point to files that actually exist.
+    const sampleDir = sampleFrames.length > 0
+        ? sampleFrames[0].replace(/\/[^/]+$/, '')
+        : '';
+    const basePath = (sampleDir || String(entry.path || '')).replace(/\/$/, '');
     return Array.from({ length: frameCount }, (_, i) => {
         const idx = String(i + 1).padStart(pad, '0');
         const fileName = pattern.replace(/\{index:\d+\}/, idx);
@@ -279,6 +286,23 @@ export default function AssetsManager() {
         setStatus('Exported full asset_index.json');
     }, [indexData]);
 
+    const handleRebuildIndex = useCallback(async () => {
+        setLoading(true);
+        setError('');
+        setStatus('');
+        try {
+            const res = await fetch('/api/assets/index', { method: 'POST' });
+            const json = await res.json();
+            if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
+            setIndexData(json.rebuilt || null);
+            setStatus(`Rebuilt index from /public (${json.rebuilt?.summary?.totalImageFiles ?? 0} files)`);
+        } catch (e) {
+            setError(`Rebuild failed: ${e.message}`);
+        } finally {
+            setLoading(false);
+        }
+    }, []);
+
     const runIngest = useCallback(async (payload, label) => {
         setIngesting(true);
         setError('');
@@ -356,6 +380,14 @@ export default function AssetsManager() {
                         title="asset_index.json 저장"
                     >
                         Save Index
+                    </button>
+                    <button
+                        disabled={loading}
+                        onClick={handleRebuildIndex}
+                        className="text-[11px] px-2.5 py-1 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800 disabled:opacity-50"
+                        title="현재 /public 폴더를 스캔해 asset_index.json 전체 재생성"
+                    >
+                        Rebuild From Public
                     </button>
                     <button
                         onClick={handleExportFullJson}
