@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import * as ingestLib from '../ingest/_lib.js';
 
 /**
  * POST /api/ingest-assets
@@ -10,6 +9,13 @@ import * as ingestLib from '../ingest/_lib.js';
  *   - assetIds: ["foo_bar", ...]
  */
 export async function POST(request) {
+    let ingestLib;
+    try {
+        ingestLib = await import('../ingest/_lib.js');
+    } catch (e) {
+        return NextResponse.json({ error: `Failed to load ingest library: ${e.message}` }, { status: 500 });
+    }
+
     let options = null;
     try {
         const body = await request.json();
