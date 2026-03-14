@@ -228,10 +228,29 @@ function extractPropsFromSource(code) {
 let _registryCache = null;
 
 function toRegistryKey(name) {
-  return name.split('_').map((p, i) => {
-    if (i < 2) return p.toUpperCase();
-    return p.charAt(0).toUpperCase() + p.slice(1).toLowerCase();
-  }).join('_');
+  const parts = name.split('_');
+  const prefix = parts.slice(0, 2).map(p => p.toUpperCase()).join('_');
+  const rest = parts.slice(2).map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join('');
+  return rest ? `${prefix}_${rest}` : prefix;
+}
+
+// 언더스코어/대소문자를 무시한 정규화 비교로 레지스트리 키 탐색 (폴백)
+function normalizeId(s) {
+  return s.replace(/_/g, '').toLowerCase();
+}
+
+function findRegistryKey(src, name, convertedKey) {
+  for (const key of [name, convertedKey]) {
+    if (src.includes(`${key}:`)) return key;
+  }
+  // fallback: normalized case-insensitive scan
+  const normTarget = normalizeId(name);
+  const keyRe = /^    (\w+):\s*\{/gm;
+  let m;
+  while ((m = keyRe.exec(src)) !== null) {
+    if (normalizeId(m[1]) === normTarget) return m[1];
+  }
+  return null;
 }
 
 /**
@@ -247,8 +266,9 @@ function extractRegistryInfo(name) {
   const src = _registryCache;
   const result = { defaultPropsSnippet: null, variants: [] };
 
-  for (const key of [name, toRegistryKey(name)]) {
-    const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const resolvedKey = findRegistryKey(src, name, toRegistryKey(name));
+  if (resolvedKey) {
+    const escaped = resolvedKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
     // defaultProps 추출
     const dpRe = new RegExp(
@@ -260,7 +280,7 @@ function extractRegistryInfo(name) {
     }
 
     // variants 배열 추출
-    const blockStart = src.indexOf(`${key}:`);
+    const blockStart = src.indexOf(`${resolvedKey}:`);
     if (blockStart !== -1) {
       const variantsPos = src.indexOf('variants: [', blockStart);
       if (variantsPos !== -1 && variantsPos < blockStart + 3000) {
@@ -272,15 +292,13 @@ function extractRegistryInfo(name) {
           pos++;
         }
         const varBlock = src.slice(arrStart, pos - 1);
-        const itemRe = /\{\s*id:\s*['"]([ ^'"]+)['"]\s*,\s*description:\s*['"]([ ^'"]+)['"]/g;
+        const itemRe = /\{\s*id:\s*['"]([^'"]+)['"]\s*,\s*description:\s*['"]([^'"]+)['"]/g;
         let m;
         while ((m = itemRe.exec(varBlock)) !== null) {
           result.variants.push({ id: m[1], description: m[2] });
         }
       }
     }
-
-    if (result.defaultPropsSnippet !== null || result.variants.length > 0) break;
   }
 
   if (result.defaultPropsSnippet === null) {
