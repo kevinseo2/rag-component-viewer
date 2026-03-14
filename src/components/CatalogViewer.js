@@ -160,12 +160,6 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
             .catch(() => setDraft({ name, category: getCategory(name), type: 'Widget', descriptionKo: '', descriptionEn: '', visualForm: '', props: defaultPropsKeys, keywords: [], relatedScreens: [] }));
     }, [name, defaultPropsKeys]);
 
-    if (!draft) return (
-        <div className="h-full flex flex-col items-center justify-center bg-white text-gray-400 text-xs border-t border-gray-200">
-            Waiting for component selection to enable catalog editor.
-        </div>
-    );
-
     const handleChange = (field, value) => { setDraft(prev => ({ ...prev, [field]: value })); setSaveStatus(null); };
 
     const handleSave = async () => {
@@ -271,6 +265,12 @@ function CatalogEditor({ name, defaultPropsKeys, selectedNamesForIngestAll = [],
         window.addEventListener('catalog-toolbar-action', onToolbarAction);
         return () => window.removeEventListener('catalog-toolbar-action', onToolbarAction);
     }, [selectedNamesForIngestAll.length, handleDelete, handleIngest, handleSave]);
+
+    if (!draft) return (
+        <div className="h-full flex flex-col items-center justify-center bg-white text-gray-400 text-xs border-t border-gray-200">
+            Waiting for component selection to enable catalog editor.
+        </div>
+    );
 
     return (
         <div className="flex h-full bg-white flex-col text-sm border-t border-gray-200">
@@ -606,7 +606,7 @@ export default function CatalogViewer() {
             <aside className="w-72 flex-shrink-0 bg-gray-50 border-r border-gray-200 flex flex-col z-20">
                 {/* App header */}
                 <div className="px-5 py-3 border-b border-gray-200 bg-gray-100">
-                    <p className="text-[10px] text-gray-600 font-mono">Widget Tree</p>
+                    <h2 className="text-xs font-bold text-gray-700 uppercase tracking-wider">Widget Tree</h2>
                 </div>
 
                 {/* Search */}

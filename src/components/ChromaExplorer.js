@@ -358,11 +358,9 @@ export default function ChromaExplorer() {
             {/* ── LEFT SIDEBAR ── */}
             <aside className="w-72 flex-shrink-0 flex flex-col border-r border-white/10" style={{ background: '#0f1012' }}>
                 {/* Header */}
-                <div className="px-5 py-4 border-b border-white/10">
-                    <div>
-                        <div className="flex items-center gap-2 mb-2">
-                            <h2 className="text-[11px] font-black text-slate-100 tracking-[0.16em] uppercase">Collections</h2>
-                        </div>
+                <div className="px-5 py-3 border-b border-white/10">
+                    <div className="flex items-center justify-between gap-2">
+                        <h2 className="text-[11px] font-black text-slate-100 tracking-[0.16em] uppercase">Collections</h2>
                         <StatusBadge connected={connected} />
                     </div>
                 </div>

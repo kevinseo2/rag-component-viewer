@@ -44,17 +44,21 @@ function AssetPreview({ entry }) {
 
     const firstFrames = Array.isArray(entry.sampleFrames?.first) ? entry.sampleFrames.first : [];
     const lastFrames = Array.isArray(entry.sampleFrames?.last) ? entry.sampleFrames.last : [];
-    const previewFrames = [...firstFrames, ...lastFrames].slice(0, 6);
+    const previewFrames = [...firstFrames, ...lastFrames];
 
     return (
         <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
-            <div className="grid grid-cols-3 gap-3">
-                {previewFrames.length > 0 ? previewFrames.map((framePath) => (
-                    <div key={framePath} className="rounded-lg border border-slate-800 bg-slate-950 p-2 flex items-center justify-center h-[92px] overflow-hidden">
-                        <img src={framePath} alt={framePath} className="max-h-full max-w-full object-contain" />
+            <div className="overflow-x-auto pb-1">
+                {previewFrames.length > 0 ? (
+                    <div className="flex items-center gap-3 min-w-max">
+                        {previewFrames.map((framePath) => (
+                            <div key={framePath} className="shrink-0 w-[120px] rounded-lg border border-slate-800 bg-slate-950 p-2 flex items-center justify-center h-[92px] overflow-hidden">
+                                <img src={framePath} alt={framePath} className="max-h-full max-w-full object-contain" />
+                            </div>
+                        ))}
                     </div>
-                )) : (
-                    <div className="col-span-3 h-[92px] rounded-lg border border-dashed border-slate-700 bg-slate-950 flex items-center justify-center text-[11px] text-slate-400">
+                ) : (
+                    <div className="h-[92px] rounded-lg border border-dashed border-slate-700 bg-slate-950 flex items-center justify-center text-[11px] text-slate-400">
                         No preview frames available.
                     </div>
                 )}
@@ -80,7 +84,6 @@ export default function AssetsManager() {
     const [loading, setLoading] = useState(false);
     const [saving, setSaving] = useState(false);
     const [ingesting, setIngesting] = useState(false);
-    const [showRawJson, setShowRawJson] = useState(false);
 
     const loadIndex = useCallback(async () => {
         setLoading(true);
@@ -431,19 +434,14 @@ export default function AssetsManager() {
                                 <h2 className="text-sm font-semibold text-slate-100">Asset Review</h2>
                                 <p className="text-[11px] text-slate-400 mt-1">썸네일/프레임 미리보기와 항목 메타데이터를 확인하고, 필요 시 항목 JSON만 수정하세요.</p>
                             </div>
-                            <button
-                                onClick={() => setShowRawJson((v) => !v)}
-                                className="text-[11px] px-2 py-1 rounded border border-slate-700 text-slate-300 hover:bg-slate-800"
-                            >
-                                {showRawJson ? 'Hide Full JSON' : 'Show Full JSON'}
-                            </button>
                         </div>
                     </div>
 
                     <div className="flex-1 overflow-y-auto p-5 space-y-4">
                         <AssetPreview entry={activeEntry} />
 
-                        <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-2">
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
+                            <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-2">
                             <div className="flex items-center justify-between gap-3">
                                 <h3 className="text-[13px] font-semibold text-slate-100">Current Asset</h3>
                                 {activeEntry ? <span className="text-[10px] px-2 py-1 rounded-full bg-slate-800 border border-slate-700">{activeEntry.type}</span> : null}
@@ -499,21 +497,20 @@ export default function AssetsManager() {
                                 spellCheck={false}
                             />
                         </div>
+                        </div>
 
-                        {showRawJson ? (
-                            <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
-                                <div>
-                                    <h3 className="text-[13px] font-semibold text-slate-100">Full asset_index.json</h3>
-                                    <p className="text-[11px] text-slate-400 mt-1">파일 전체를 직접 편집하고 저장할 수 있습니다. 항목 단위 편집 후에도 이 뷰는 자동으로 동기화됩니다.</p>
-                                </div>
-                                <textarea
-                                    value={rawJsonText}
-                                    onChange={(e) => setRawJsonText(e.target.value)}
-                                    className="w-full min-h-[320px] rounded-xl border border-slate-800 bg-slate-950/90 text-slate-200 text-[12px] font-mono p-4 outline-none focus:border-cyan-500"
-                                    spellCheck={false}
-                                />
+                        <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
+                            <div>
+                                <h3 className="text-[13px] font-semibold text-slate-100">Full asset_index.json</h3>
+                                <p className="text-[11px] text-slate-400 mt-1">파일 전체를 직접 편집하고 저장할 수 있습니다. 항목 단위 편집 후에도 이 뷰는 자동으로 동기화됩니다.</p>
                             </div>
-                        ) : null}
+                            <textarea
+                                value={rawJsonText}
+                                onChange={(e) => setRawJsonText(e.target.value)}
+                                className="w-full min-h-[320px] rounded-xl border border-slate-800 bg-slate-950/90 text-slate-200 text-[12px] font-mono p-4 outline-none focus:border-cyan-500"
+                                spellCheck={false}
+                            />
+                        </div>
                     </div>
                 </section>
             </main>
