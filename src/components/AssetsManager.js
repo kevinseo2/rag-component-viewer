@@ -19,8 +19,28 @@ function cloneIndex(indexData) {
     return JSON.parse(JSON.stringify(indexData));
 }
 
-function syncRawJson(setter, value) {
-    setter(pretty(value));
+function fileNameFromPath(path) {
+    const parts = String(path || '').split('/').filter(Boolean);
+    return parts.length ? parts[parts.length - 1] : String(path || '');
+}
+
+function buildSequenceFrames(entry) {
+    const frameCount = Number.isInteger(entry?.frameCount) && entry.frameCount > 0 ? entry.frameCount : 0;
+    const tokenMatch = String(entry?.namingPattern || '').match(/\{index:(\d+)\}/);
+    if (!tokenMatch || frameCount === 0) {
+        const firstFrames = Array.isArray(entry?.sampleFrames?.first) ? entry.sampleFrames.first : [];
+        const lastFrames = Array.isArray(entry?.sampleFrames?.last) ? entry.sampleFrames.last : [];
+        return [...firstFrames, ...lastFrames];
+    }
+
+    const pad = Number(tokenMatch[1]);
+    const pattern = String(entry.namingPattern);
+    const basePath = String(entry.path || '').replace(/\/$/, '');
+    return Array.from({ length: frameCount }, (_, i) => {
+        const idx = String(i + 1).padStart(pad, '0');
+        const fileName = pattern.replace(/\{index:\d+\}/, idx);
+        return `${basePath}/${fileName}`;
+    });
 }
 
 function AssetPreview({ entry }) {
@@ -42,9 +62,7 @@ function AssetPreview({ entry }) {
         );
     }
 
-    const firstFrames = Array.isArray(entry.sampleFrames?.first) ? entry.sampleFrames.first : [];
-    const lastFrames = Array.isArray(entry.sampleFrames?.last) ? entry.sampleFrames.last : [];
-    const previewFrames = [...firstFrames, ...lastFrames];
+    const previewFrames = buildSequenceFrames(entry);
 
     return (
         <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
@@ -52,8 +70,11 @@ function AssetPreview({ entry }) {
                 {previewFrames.length > 0 ? (
                     <div className="flex items-center gap-3 min-w-max">
                         {previewFrames.map((framePath) => (
-                            <div key={framePath} className="shrink-0 w-[120px] rounded-lg border border-slate-800 bg-slate-950 p-2 flex items-center justify-center h-[92px] overflow-hidden">
-                                <img src={framePath} alt={framePath} className="max-h-full max-w-full object-contain" />
+                            <div key={framePath} className="shrink-0 w-[130px] rounded-lg border border-slate-800 bg-slate-950 p-2">
+                                <div className="flex items-center justify-center h-[78px] overflow-hidden rounded bg-slate-950">
+                                    <img src={framePath} alt={framePath} className="max-h-full max-w-full object-contain" />
+                                </div>
+                                <p className="mt-1 text-[9px] text-slate-400 font-mono truncate" title={framePath}>{fileNameFromPath(framePath)}</p>
                             </div>
                         ))}
                     </div>
@@ -73,7 +94,6 @@ function AssetPreview({ entry }) {
 
 export default function AssetsManager() {
     const [indexData, setIndexData] = useState(null);
-    const [rawJsonText, setRawJsonText] = useState('');
     const [entryJsonText, setEntryJsonText] = useState('');
     const [selectedType, setSelectedType] = useState('all');
     const [search, setSearch] = useState('');
@@ -94,7 +114,6 @@ export default function AssetsManager() {
             const json = await res.json();
             if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
             setIndexData(json);
-            syncRawJson(setRawJsonText, json);
         } catch (e) {
             setError(`Failed to load asset index: ${e.message}`);
         } finally {
@@ -167,7 +186,6 @@ export default function AssetsManager() {
 
     const updateIndexData = useCallback((nextIndex, nextStatus) => {
         setIndexData(nextIndex);
-        syncRawJson(setRawJsonText, nextIndex);
         if (nextStatus) setStatus(nextStatus);
     }, []);
 
@@ -223,10 +241,9 @@ export default function AssetsManager() {
         setSaving(true);
         setError('');
         setStatus('');
-        const parsed = parseJsonSafe(rawJsonText);
-        if (!parsed.ok) {
+        if (!indexData) {
             setSaving(false);
-            setError(`JSON parse error: ${parsed.error}`);
+            setError('No index data loaded.');
             return;
         }
 
@@ -234,11 +251,10 @@ export default function AssetsManager() {
             const res = await fetch('/api/assets/index', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(parsed.data),
+                body: JSON.stringify(indexData),
             });
             const json = await res.json();
             if (!res.ok) throw new Error(json.error || `HTTP ${res.status}`);
-            setIndexData(parsed.data);
             setStatus('asset_index.json saved');
             setError('');
         } catch (e) {
@@ -246,7 +262,22 @@ export default function AssetsManager() {
         } finally {
             setSaving(false);
         }
-    }, [rawJsonText]);
+    }, [indexData]);
+
+    const handleExportFullJson = useCallback(() => {
+        const payload = pretty(indexData || { images: [], sequences: [] });
+        const blob = new Blob([payload], { type: 'application/json;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+        a.href = url;
+        a.download = `asset_index_export_${stamp}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        setStatus('Exported full asset_index.json');
+    }, [indexData]);
 
     const runIngest = useCallback(async (payload, label) => {
         setIngesting(true);
@@ -325,6 +356,13 @@ export default function AssetsManager() {
                         title="asset_index.json 저장"
                     >
                         Save Index
+                    </button>
+                    <button
+                        onClick={handleExportFullJson}
+                        className="text-[11px] px-2.5 py-1 rounded border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800"
+                        title="전체 asset_index.json 파일 다운로드"
+                    >
+                        Full JSON Export
                     </button>
                     <button
                         disabled={ingesting}
@@ -440,14 +478,14 @@ export default function AssetsManager() {
                     <div className="flex-1 overflow-y-auto p-5 space-y-4">
                         <AssetPreview entry={activeEntry} />
 
-                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
-                            <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-2">
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-stretch">
+                            <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-2 h-[420px] flex flex-col">
                             <div className="flex items-center justify-between gap-3">
                                 <h3 className="text-[13px] font-semibold text-slate-100">Current Asset</h3>
                                 {activeEntry ? <span className="text-[10px] px-2 py-1 rounded-full bg-slate-800 border border-slate-700">{activeEntry.type}</span> : null}
                             </div>
                             {activeEntry ? (
-                                <div className="text-[12px] text-slate-300 space-y-2">
+                                    <div className="text-[12px] text-slate-300 space-y-2 overflow-y-auto pr-1">
                                     <div>
                                         <p className="text-[10px] uppercase tracking-[0.18em] text-slate-500">Name</p>
                                         <p className="mt-1 break-all">{activeEntry.name}</p>
@@ -478,7 +516,7 @@ export default function AssetsManager() {
                             )}
                         </div>
 
-                        <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
+                        <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3 h-[420px] flex flex-col">
                             <div className="flex items-center justify-between gap-3">
                                 <h3 className="text-[13px] font-semibold text-slate-100">Current Entry JSON</h3>
                                 <button
@@ -493,23 +531,10 @@ export default function AssetsManager() {
                                 value={entryJsonText}
                                 onChange={(e) => setEntryJsonText(e.target.value)}
                                 disabled={!activeEntry}
-                                className="w-full min-h-[300px] rounded-xl border border-slate-700 bg-slate-950 text-slate-200 text-[12px] font-mono p-3 outline-none focus:border-cyan-500 disabled:opacity-50"
+                                className="w-full flex-1 min-h-0 rounded-xl border border-slate-700 bg-slate-950 text-slate-200 text-[12px] font-mono p-3 outline-none focus:border-cyan-500 disabled:opacity-50"
                                 spellCheck={false}
                             />
                         </div>
-                        </div>
-
-                        <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 space-y-3">
-                            <div>
-                                <h3 className="text-[13px] font-semibold text-slate-100">Full asset_index.json</h3>
-                                <p className="text-[11px] text-slate-400 mt-1">파일 전체를 직접 편집하고 저장할 수 있습니다. 항목 단위 편집 후에도 이 뷰는 자동으로 동기화됩니다.</p>
-                            </div>
-                            <textarea
-                                value={rawJsonText}
-                                onChange={(e) => setRawJsonText(e.target.value)}
-                                className="w-full min-h-[320px] rounded-xl border border-slate-800 bg-slate-950/90 text-slate-200 text-[12px] font-mono p-4 outline-none focus:border-cyan-500"
-                                spellCheck={false}
-                            />
                         </div>
                     </div>
                 </section>
