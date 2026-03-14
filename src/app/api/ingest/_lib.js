@@ -23,6 +23,25 @@ export const COL_DESCRIPTION = 'ui_components_description';
 export const COL_CODE        = 'ui_components_code';
 export const COL_SAMPLES     = 'ui_components_samples';
 
+function normalizeNameForMatch(value) {
+    return String(value || '').replace(/_/g, '').toUpperCase();
+}
+
+/**
+ * 입력 name/cataloData.name 과 매칭되는 카탈로그 파일명을 canonical component name으로 반환
+ * 예: CM_LIST_HorizontalPager -> CM_LIST_HORIZONTAL_PAGER
+ */
+function resolveCanonicalComponentName(name, catalogName) {
+    const candidates = [name, catalogName].filter(Boolean).map(normalizeNameForMatch);
+    if (!fs.existsSync(CATALOG_DIR)) return String(name || catalogName || '').toUpperCase();
+    const files = fs.readdirSync(CATALOG_DIR).filter(f => f.endsWith('.json'));
+    const match = files.find((f) => {
+        const stemNorm = normalizeNameForMatch(f.replace('.json', ''));
+        return candidates.includes(stemNorm);
+    });
+    return match ? match.replace('.json', '').toUpperCase() : String(name || catalogName || '').toUpperCase();
+}
+
 // ─── 유틸 ────────────────────────────────────────────────────────────────────
 
 /** 컴포넌트 소스 파일 경로 탐색 */
@@ -218,6 +237,8 @@ export async function chromaUpsert(collectionName, id, embedding, metadata, docu
  * @returns {{ ok: boolean, name: string, error?: string }}
  */
 export async function ingestOne(name, catalogData = null) {
+    const requestedName = name;
+
     // 카탈로그 데이터 로드 (없으면 파일에서)
     if (!catalogData) {
         const files = fs.existsSync(CATALOG_DIR) ? fs.readdirSync(CATALOG_DIR) : [];
@@ -236,19 +257,23 @@ export async function ingestOne(name, catalogData = null) {
         }
     }
 
+    // ingest-all / ingest-this가 동일 레코드를 업데이트하도록 canonical 이름으로 통일
+    const canonicalName = resolveCanonicalComponentName(requestedName, catalogData?.name);
+
     // 소스 코드 로드
-    const sourcePath = findWidgetSource(name);
+    const sourcePath = findWidgetSource(canonicalName);
     const code = sourcePath ? fs.readFileSync(sourcePath, 'utf-8') : '';
     const sourceRelativePath = sourcePath
         ? path.relative(process.cwd(), sourcePath).replace(/\\/g, '/')
         : '';
 
     // 샘플 스니펫 + variants
-    const { defaultPropsSnippet, variants } = extractRegistryInfo(name);
+    const registryLookupName = catalogData?.name || requestedName || canonicalName;
+    const { defaultPropsSnippet, variants } = extractRegistryInfo(registryLookupName);
 
     // 텍스트 빌드
-    const descText   = buildDescriptionText(catalogData, name);
-    const sampleText = buildSampleText(catalogData, name, defaultPropsSnippet, variants);
+    const descText   = buildDescriptionText(catalogData, canonicalName);
+    const sampleText = buildSampleText(catalogData, canonicalName, defaultPropsSnippet, variants);
 
     // 임베딩
     let descEmbedding, sampleEmbedding;
@@ -270,10 +295,10 @@ export async function ingestOne(name, catalogData = null) {
         await Promise.all([
             chromaUpsert(
                 COL_DESCRIPTION,
-                `desc_${name}`,
+                `desc_${canonicalName}`,
                 descEmbedding,
                 {
-                    componentName: name,
+                    componentName: canonicalName,
                     category: catalogData.category || '',
                     descriptionKo: (catalogData.descriptionKo || '').slice(0, 512),
                     descriptionEn: (catalogData.descriptionEn || '').slice(0, 512),
@@ -286,22 +311,22 @@ export async function ingestOne(name, catalogData = null) {
             ),
             chromaUpsert(
                 COL_CODE,
-                `code_${name}`,
+                `code_${canonicalName}`,
                 null,
                 {
-                    componentName: name,
+                    componentName: canonicalName,
                     category: catalogData.category || '',
                     props: props.join(', '),
                     sourcePath: sourceRelativePath,
                 },
-                code || `// 소스 없음: ${name}`
+                code || `// 소스 없음: ${canonicalName}`
             ),
             chromaUpsert(
                 COL_SAMPLES,
-                `sample_${name}`,
+                `sample_${canonicalName}`,
                 sampleEmbedding,
                 {
-                    componentName: name,
+                    componentName: canonicalName,
                     category: catalogData.category || '',
                     sourcePath: sourceRelativePath,
                 },
